@@ -1,0 +1,806 @@
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans+Mono|Anonymous+Pro|Orbitron&v2);
+
+a
+  {
+    color: blue;
+    text-decoration: none;
+  }
+a:hover
+  {
+    text-decoration: underline;
+  }
+a:link
+  {
+    color: blue;
+  }
+a:visited
+  {
+    color: blue;
+  }
+
+body
+  {
+    padding-left: 0;
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: 9pt;
+    color: black;
+    background-color: #ffffff
+  }
+
+table
+  {
+    width: auto;
+    overflow: hidden;
+  }
+
+td
+  {
+    text-align: left;
+  }
+
+table.inlineTable
+{
+  display: inline;
+  padding: 0;
+  border: 0;
+  margin: 0;
+  line-height: 1em;
+  overflow: visible;
+}
+
+table.inlineTable tr, table.inlineTable td
+{
+  line-height: 0.75em;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+}
+
+.headerLink
+{
+  font-size: 36pt;
+  position: absolute;
+  right: 0;
+  top: 12px;
+}
+
+.headerLink a
+{
+  text-decoration: none;
+}
+
+dl.formEntry
+{
+  display: block;
+  overflow: auto;
+}
+
+dl.formEntry dt
+{
+  float: left;
+  padding: 4px 5px 0 0;
+}
+
+#MainHeader_Mini
+{
+  font-size: 9pt;
+}
+
+#MainHeader
+  {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5em;
+    padding: 0;
+    border: 0;
+    margin: 0;
+    background-color: #ffffff;
+    /*background: url("/img/gallery/fw-new-small2.gif") bottom right;*/
+    background: url("http://www.footbag.org/media/524/fw-word.gif") bottom right;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-color: #ffffff;
+  }
+
+#MainHeader li a:hover
+  {
+    text-decoration: underline;
+    color: #2F2F4F;
+  }
+
+#MainHeaderAd
+  {
+    margin: 0;
+    height: 4em;
+    padding: 0;
+    border: 0;
+    bottom: 0;
+    top: auto;
+  }
+
+#MainLanguageMenu
+{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 7pt;
+  background-color: #2F2F4F;
+  width: 20em;
+}
+
+#MainLanguageMenu form
+{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  display: inline;
+}
+
+#MainLanguageMenu input, #MainLanguageMenu select
+{
+  font-size: 8pt;
+}
+
+#MainBody
+  {
+    padding: 0;
+    border: 0;
+    width: auto;
+    overflow: hidden;
+    /*margin-top: 1em;
+    margin-right: 1em;
+    margin-left: 1em;*/
+    background-color: #ffffff;
+    zoom: 1;
+  }
+
+#MainForm_Mini
+{
+  padding: 0;
+  margin: 0;
+  font-size: 7pt;
+}
+
+#MainForm
+  {
+    padding: 0;
+    margin: 0;
+    border-left: 2px solid #2f2f4f;
+    border-right: 2px solid #2f2f4f;
+    border-bottom: 2px solid #2f2f4f;
+    border-top: none;
+    background-color: white;
+    font-size: 9pt;
+    overflow: hidden;
+    zoom: 1;
+  }
+
+#MainForm form, #MainForm_Mini form
+  {
+    padding: 1em;
+  }
+
+#MainForm textarea, #MainForm input, #MainForm select
+  {
+    /*color: #000050;*/
+    /*font-weight: bold;*/
+    /*border: 2px solid;*/
+    /*padding: 3px;*/
+  }
+
+#MainForm textarea:focus, #MainForm input:focus, #MainForm select:focus, #MainForm_Mini textarea:focus, #MainForm_Mini input:focus, #MainForm_Mini select:focus
+  {
+    color: #800000;
+  }
+
+#MainForm_Mini h1
+{
+  font-size: 10pt;
+  margin: 0;
+  padding: 0.75em;
+}
+
+#MainForm h1
+  {
+    border-top: 2px solid black;
+    width: auto;
+    font-size: 15pt;
+    margin: 0;
+    background-color: #2F2F4F;
+    color: #ffffff;
+    padding: 1em;
+  }
+
+#MainForm th, #MainForm_Mini th
+{
+  text-align: right;
+}
+
+#MainForm td, #MainForm_Mini td
+{
+  text-align: left;
+}
+
+#MainForm dt, #MainForm_Mini dt
+  {
+    border-top: 0.25em;
+    font-size: 9pt;
+    font-weight: bold;
+    width: 14em;
+    display: compact;
+  }
+
+#MainForm dd, #MainForm_Mini dd
+  {
+    margin-left: 4em;
+  }
+
+#MainForm .topButton, #MainForm_Mini .topButton
+  {
+    float: right;
+    margin: 1em;
+    border-color: #2F2F4F;
+    border-style: solid;
+    background-color: #ffffff;
+    text-decoration: none;
+  }
+
+#MainForm .topButton:hover, #MainForm_Mini .topButton:hover
+  {
+    color: #2F2F4F;
+  }
+
+#MainForm .topButton:active, #MainForm .topButton:focus, #MainForm_Mini .topButton:active, #MainForm_Mini .topButton:focus
+  {
+    color: #000000;
+    text-decoration: line-through;
+  }
+
+#MainBody_Mini h1
+{
+  font-size: 11pt;
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+}
+
+#MainBody h1
+  {
+    font-size: 15pt;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+#MainHeaderTitle_Mini
+{
+  padding: 0.5em;
+  margin: 0;
+  font-size: 11pt;
+  background-color: #2f2f4f;
+  color: white;
+}
+
+#MainHeaderTitle
+  {
+    -moz-border-radius: 12px 0px 0px 0px;
+  }
+
+#MainHeaderTitle
+  {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 0;
+    margin: 0;
+    font-size: larger;
+    background-color: #2F2F4F;
+  }
+
+#MainHeaderTitle_Mini h1
+{
+  padding: 0.25em 0 0 0.25em;
+  font-size: 11pt;
+  margin: 0;
+  font-family: Verdana, Helvetica, sans-serif;
+  font-weight: bold;
+  font-stretch: condensed;
+  background-color: #2f2f4f;
+  color: white;
+}
+
+#MainHeaderTitle h1
+  {
+    padding-left: 0.25em;
+    padding-right: 0;
+    padding-top: 0.25em;
+    padding-bottom: 0;
+    font-size: 16pt;
+    margin: 0;
+    font-family: Verdana, Helvetica, sans-serif;
+    font-weight: bold;
+    font-stretch: condensed;
+    background-color: #2F2F4F;
+    color: #ffffff;
+  }
+
+#MainBreadcrumb_Mini
+{
+  display: none;
+  visibility: hidden;
+}
+
+#MainBreadcrumb
+  {
+    background-color: #FF9900;
+    padding: 0.5em;
+    font-size: 8pt;
+    color: #000000;
+    overflow: hidden;
+  }
+
+#MainBreadcrumb a
+  {
+    text-decoration: none;                                    
+    font-size: 8pt;
+    color: #000000;
+  }
+
+#MainBreadcrumb a:hover
+  {
+    text-decoration: underline;
+  }
+
+#MainWrapper
+{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow: hidden;
+  zoom: 1;
+}
+
+#MainMenu_Mini
+{
+  font-size: 7pt;
+  float: right;
+  text-align: center
+  padding: 3px;
+  margin: 0 0 0 0.5em;
+  border: 1px solid black;
+  width: 12em;
+  background-color: #2f2f4f;
+  color: white;
+}
+
+#MainMenu
+  {
+    background-color: #2F2F4F;
+    float: right;
+    text-align: center;
+    padding: 5px;
+    margin: 0;
+    /*margin-left: 1em;*/
+    /*border: 0;*/
+    width: 12em;
+    color: #ffffff;
+    overflow: hidden;
+    position: relative;
+  }
+
+#MainMenuALT
+  {
+    background-color: #2F2F4F;
+    float: left;
+    text-align: center;
+    padding: 5px;
+    margin: 0;
+    margin-right: 1em;
+    border: 0;
+    width: 12em;
+    color: #ffffff;
+  }
+
+#MainMenu_Mini ul
+{
+  border: 0;
+  margin: 0;
+  padding: 0.75em;
+  font-size: 7pt;
+}
+
+#MainMenu ul
+  {
+    border: 0;
+    margin: 0;
+    padding: 1em;
+    font-size: 9pt;
+  }
+
+disabled.#MainMenu li
+  {
+    -moz-border-radius: 12px 12px 12px 12px;
+  }
+
+#MainMenu li, #MainMenu_Mini li
+  {
+    list-style-type: none;
+    width: 9em;
+    padding-left: 1em;
+    padding-right: 0;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin: 5px;
+    text-align: left;
+    border-bottom: 1px solid white;
+  }
+
+#MainMenu li
+{
+  font-size: 9pt;
+}
+
+#MainMenu li a, #MainMenu_Mini li a
+  {
+    color: #ffffff;
+    /*font-family: Verdana, Helvetica, sans-serif;*/
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    font-stretch: condensed;
+    text-decoration: none;
+    text-align: left;
+    padding: 2px;
+  }
+
+#MainMenu li .withIcon
+  {
+    position: relative;
+    border: 0;
+    padding: 0;
+    margin: 0;
+  }
+
+#MainMenu li .withIcon img
+  {
+    position: absolute;
+    left: auto;
+    right: 0;
+    top: 0;
+    border: 0;
+    padding: 0;
+    margin: 0;
+  }
+
+#MainMenu a, #MainMenu_Mini a
+  {
+    color: white;
+  }
+
+#MainMenu a:hover, #MainMenu_Mini a:hover
+  {
+    text-decoration: none;
+    color: #ff9900;
+  }
+
+#MainMenu li a:hover, #MainMenu_Mini li a:hover
+  {
+    border: 1px solid #ff9900;
+    padding: 1px;
+  }
+
+h1
+  {
+    /*font-family: Verdana, Helvetica, Geneva, Arial, SunSans-Regular, sans-serif;*/
+  }
+
+#MainHeader a, #MainHeader_Mini a
+  {
+    text-decoration: none;
+  }
+
+#MainFooter_Mini
+{
+  display: none;
+}
+
+#MainFooter
+  {
+    margin-top: 2em;
+    border: 0;
+    margin-top: 6em;
+    margin-left: 0;
+    padding: 3px 0 0 0;
+    border-top: thin dotted;
+    border-top-width: 2px;
+    width: 100%;
+    height: 3em;
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+#MainDonateLink, #MainPrivacyPolicyLink
+{
+  margin-left: 2em;
+  padding: 2px;
+  background-color: #eee;
+}
+
+#MainDonateLink a, #MainDonateLink a:visited
+{
+  color: red;
+  text-decoration: underline;
+}
+
+#MainDonateLink a:hover
+{
+  border: 1px solid red;
+  color: red;
+  text-decoration: none;
+}
+
+#MainPrivacyPolicyLink a, #MainPrivacyPolicyLink a:visited
+{
+  font-size: 7pt;
+  color: green;
+  text-decoration: underline;
+}
+
+#MainPrivacyPolicyLink a:hover
+{
+  border: 1px solid green;
+  color: green;
+  text-decoration: none;
+}
+
+#AdminBar, .AdminBar
+  {
+    background-color: #e0e0e0;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 1em;
+    margin-right: 0.5em;
+    padding: 3px;
+    text-align: center;
+    font-size: smaller;
+    /*border-radius: 12px 12px 12px 12px;*/
+    color: green;
+    float: right;
+    width: 38em;
+    overflow: hidden;
+    zoom: 1;
+  }
+
+#AdminBar, .AdminBar
+  {
+    -moz-border-radius: 12px 12px 12px 12px;
+  }
+
+#AdminBar a, .AdminBar a
+  {
+    color: green;
+    text-decoration: none;
+    border: 1px solid green;
+  }
+
+#AdminBar a:hover, .AdminBar a:hover
+  {
+    color: black;
+    /* text-decoration: underline; */
+    border: 2px solid black;
+  }
+
+.admin
+{
+  -moz-border-radius: 3px;
+}
+
+.admin
+{
+  color: green;
+  /*background-color: #e0e0e0;*/
+  font-weight: bold;
+  padding: 1px;
+  border: 1px solid green;
+  margin: 0 6px 0 6px;
+  text-align: center;
+  font-size: 7pt;
+}
+
+.admin > a, .admin > a:visited
+{
+  color: green;
+  text-decoration: none;
+}
+
+.admin > a:hover
+{
+  color: green;
+  text-decoration: underline;
+}
+
+font.RoundedSmallButton
+{
+  -moz-border-radius: 7px;
+}
+
+font.RoundedSmallButton
+{
+  color: white;
+  font-size: 7pt;
+  background-color: #808080;
+  font-weight: bold;
+  padding: 0.25em;
+  margin: 0 0.5em 0 0.5em;
+  text-align: center;
+}
+
+font.RoundedSmallButton a
+{
+  color: white;
+  text-decoration: none;
+}
+
+font.RoundedSmallButton a:hover
+{
+  text-decoration: none;
+  border: 1px solid white;
+}
+
+#MainModified
+  {
+    color: gray;
+    background-color: #ffcc66;
+    font-size: 8pt;
+    font-weight: bold;
+    border: 1px dotted gray;
+    margin-top: 2.5em;
+    margin-left: 0;
+    margin-bottom: 0.5em;
+    padding: 0.25em;
+    text-align: center;
+    overflow: hidden;
+    text-transform: uppercase;
+  }
+
+#MainModified a
+  {
+    color: gray;
+    border: 1px solid gray;
+    text-decoration: none;
+  }
+
+#MainModified a:hover
+  {
+    border: 2px solid black;
+    color: black;
+    text-decoration: none;
+  }
+
+#MainMenu .searchBox
+  {
+    -moz-border-radius: 12px;
+  }
+
+#MainMenu .searchBox
+  {
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding: 0.5em;
+    margin-top: 1.25em;
+    margin-left: 4px;
+    margin-right: 4px;
+    margin-bottom: 0.75em;
+    border: 0;
+    font-size: 8pt;
+  }
+
+#MainMenu .searchBox input
+  {
+    color: #2F2F4F;
+    margin-bottom: 0.25em;
+    font-size: 8pt;
+  }
+
+.tiny
+  {
+    font-size: 7pt;
+  }
+
+.fooBar
+  {
+    background: url("/img/gallery/blue-title-bg.gif");
+  }
+
+.LocalizeBox
+{
+  display: inline;
+  padding: 0;
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  text-align: inherit;
+  color: inherit;
+  zoom: 1;
+}
+
+.LocalizeBox form
+{
+  border: 0;
+  display: inline;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  background: inherit;
+  color: inherit;
+  text-align: inherit;
+}
+
+.LocalizeBox input, .LocalizeBox textarea
+{
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  font: inherit;
+  background: inherit;
+  color: inherit;
+  text-align: inherit;
+  border: 1px dotted gray; 
+}
+
+.LocalizeBox input:focus, .LocalizeBox input:hover, .LocalizeBox textarea:focus, .LocalizeBox textarea:hover
+{
+  border: 1px solid black;
+}
+
+.LocalizeBox input.submit
+{
+  border: 0;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  font-size: 7pt;
+  font-weight: normal;
+  color: white;
+  background-color: gray;
+  text-align: inherit;
+}
+
+.LocalizeBox input.hidden
+{
+  border: 0;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+.notice
+{
+  color: red;
+  background-color: #FF9900;
+  border: 1px solid black;
+  padding: 2px;
+  font-size: 7pt;
+}
+
+.FootbagWarningBox
+{
+  margin: 1em;
+  border: 1px solid black;
+  padding: 1em;
+  font-size: 10pt;
+}
+
+.warning
+{
+  padding: 2px;
+  border: 1px solid black;
+  color: #C00000;
+}
+
+.minibold
+{
+  font-size: 7pt;
+  font-weight: bold;
+}

@@ -1,0 +1,15 @@
+{
+  "name": "footbag-org",
+  "version": "0.0.0",
+  "description": "New footbag.org site",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server migration-demo",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jani Säntti",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  }
+}
