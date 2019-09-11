@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Footbag</title>
+    <style>
+        html {
+            box-sizing: border-box;
+        }
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+        body {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-column-gap: 6px;
+            grid-row-gap: 6px;
+            max-width: 1440px;
+            border: 1px solid gray;
+        }
+        @media only screen and (min-width: 600px) {
+            body {
+                grid-column-gap: 26px;
+                grid-row-gap: 26px;
+            }
+        }
+
+        header {
+            grid-column: span 4;
+            width: 5rem;
+            height: 5rem;
+            border: 1px solid gray;
+        }
+
+        .top-nav {
+            grid-column: span 8;
+        }
+    
+        .top-nav__item {
+            display: inline;
+            margin: 0 12px;
+        }
+        .nav{
+            grid-column: span 3;
+        }
+
+        article{
+            grid-column: span 12;
+        }
+
+        footer {
+            grid-column: span 12;
+        }
+
+        .videos {
+            grid-column: span 12;
+            height: 200px;
+        }
+
+        .what-is-footbag {
+            grid-column: span 12;
+            height: 200px;
+        }
+
+        .news {
+            grid-column: span 12;
+            height: 200px;
+        }
+
+        @media only screen and (min-width: 600px) {
+            .what-is-footbag {
+                grid-column: span 8;
+                height: 200px;
+            }
+
+            .news {
+                grid-column: span 4;
+                height: 200px;
+            }
+        }
+
+        .ruler {
+            grid-column: span 1;
+        }
+    </style>
+
+</head>
+    <body>
+
+        <header>
+            logo
+        </header>
+        <nav class="top-nav">
+            <div class="top-nav__item">IFPA</div>
+            <div class="top-nav__item">Members</div>
+            <div class="top-nav__item">Clubs</div>
+            <div class="top-nav__item">Contact<div>
+        </nav>  
+
+        <nav class="nav">FOOTBAG v</nav>
+        <nav class="nav">NEWS</nav>
+        <nav class="nav">EVENTS v</nav>
+        <nav class="nav">MEDIA</nav>
+    
+        <section class="videos">videos?</section>
+        <section class="what-is-footbag">Footbag in nutshell</section>
+        <section class="news">Upcoming events</section>
+    
+    <footer>
+        Footer
+        <button onclick="toggleDebug()">see outlines</button>
+        <script>
+            function toggleDebug() {
+                const styles = document.createElement('style');
+                styles.innerHTML = `* { background-color: rgba(255,0,0,.2); }
+                                    * * { background-color: rgba(0,255,0,.2); }
+                                    * * * { background-color: rgba(0,0,255,.2); }
+                                    * * * * { background-color: rgba(255,0,255,.2); }
+                                    * * * * * { background-color: rgba(0,255,255,.2); }
+                                    * * * * * * { background-color: rgba(255,255,0,.2); }
+                                    * * * * * * * { background-color: rgba(255,0,0,.2); }
+                                    * * * * * * * * { background-color: rgba(0,255,0,.2); }
+                                    * * * * * * * * * { background-color: rgba(0,0,255,.2); }
+                                    `;
+                document.head.appendChild(styles);
+
+            }
+        </script>
+    </footer>
+    <div class="ruler">1</div>
+        <div class="ruler">2</div>
+        <div class="ruler">3</div>
+        <div class="ruler">4</div>
+        <div class="ruler">5</div>
+        <div class="ruler">6</div>
+        <div class="ruler">7</div>
+        <div class="ruler">8</div>
+        <div class="ruler">9</div>
+        <div class="ruler">10</div>
+        <div class="ruler">11</div>
+        <div class="ruler">12</div>
+
+</body>
+</html>
