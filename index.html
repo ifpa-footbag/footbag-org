@@ -3,6 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap"
+      rel="stylesheet"
+    />
     <title>Footbag</title>
     <style>
       html {
@@ -16,11 +20,11 @@
 
       body {
         display: grid;
+        font-family: "Open Sans Condensed", sans-serif;
         grid-template-columns: repeat(12, 1fr);
         grid-column-gap: 6px;
         grid-row-gap: 6px;
         max-width: 1440px;
-        border: 1px solid gray;
       }
       @media only screen and (min-width: 600px) {
         body {
@@ -39,6 +43,10 @@
         grid-column: span 12;
         display: flex;
         justify-content: flex-end;
+      }
+
+      .menu {
+        font-size: 24px;
       }
 
       .main-wide {
@@ -65,10 +73,22 @@
 
       .footer {
         grid-column: span 12;
+        background-color: darkgray;
+        color: #fff;
+      }
+
+      .footer {
+        grid-template-columns: repeat(12, 1fr);
+        grid-column-gap: 6px;
+        grid-row-gap: 6px;
       }
 
       /* Components */
 
+      /* have exactly one h1 on the page (for SEO) */
+      h1 {
+        text-align: center;
+      }
 
       .top-nav__item {
         display: inline;
@@ -88,10 +108,33 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
       }
-      picture {
+      .pics-and-video__pic {
+        background-repeat: no-repeat;
         width: 100%;
-        height: 100px;
-        border: 1px solid gray;
+        height: 150px;
+
+        display: flex;
+        align-items: flex-end;
+        justify-content: end;
+        padding: 13px;
+      }
+
+      .pics-and-video__pic--net {
+        background-image: url("./images/net.jpg");
+      }
+
+      .pics-and-video__pic--freestyle {
+        background-image: url("./images/freestyle.jpg");
+      }
+
+      .pics-and-video__pic--casual {
+        background-image: url("./images/casual.jpg");
+      }
+
+      .pic-text {
+        color: #fff;
+        font-size: 24px;
+        font-weight: 900;
       }
 
       img {
@@ -101,61 +144,68 @@
 
       .pics-and-video__video {
         grid-column: span 3;
-    
+
         position: relative;
         padding-bottom: 56.25%; /* 16:9 */
         padding-top: 25px;
         height: 0;
-    }
-    .video-iframe {
-        
+      }
+      .video-iframe {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-    }
+      }
 
+      .footer__section {
+      }
+
+      .footer-link {
+        display: block;
+      }
     </style>
   </head>
   <body>
-
     <header class="header">
-            <nav class="top-nav">
-                    <div class="top-nav__item">IFPA</div>
-                    <div class="top-nav__item">Members</div>
-                    <div class="top-nav__item">Clubs</div>
-                    <div class="top-nav__item">Contact</div>
-                    </nav>
-        <h1>Footbag Worldwide</h1>
+      <nav class="top-nav">
+        <div class="top-nav__item">IFPA</div>
+        <div class="top-nav__item">Members</div>
+        <div class="top-nav__item">Clubs</div>
+        <div class="top-nav__item">Contact</div>
+      </nav>
+      <h1>Footbag Worldwide</h1>
     </header>
 
     <nav class="menu">
-        <div class="menu__item">FOOTBAG</div>
-        <div class="menu__item">NEWS</div>
-        <div class="menu__item">EVENTS</div>
-        <div class="menu__item">MEDIA</div>
+      <div class="menu__item">FOOTBAG</div>
+      <div class="menu__item">NEWS</div>
+      <div class="menu__item">EVENTS</div>
+      <div class="menu__item">MEDIA</div>
     </nav>
 
     <main class="main-wide">
       <div class="pics-and-video">
-        <picture class=">
-          <img src="./images/net.jpg" />
+        <picture class="pics-and-video__pic pics-and-video__pic--net">
+          <!--img src="./images/net.jpg" /-->
+          <div class="pic-text">net</div>
         </picture>
-        <picture>
-          <img src="./images/freestyle.jpg" />
+        <picture class="pics-and-video__pic pics-and-video__pic--freestyle">
+          <!--img src="./images/freestyle.jpg" /-->
+          <div class="pic-text">freestyle</div>
         </picture>
-        <picture>
-          <img src="./images/casual.jpg" />
+        <picture class="pics-and-video__pic pics-and-video__pic--casual">
+          <!--img src="./images/casual.jpg" /-->
+          <div class="pic-text">casual</div>
         </picture>
         <div class="pics-and-video__video">
-            <iframe
+          <iframe
             class="video-iframe"
             src="https://www.youtube.com/embed/NeY-Ok9K1fU"
             frameborder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
-            ></iframe>
+          ></iframe>
         </div>
       </div>
     </main>
@@ -183,16 +233,16 @@
     <footer class="footer">
       <section class="footer__section">
         <h3>Social media</h3>
-      <a href="">Facebook</a>
-      <a href="">Instagram</a>
-      <a href="">Net facebook</a>
-      <a href="">Freestyle facebook</a>
-    </section>
+        <a class="footer-link" href="">Facebook</a>
+        <a class="footer-link" href="">Instagram</a>
+        <a class="footer-link" href="">Net facebook</a>
+        <a class="footer-link" href="">Freestyle facebook</a>
+      </section>
 
-    <section class="footer__section">
-      <h3>Contact & feedback</h3>
-      Please leave feedback or contact via <a href="">facebook</a>
-    </section>
+      <section class="footer__section">
+        <h3>Contact & feedback</h3>
+        Please leave feedback or contact via <a href="">facebook</a>
+      </section>
 
       <button onclick="toggleDebug()">see outlines</button>
       <script>
