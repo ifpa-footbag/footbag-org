@@ -1,167 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8" />
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Footbag</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Footbag</title>
     <style>
-        html {
-            box-sizing: border-box;
-        }
-        *, *:before, *:after {
-            box-sizing: inherit;
-        }
+      html {
+        box-sizing: border-box;
+      }
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+
+      body {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-column-gap: 6px;
+        grid-row-gap: 6px;
+        max-width: 1440px;
+        border: 1px solid gray;
+      }
+      @media only screen and (min-width: 600px) {
         body {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            grid-column-gap: 6px;
-            grid-row-gap: 6px;
-            max-width: 1440px;
-            border: 1px solid gray;
+          grid-column-gap: 26px;
+          grid-row-gap: 26px;
         }
-        @media only screen and (min-width: 600px) {
-            body {
-                grid-column-gap: 26px;
-                grid-row-gap: 26px;
-            }
+      }
+
+      /* Page structure */
+
+      .header {
+        grid-column: span 12;
+      }
+
+      .top-nav {
+        grid-column: span 12;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .main-wide {
+        grid-column: span 12;
+      }
+
+      .main-left {
+        grid-column: span 12;
+      }
+
+      .main-right {
+        grid-column: span 12;
+      }
+
+      @media only screen and (min-width: 600px) {
+        .main-left {
+          grid-column: span 8;
         }
 
-        header {
-            grid-column: span 4;
-            width: 5rem;
-            height: 3rem;
-            border: 1px solid gray;
+        .main-right {
+          grid-column: span 4;
         }
+      }
 
-        .top-nav {
-            grid-column: span 8;
-            display: flex;
-            justify-content: flex-end;
-        }
+      .footer {
+        grid-column: span 12;
+      }
+
+      /* Components */
+
+
+      .top-nav__item {
+        display: inline;
+        margin: 0 12px;
+      }
+      .menu {
+        grid-column: span 12;
+        display: flex;
+        justify-content: space-evenly;
+      }
+
+      article {
+        grid-column: span 12;
+      }
+
+      .pics-and-video {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+      picture {
+        width: 100%;
+        height: 100px;
+        border: 1px solid gray;
+      }
+
+      img {
+        width: 100%;
+        height: 200px;
+      }
+
+      .pics-and-video__video {
+        grid-column: span 3;
     
-        .top-nav__item {
-            display: inline;
-            margin: 0 12px;
-        }
-        .nav{
-            grid-column: span 3;
-        }
-
-        article{
-            grid-column: span 12;
-        }
-
-        footer {
-            grid-column: span 12;
-        }
-
-        .pics-and-video {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-        }
-        picture {
-            width: 100%;
-            height: 100px;
-            border: 1px solid gray;
-        }
-
-        img{
-            width: 100%;
-            height: 200px;
-        }
-
-        .videos {
-            grid-column: span 12;
-        }
-
-        iframe {
-            grid-column: span 3;
-            max-width: 100%;
-        }
-
-        .what-is-footbag {
-            grid-column: span 12;
-        }
-
-        .news {
-            grid-column: span 12;
-        }
-
-        @media only screen and (min-width: 600px) {
-            .what-is-footbag {
-                grid-column: span 8;  
-            }
-
-            .news {
-                grid-column: span 4;
-            }
-        }
-
-   </style>
-
-</head>
-    <body>
-        <header>
-            logo
-        </header>
-        <nav class="top-nav">
-            <div class="top-nav__item">IFPA</div>
-            <div class="top-nav__item">Members</div>
-            <div class="top-nav__item">Clubs</div>
-            <div class="top-nav__item">Contact<div>
-        </nav>  
-
-        <nav class="nav">FOOTBAG</nav>
-        <nav class="nav">NEWS</nav>
-        <nav class="nav">EVENTSs</nav>
-        <nav class="nav">MEDIA</nav>
-    
-        <section class="videos">
-            <div class="pics-and-video">
-                <picture>
-                    <img src="./images/net.jpg">
-                </picture>
-                <picture>
-                    <img src="./images/freestyle.jpg">
-                </picture>
-                <picture>
-                    <img src="./images/casual.jpg">
-                </picture>
-                <iframe width="100%" height="auto" src="https://www.youtube.com/embed/NeY-Ok9K1fU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </section>
-        <section class="what-is-footbag"><h2>Footbag</h2>
-        <p>Footbag is a sport played all over the world. It is originated in North America and also called as "Hacky Sack®". 
-            Footbag has existed as a competitive sport in several forms since 1972.</p>
-            <p>
-                The most popular competitive footbag sports are Footbag Net and Freestyle. There are a substantial number of 
-            footbag tournaments and festivals each year.
- 
-            Competitive footbag is governed by the International Footbag Players' Association, Inc., a charitable non-profit corporation to promote footbag as an amateur competitive sport. 
-
-           </p>
-           </section>
-        <section class="news">
-            <h2>News</h2>
-            Here we can have latest news including social media, upcoming events etc.
-        </section>
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 */
+        padding-top: 25px;
+        height: 0;
+    }
+    .video-iframe {
         
-    <footer>
-    
-        <h3>Social media</h3>
-        <a href="">Facebook</a>
-        <a href="">Instagram</a>
-        <a href="">Net facebook</a>
-        <a href="">Freestyle facebook</a>
- 
-        <h3>Contact & feedback</h3>
-        Please leave feedback or contact via <a href="">facebook</a>
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
 
-        <button onclick="toggleDebug()">see outlines</button>
-        <script>
-            function toggleDebug() {
-                const styles = document.createElement('style');
-                styles.innerHTML = `* { background-color: rgba(255,0,0,.2); }
+    </style>
+  </head>
+  <body>
+
+    <header class="header">
+            <nav class="top-nav">
+                    <div class="top-nav__item">IFPA</div>
+                    <div class="top-nav__item">Members</div>
+                    <div class="top-nav__item">Clubs</div>
+                    <div class="top-nav__item">Contact</div>
+                    </nav>
+        <h1>Footbag Worldwide</h1>
+    </header>
+
+    <nav class="menu">
+        <div class="menu__item">FOOTBAG</div>
+        <div class="menu__item">NEWS</div>
+        <div class="menu__item">EVENTS</div>
+        <div class="menu__item">MEDIA</div>
+    </nav>
+
+    <main class="main-wide">
+      <div class="pics-and-video">
+        <picture class=">
+          <img src="./images/net.jpg" />
+        </picture>
+        <picture>
+          <img src="./images/freestyle.jpg" />
+        </picture>
+        <picture>
+          <img src="./images/casual.jpg" />
+        </picture>
+        <div class="pics-and-video__video">
+            <iframe
+            class="video-iframe"
+            src="https://www.youtube.com/embed/NeY-Ok9K1fU"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            ></iframe>
+        </div>
+      </div>
+    </main>
+    <section class="main-left">
+      <h2>Footbag</h2>
+      <p>
+        Footbag is a sport played all over the world. It is originated in North
+        America and also called as "Hacky Sack®". Footbag has existed as a
+        competitive sport in several forms since 1972.
+      </p>
+      <p>
+        The most popular competitive footbag sports are Footbag Net and
+        Freestyle. There are a substantial number of footbag tournaments and
+        festivals each year. Competitive footbag is governed by the
+        International Footbag Players' Association, Inc., a charitable
+        non-profit corporation to promote footbag as an amateur competitive
+        sport.
+      </p>
+    </section>
+    <aside class="main-right">
+      <h2>News</h2>
+      Here we can have latest news including social media, upcoming events etc.
+    </aside>
+
+    <footer class="footer">
+      <section class="footer__section">
+        <h3>Social media</h3>
+      <a href="">Facebook</a>
+      <a href="">Instagram</a>
+      <a href="">Net facebook</a>
+      <a href="">Freestyle facebook</a>
+    </section>
+
+    <section class="footer__section">
+      <h3>Contact & feedback</h3>
+      Please leave feedback or contact via <a href="">facebook</a>
+    </section>
+
+      <button onclick="toggleDebug()">see outlines</button>
+      <script>
+        function toggleDebug() {
+          const styles = document.createElement("style");
+          styles.innerHTML = `* { background-color: rgba(255,0,0,.2); }
                                     * * { background-color: rgba(0,255,0,.2); }
                                     * * * { background-color: rgba(0,0,255,.2); }
                                     * * * * { background-color: rgba(255,0,255,.2); }
@@ -171,11 +208,9 @@
                                     * * * * * * * * { background-color: rgba(0,255,0,.2); }
                                     * * * * * * * * * { background-color: rgba(0,0,255,.2); }
                                     `;
-                document.head.appendChild(styles);
-
-            }
-        </script>
+          document.head.appendChild(styles);
+        }
+      </script>
     </footer>
-        
-</body>
+  </body>
 </html>
