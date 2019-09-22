@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Footbag</title>
     <style>
         html {
@@ -55,11 +55,27 @@
             grid-column: span 12;
         }
 
+        .pics-and-video {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        picture {
+            width: 100%;
+            height: 100px;
+            border: 1px solid gray;
+        }
+
+        img{
+            width: 100%;
+            height: 200px;
+        }
+
         .videos {
             grid-column: span 12;
         }
 
         iframe {
+            grid-column: span 3;
             max-width: 100%;
         }
 
@@ -81,10 +97,7 @@
             }
         }
 
-        .ruler {
-            grid-column: span 1;
-        }
-    </style>
+   </style>
 
 </head>
     <body>
@@ -98,25 +111,52 @@
             <div class="top-nav__item">Contact<div>
         </nav>  
 
-        <nav class="nav">FOOTBAG v</nav>
+        <nav class="nav">FOOTBAG</nav>
         <nav class="nav">NEWS</nav>
-        <nav class="nav">EVENTS v</nav>
+        <nav class="nav">EVENTSs</nav>
         <nav class="nav">MEDIA</nav>
     
         <section class="videos">
-            <iframe width="450px" height="300px" src="https://www.youtube.com/embed/NeY-Ok9K1fU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></section>
-        <section class="what-is-footbag"><h2>Footbag in nutshell</h2>
-        <p>Footbag is a growing sport, originating in North America, though the sport is now played all over the world. Frequently referred to as "Hacky Sack®" (the registered trademark for a product manufactured by Wham-O, Inc.), footbag has existed as a competitive sport in several forms since 1972. There are a substantial number of footbag tournaments and festivals each year.
-
-                Competitive footbag is governed by the International Footbag Players' Association, Inc., a charitable non-profit corporation to promote footbag as an amateur competitive sport. The rules are published by the International Footbag Committee (IFC). The rule book, Rules of Footbag Sports, is available on-line and is translated (or being translated) into many popular languages.
-                
-                The most popular competitive footbag sports are Footbag Net and Freestyle.</p>
+            <div class="pics-and-video">
+                <picture>
+                    <img src="./images/net.jpg">
+                </picture>
+                <picture>
+                    <img src="./images/freestyle.jpg">
+                </picture>
+                <picture>
+                    <img src="./images/casual.jpg">
+                </picture>
+                <iframe width="100%" height="auto" src="https://www.youtube.com/embed/NeY-Ok9K1fU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
         </section>
-        <section class="news"><h2>Social Media</h2>
-            <div class="fb-page" data-href="https://www.facebook.com/footbag.org/" data-tabs="timeline" data-width="250" data-height="550" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true"><blockquote cite="https://www.facebook.com/footbag.org/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/footbag.org/">Footbag</a></blockquote></div></section>
-    
+        <section class="what-is-footbag"><h2>Footbag</h2>
+        <p>Footbag is a sport played all over the world. It is originated in North America and also called as "Hacky Sack®". 
+            Footbag has existed as a competitive sport in several forms since 1972.</p>
+            <p>
+                The most popular competitive footbag sports are Footbag Net and Freestyle. There are a substantial number of 
+            footbag tournaments and festivals each year.
+ 
+            Competitive footbag is governed by the International Footbag Players' Association, Inc., a charitable non-profit corporation to promote footbag as an amateur competitive sport. 
+
+           </p>
+           </section>
+        <section class="news">
+            <h2>News</h2>
+            Here we can have latest news including social media, upcoming events etc.
+        </section>
+        
     <footer>
-        Footer
+    
+        <h3>Social media</h3>
+        <a href="">Facebook</a>
+        <a href="">Instagram</a>
+        <a href="">Net facebook</a>
+        <a href="">Freestyle facebook</a>
+ 
+        <h3>Contact & feedback</h3>
+        Please leave feedback or contact via <a href="">facebook</a>
+
         <button onclick="toggleDebug()">see outlines</button>
         <script>
             function toggleDebug() {
@@ -136,21 +176,6 @@
             }
         </script>
     </footer>
-    <div class="ruler">1</div>
-        <div class="ruler">2</div>
-        <div class="ruler">3</div>
-        <div class="ruler">4</div>
-        <div class="ruler">5</div>
-        <div class="ruler">6</div>
-        <div class="ruler">7</div>
-        <div class="ruler">8</div>
-        <div class="ruler">9</div>
-        <div class="ruler">10</div>
-        <div class="ruler">11</div>
-        <div class="ruler">12</div>
-
-        <div id="fb-root"></div>
-        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v4.0"></script>
-
+        
 </body>
 </html>
