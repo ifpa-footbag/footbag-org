@@ -49,6 +49,20 @@
         font-size: 24px;
       }
 
+      @media only screen and (max-width: 600px) {
+        .menu {
+          position: fixed;
+          left: 0px;
+          right: 0px;
+          bottom: 0px;
+          background-color: #fff;
+
+          box-shadow: rgba(0, 0, 0, 0.05) 0px -1px 4px 0px;
+          font-size: 16px;
+          padding: 6px 0;
+        }
+      }
+
       .main-wide {
         grid-column: span 12;
       }
@@ -111,7 +125,7 @@
       .pics-and-video__pic {
         background-repeat: no-repeat;
         width: 100%;
-        height: 150px;
+        height: calc(100vw * (9 / 16) / 2);
 
         display: flex;
         align-items: flex-end;
@@ -156,9 +170,6 @@
         left: 0;
         width: 100%;
         height: 100%;
-      }
-
-      .footer__section {
       }
 
       .footer-link {
@@ -210,6 +221,75 @@
       </div>
     </main>
     <section class="main-left">
+      <h2>News</h2>
+      <h3>Footbag.org renewed</h3>
+      <p>
+        Footbag.org has been redesigned. Goal has been to improve mobile
+        experience, tell up-to-date information about footbag, attract new
+        players and serve old ones. Tell us feedback on
+        <a class="news-readmore" href="">facebook</a>
+        <a href="">read more</a>
+      </p>
+
+      <h3>2019 Bulgarian Footbag Open</h3>
+      <p>
+        September 21-23, 2019 Stara Zagora, Bulgaria
+        <a class="news-readmore" href="">read more</a>
+      </p>
+
+      <h3>2019 German Footbag Open</h3>
+      <p>
+        October 12-13, 2019 Berlin, Germany Contact: Matthias Schmidt,
+        matthias@fcfootstar.de
+
+        <a class="news-readmore" href="">read more</a>
+      </p>
+      <h3>Footbag.org renewed</h3>
+      <p>
+        Footbag.org has been redesigned. Goal has been to improve mobile
+        experience, tell up-to-date information about footbag, attract new
+        players and serve old ones. Tell us feedback on
+        <a class="news-readmore" href="">facebook</a>
+        <a href="">read more</a>
+      </p>
+
+      <h3>2019 Bulgarian Footbag Open</h3>
+      <p>
+        September 21-23, 2019 Stara Zagora, Bulgaria
+        <a class="news-readmore" href="">read more</a>
+      </p>
+
+      <h3>2019 German Footbag Open</h3>
+      <p>
+        October 12-13, 2019 Berlin, Germany Contact: Matthias Schmidt,
+        matthias@fcfootstar.de
+
+        <a class="news-readmore" href="">read more</a>
+      </p>
+      <h3>Footbag.org renewed</h3>
+      <p>
+        Footbag.org has been redesigned. Goal has been to improve mobile
+        experience, tell up-to-date information about footbag, attract new
+        players and serve old ones. Tell us feedback on
+        <a class="news-readmore" href="">facebook</a>
+        <a href="">read more</a>
+      </p>
+
+      <h3>2019 Bulgarian Footbag Open</h3>
+      <p>
+        September 21-23, 2019 Stara Zagora, Bulgaria
+        <a class="news-readmore" href="">read more</a>
+      </p>
+
+      <h3>2019 German Footbag Open</h3>
+      <p>
+        October 12-13, 2019 Berlin, Germany Contact: Matthias Schmidt,
+        matthias@fcfootstar.de
+
+        <a class="news-readmore" href="">read more</a>
+      </p>
+    </section>
+    <aside class="main-right">
       <h2>Footbag</h2>
       <p>
         Footbag is a sport played all over the world. It is originated in North
@@ -224,10 +304,6 @@
         non-profit corporation to promote footbag as an amateur competitive
         sport.
       </p>
-    </section>
-    <aside class="main-right">
-      <h2>News</h2>
-      Here we can have latest news including social media, upcoming events etc.
     </aside>
 
     <footer class="footer">
