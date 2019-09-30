@@ -9,6 +9,8 @@
     />
     <title>Footbag</title>
     <style>
+      /* Use BEM or capsulate components other ways*/
+
       html {
         box-sizing: border-box;
       }
@@ -67,6 +69,17 @@
         grid-column: span 12;
       }
 
+      @media only screen and (min-width: 600px) {
+        .main-wide {
+          grid-column: 2 / span 10;
+        }
+      }
+      @media only screen and (min-width: 1000px) {
+        .main-wide {
+          grid-column: 3 / span 8;
+        }
+      }
+
       .main-left {
         grid-column: span 12;
       }
@@ -95,12 +108,16 @@
         grid-template-columns: repeat(12, 1fr);
         grid-column-gap: 6px;
         grid-row-gap: 6px;
+
+        margin: -8px;
+        padding: 8px;
       }
 
       /* Components */
 
       /* have exactly one h1 on the page (for SEO) */
       h1 {
+        margin-bottom: 1rem;
         text-align: center;
       }
 
@@ -133,12 +150,24 @@
         width: 100%;
         height: 100%;
       }
+      .footbag__section {
+        overflow: auto;
+      }
 
       .small-picture {
-        width: 100px;
+        width: 130px;
+        max-width: 46%;
         height: auto;
         float: left;
         padding: 6px;
+      }
+
+      .news__header {
+        font-size: 16px;
+        margin-bottom: 0;
+      }
+      .news__body {
+        margin-top: 0;
       }
 
       .footer-link {
@@ -164,7 +193,7 @@
     </header>
 
     <nav class="menu">
-      <div class="menu__item">????</div>
+      <div class="menu__item">GETTING STARTED</div>
       <div class="menu__item">
         <a href="http://footbag.org/rules/">RULES</a>
       </div>
@@ -185,71 +214,59 @@
     </main>
     <section class="main-left">
       <h2>News</h2>
-      <h3>Footbag.org renewed</h3>
-      <p>
+      <h3 class="news__header">Footbag.org renewed</h3>
+      <p class="news__body">
         Footbag.org has been redesigned. Goal has been to improve mobile
         experience, tell up-to-date information about footbag, attract new
         players and serve old ones. Tell us feedback on
         <a class="news-readmore" href="">facebook</a>
-        <a href="">read more</a>
       </p>
 
-      <h3>2019 Bulgarian Footbag Open</h3>
-      <p>
+      <h3 class="news__header">2019 Bulgarian Footbag Open</h3>
+      <p class="news__body">
         September 21-23, 2019 Stara Zagora, Bulgaria
-        <a class="news-readmore" href="">read more</a>
       </p>
 
-      <h3>2019 German Footbag Open</h3>
-      <p>
+      <h3 class="news__header">2019 German Footbag Open</h3>
+      <p class="news__body">
         October 12-13, 2019 Berlin, Germany Contact: Matthias Schmidt,
         matthias@fcfootstar.de
-
-        <a class="news-readmore" href="">read more</a>
       </p>
-      <h3>Footbag.org renewed</h3>
-      <p>
+      <h3 class="news__header">Footbag.org renewed</h3>
+      <p class="news__body">
         Footbag.org has been redesigned. Goal has been to improve mobile
         experience, tell up-to-date information about footbag, attract new
         players and serve old ones. Tell us feedback on
         <a class="news-readmore" href="">facebook</a>
-        <a href="">read more</a>
       </p>
 
-      <h3>2019 Bulgarian Footbag Open</h3>
-      <p>
+      <h3 class="news__header">2019 Bulgarian Footbag Open</h3>
+      <p class="news__body">
         September 21-23, 2019 Stara Zagora, Bulgaria
-        <a class="news-readmore" href="">read more</a>
       </p>
 
-      <h3>2019 German Footbag Open</h3>
-      <p>
+      <h3 class="news__header">2019 German Footbag Open</h3>
+      <p class="news__body">
         October 12-13, 2019 Berlin, Germany Contact: Matthias Schmidt,
         matthias@fcfootstar.de
-
-        <a class="news-readmore" href="">read more</a>
       </p>
-      <h3>Footbag.org renewed</h3>
-      <p>
+      <h3 class="news__header">Footbag.org renewed</h3>
+      <p class="news__body">
         Footbag.org has been redesigned. Goal has been to improve mobile
         experience, tell up-to-date information about footbag, attract new
         players and serve old ones. Tell us feedback on
         <a class="news-readmore" href="">facebook</a>
-        <a href="">read more</a>
       </p>
 
-      <h3>2019 Bulgarian Footbag Open</h3>
-      <p>
+      <h3 class="news__header">2019 Bulgarian Footbag Open</h3>
+      <p class="news__body">
         September 21-23, 2019 Stara Zagora, Bulgaria
-        <a class="news-readmore" href="">read more</a>
       </p>
 
-      <h3>2019 German Footbag Open</h3>
-      <p>
+      <h3 class="news__header">2019 German Footbag Open</h3>
+      <p class="news__body">
         October 12-13, 2019 Berlin, Germany Contact: Matthias Schmidt,
         matthias@fcfootstar.de
-
-        <a class="news-readmore" href="">read more</a>
       </p>
     </section>
     <aside class="main-right">
@@ -260,7 +277,7 @@
         competitive sport in several forms since 1972.
       </p>
 
-      <section>
+      <section class="footbag__section">
         <p>
           <img class="small-picture" src="./images/net.jpg" />
           <b
@@ -275,7 +292,7 @@
           however, players are only allowed two kicks per side.
         </p>
       </section>
-      <section>
+      <section class="footbag__section">
         <p>
           <img class="small-picture" src="./images/freestyle.jpg" />
           <b
@@ -285,10 +302,10 @@
           >
           has evolved into a very technical competitive discipline. Players
           compete by choreographing routines, performing very difficult
-          conbinations of footbag tricks to music, much like figure skating.
+          combinations of footbag tricks to music, much like figure skating.
         </p>
       </section>
-      <section>
+      <section class="footbag__section">
         <p>
           <img class="small-picture" src="./images/casual.jpg" />
           <b>Casual Footbag</b> refers to... What is Lorem Ipsum? Lorem Ipsum is
@@ -320,7 +337,7 @@
         <h3>Contact & feedback</h3>
         Please leave feedback or contact via <a href="">facebook</a>
       </section>
-
+      <br />
       <button onclick="toggleDebug()">see outlines</button>
       <script>
         function toggleDebug() {
