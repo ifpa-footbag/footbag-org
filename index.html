@@ -1,157 +1,126 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap"
+      href="https://fonts.googleapis.com/css?family=Rubik&display=swap"
       rel="stylesheet"
     />
-    <title>Footbag</title>
+  </head>
+  <body>
     <style>
-      /* Use BEM or capsulate components other ways*/
-
-      html {
-        box-sizing: border-box;
-        scroll-behavior: smooth;
-      }
       *,
       *:before,
       *:after {
-        box-sizing: inherit;
+        box-sizing: border-box;
+      }
+
+      html {
+        /* COMMON VARIABLES */
+        --space-s: 0.25rem;
+        --space-m: 0.5rem;
+        --space-l: 1rem;
+
+        --color-white: #fff;
+        --color-black: #000;
+
+        --color-blue: #2c204e;
+        --color-orange: #f39313;
+        --color-red: #cb4c44;
+        --color-gray: #ededed;
+
+        /* 
+           * Modular scale base 1em, ratio 1.25 (modularscale.com)
+           * e.g. 1em, 1.25em, 1.563em, 1.953em, 2.441em, 3.052em, 3.814,
+           */
+        --font-size-xsmall: 0.64rem;
+        --font-size-small: 0.8rem;
+        --font-size-medium: 1rem;
+        --font-size-large: 1.25rem;
+        --font-size-xlarge: 1.563rem;
+        --font-size-xxlarge: 1.953rem;
+        --font-size-xxxlarge: 2.441rem;
+        --font-size-xxxxlarge: 3.052rem;
+
+        --grid-gap: var(--space-m);
+        --grid-gap-negative: calc(-1 * var(--space-m));
+
+        background-color: var(--color-gray);
       }
 
       body {
-        font-family: "Open Sans Condensed", sans-serif;
+        font-family: "Rubik", sans-serif;
+        font-size: 16px;
+
+        margin: 0 auto;
+        max-width: 1024px;
       }
 
-      .grid-12 {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        grid-column-gap: 6px;
-        grid-row-gap: 6px;
-        max-width: 1440px;
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
       }
-      @media only screen and (min-width: 600px) {
-        .grid-12 {
-          grid-column-gap: 26px;
-          grid-row-gap: 26px;
+
+      /* UTILITY CLASSES */
+
+      @media only screen and (max-width: 600px) {
+        .u-hide--small {
+          display: none;
         }
       }
 
-      /* Page structure */
+      /* LOGO */
 
-      .header {
-        grid-column: span 12;
+      .logo {
+        /* anchor for logo-header, which is positioned absolute */
+        position: relative;
+      }
+      .logo-header {
+        background-color: var(--color-white);
+        border-radius: 50%;
+
+        align-items: center;
+        display: flex;
+
+        justify-content: center;
+        position: absolute;
+        top: 0.5rem;
+        left: 0.5rem;
+        width: 7rem;
+        height: 7rem;
+
+        z-index: 1;
       }
 
-      .top-nav {
-        grid-column: span 12;
+      /* NAVIGATION */
+
+      .nav {
+        background-color: var(--color-blue);
+        color: var(--color-white);
         display: flex;
         justify-content: flex-end;
       }
-
-      .menu {
-        position: fixed;
-        left: 0px;
-        right: 0px;
-        bottom: 0px;
-        background-color: #fff;
-
-        box-shadow: rgba(0, 0, 0, 0.05) 0px -1px 4px 0px;
-        font-size: 16px;
-        padding: 6px 0;
+      .nav-item {
+        font-size: var(--font-size-medium);
+        padding: 1.25rem;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+      .nav-item--selected {
+        color: var(--color-orange);
       }
 
-      @media only screen and (min-width: 600px) {
-        .menu {
-          position: static;
-          left: none;
-          right: none;
-          bottom: none;
-
-          box-shadow: none;
-          font-size: 24px;
-          margin-bottom: 0.5rem;
-        }
+      .nav-item:last-child {
+        border-left: 1px solid var(--color-gray);
       }
 
-      .main-wide {
-        grid-column: span 12;
-        order: 1;
-      }
-
-      @media only screen and (min-width: 800px) {
-        .main-wide {
-          grid-column: 2 / span 10;
-        }
-      }
-      @media only screen and (min-width: 1000px) {
-        .main-wide {
-          grid-column: 3 / span 8;
-        }
-      }
-
-      .main-left {
-        grid-column: span 12;
-        order: 3;
-      }
-
-      .main-right {
-        grid-column: span 12;
-        order: 2;
-      }
-
-      @media only screen and (min-width: 600px) {
-        .main-left {
-          grid-column: span 8;
-          order: 2;
-        }
-
-        .main-right {
-          grid-column: span 4;
-          order: 3;
-        }
-      }
-
-      .footer {
-        grid-column: span 12;
-        background-color: darkgray;
-        color: #fff;
-      }
-
-      .footer {
-        grid-template-columns: repeat(12, 1fr);
-        grid-column-gap: 6px;
-        grid-row-gap: 6px;
-
-        margin: -8px;
-        padding: 8px;
-      }
-
-      /* Components */
-
-      /* have exactly one h1 on the page (for SEO) */
-      h1 {
-        margin-bottom: 1rem;
-        text-align: center;
-      }
-
-      .top-nav__item {
-        display: inline;
-        margin: 0 12px;
-      }
-      .menu {
-        grid-column: span 12;
+      /* PAGE HERO (VIDEO) */
+      .hero {
         display: flex;
-        justify-content: space-evenly;
-      }
+        align-items: center;
+        justify-content: center;
 
-      article {
-        grid-column: span 12;
-      }
-
-      .video {
         margin: 0 auto;
         position: relative;
         /*padding-bottom: 56.25%;  16:9 */
@@ -166,239 +135,156 @@
         width: 100%;
         height: 100%;
       }
-      .footbag__section {
-        overflow: auto;
+
+      /* GRID */
+
+      .grid {
+        display: grid;
+        grid-auto-flow: dense;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-auto-rows: minmax(44px, auto);
+        grid-gap: var(--grid-gap);
       }
 
-      .small-picture {
-        width: 130px;
-        max-width: 46%;
-        height: auto;
-        float: left;
-        padding: 6px;
+      .panel {
+        background-color: white;
+        padding: var(--space-l);
       }
 
-      .news__header {
-        font-size: 16px;
-        margin-bottom: 0;
-      }
-      .news__body {
-        margin-top: 0;
+      .panel--header {
+        display: flex;
+        align-items: center;
       }
 
-      .footer-link {
-        display: block;
+      .panel_header {
+        font-size: var(--font-size-medium);
+      }
+
+      /* GRID EVENTS */
+
+      .panel--events-header {
+        background-color: var(--color-red);
+        color: var(--color-white);
+        grid-row-start: 1;
+        grid-column-end: -1;
+      }
+
+      .panel--events {
+        grid-row: 2 / 14;
+        grid-column-end: -1;
+        margin-top: var(--grid-gap-negative);
+        padding-top: var(--grid-gap);
+      }
+
+      /* GRID NEWS */
+
+      .panel--news-header {
+        background-color: var(--color-blue);
+        color: var(--color-white);
+        grid-column: 1 / -2;
+        margin-right: var(--grid-gap-negative);
+      }
+
+      .panel--news:nth-child(3n) {
+        grid-row: span 3;
+      }
+
+      .panel--news:nth-child(3n + 1) {
+        grid-row: span 4;
+      }
+      .panel--news:nth-child(3n + 2) {
+        grid-row: span 5;
+      }
+
+      /* EVENTS */
+
+      .event_header {
+        margin: var(--space-m) 0;
+      }
+
+      .event {
+        border-bottom: 1px solid #ccc;
+        padding: var(--space-m) 0 var(--space-l) 0;
       }
     </style>
-  </head>
-  <body>
-    <header class="header">
-      <nav class="top-nav">
-        <div class="top-nav__item">
-          <a href="http://footbag.org/members/home">Log in</a>
-        </div>
-        <div class="top-nav__item">
-          <a href="http://footbag.org/ifpa/">IFPA</a>
-        </div>
-        <div class="top-nav__item">
-          <a href="http://footbag.org/clubs/index">Clubs</a>
-        </div>
-      </nav>
-      <h1>Footbag Worldwide</h1>
+
+    <header class="logo">
+      <h1 class="logo-header">FB</h1>
     </header>
 
-    <nav class="menu">
-      <div class="menu__item">
-        <a href="http://footbag.org/reference/-/Footbag_Reference_Area"
-          >GETTING STARTED</a
+    <nav class="nav">
+      <div class="nav-item">Footbag</div>
+      <div class="nav-item nav-item--selected">News</div>
+      <div class="nav-item u-hide--small">events</div>
+      <div class="nav-item u-hide--small">
+        Media
+      </div>
+      <div class="nav-item">
+        IFPA
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="8"
+          height="8"
+          viewBox="0 0 292.4 292.4"
         >
-      </div>
-      <div class="menu__item">
-        <a href="http://footbag.org/rules/">RULES</a>
-      </div>
-      <div class="menu__item">
-        <a href="#social-media-links">SOCIAL MEDIA</a>
+          <path
+            fill="#fff"
+            d="M287 69.4a17.6 17.6 0 0 0-13-5.4H18.4c-5 0-9.3 1.8-12.9 5.4A17.6 17.6 0 0 0 0 82.2c0 5 1.8 9.3 5.4 12.9l128 127.9c3.6 3.6 7.8 5.4 12.8 5.4s9.2-1.8 12.8-5.4L287 95c3.5-3.5 5.4-7.8 5.4-12.8 0-5-1.9-9.2-5.5-12.8z"
+          ></path>
+        </svg>
       </div>
     </nav>
 
-    <main class="grid-12">
-      <section class="main-wide">
-        <div class="video">
-          <iframe
-            class="video-iframe"
-            src="https://www.youtube.com/embed/NeY-Ok9K1fU"
-            frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          ></iframe>
-        </div>
-      </section>
-      <section class="main-left">
-        <h2>News</h2>
-        <h3 class="news__header">Footbag.org renewed</h3>
-        <p class="news__body">
-          Footbag.org has been redesigned. Goal has been to improve mobile
-          experience, tell up-to-date information about footbag, attract new
-          players and serve old ones. Tell us feedback on
-          <a class="news-readmore" href="">facebook</a>
-        </p>
-
-        <h3 class="news__header">2019 Bulgarian Footbag Open</h3>
-        <p class="news__body">
-          September 21-23, 2019 Stara Zagora, Bulgaria
-        </p>
-
-        <h3 class="news__header">2019 German Footbag Open</h3>
-        <p class="news__body">
-          October 12-13, 2019 Berlin, Germany Contact: Matthias Schmidt,
-          matthias@fcfootstar.de
-        </p>
-        <h3 class="news__header">Footbag.org renewed</h3>
-        <p class="news__body">
-          Footbag.org has been redesigned. Goal has been to improve mobile
-          experience, tell up-to-date information about footbag, attract new
-          players and serve old ones. Tell us feedback on
-          <a class="news-readmore" href="">facebook</a>
-        </p>
-
-        <h3 class="news__header">2019 Bulgarian Footbag Open</h3>
-        <p class="news__body">
-          September 21-23, 2019 Stara Zagora, Bulgaria
-        </p>
-
-        <h3 class="news__header">2019 German Footbag Open</h3>
-        <p class="news__body">
-          October 12-13, 2019 Berlin, Germany Contact: Matthias Schmidt,
-          matthias@fcfootstar.de
-        </p>
-        <h3 class="news__header">Footbag.org renewed</h3>
-        <p class="news__body">
-          Footbag.org has been redesigned. Goal has been to improve mobile
-          experience, tell up-to-date information about footbag, attract new
-          players and serve old ones. Tell us feedback on
-          <a class="news-readmore" href="">facebook</a>
-        </p>
-
-        <h3 class="news__header">2019 Bulgarian Footbag Open</h3>
-        <p class="news__body">
-          September 21-23, 2019 Stara Zagora, Bulgaria
-        </p>
-
-        <h3 class="news__header">2019 German Footbag Open</h3>
-        <p class="news__body">
-          October 12-13, 2019 Berlin, Germany Contact: Matthias Schmidt,
-          matthias@fcfootstar.de
-        </p>
-
-        <p>
-          <a href="http://www.footbag.org/events/">All events</a> and
-          <a href="http://www.footbag.org/events/results">results</a>
-        </p>
-      </section>
-      <aside class="main-right">
-        <h2>Footbag</h2>
-        <p>
-          Footbag is a series of sports where players use their feet to kick a
-          small round bag or ball. Footbag's current form came about in 1972 in
-          North America and has continued evolving into a popular sport that is
-          played all over the world.
-        </p>
-
-        <section class="footbag__section">
-          <p>
-            <img class="small-picture" src="./images/net.jpg" />
-            <b
-              ><a href="http://footbag.org/reference/-/Footbag_Net"
-                >Footbag Net</a
-              ></b
-            >
-            Footbag Net is a singles or doubles court game, where players use
-            only their feet to kick the footbag over a net. The size of the
-            court and the height of the net are the same as those used in
-            badminton. The rules for doubles net are a lot like volleyball:
-            players are allowed three kicks per side before the ball must be
-            sent to the opponents side of the net. Singles players are only
-            allowed two kicks per side. Playing strategies are very similar to
-            those used in beach volleyball. The attacking side sets the bag high
-            in the air and attempts to hit it down onto the opponent's side of
-            the court. The defending side tries to block the opponent's hits as
-            they come over the net, or moves quickly to "dig" the bag up before
-            it hits the ground, all while preparing to counter attack.
-          </p>
-        </section>
-        <section class="footbag__section">
-          <p>
-            <img class="small-picture" src="./images/freestyle.jpg" />
-            <b
-              ><a href="http://footbag.org/reference/-/Footbag_Freestyle"
-                >Freestyle</a
-              ></b
-            >
-            The object of Freestyle Footbag is perform tricks with the bag. It
-            has evolved from its roots into a very technical competitive
-            discipline. Players compete by choreographing routines, performing
-            physically challenging and precise combinations of footbag tricks to
-            music, similar to what is done in figure skating and gymnastics
-            routines. Routines are judged based on four criteria: presentation,
-            difficulty, variety, and execution. Other forms of competitive and
-            non-competitive freestyle exist, including "shredding", where
-            players attempt to perform as many tricks in a row as possible while
-            retaining a certain level of trick difficulty. They also attempt to
-            hit different types of tricks, involving both sides of the body and
-            multiple trick components.
-          </p>
-        </section>
-        <section class="footbag__section">
-          <p>
-            <img class="small-picture" src="./images/casual.jpg" />
-            <b>Casual Footbag</b> refers to... What is Lorem Ipsum? Lorem Ipsum
-            is simply dummy text of the printing and typesetting industry. Lorem
-            Ipsum has been the industry's standard dummy text ever since the
-            1500s, when an unknown printer took a galley of type and scrambled
-            it to make a type specimen book.
-          </p>
-
-          <p>
-            More information about footbag sport on
-            <a href="http://footbag.org/reference/-/Footbag_Reference_Area"
-              >footbag reference area</a
-            >
-          </p>
-        </section>
-      </aside>
+    <main class="hero">
+      loading...
+      <iframe
+        class="video-iframe"
+        src="https://www.youtube.com/embed/NeY-Ok9K1fU"
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+      ></iframe>
     </main>
 
-    <footer class="footer">
-      <section class="footer__section">
-        <h3>Social media</h3>
-        <a name="social-media-links"></a>
-        <a class="footer-link" href="">Facebook</a>
-        <a class="footer-link" href="">Instagram</a>
-        <a class="footer-link" href="">Net facebook</a>
-        <a class="footer-link" href="">Freestyle facebook</a>
-      </section>
+    <div class="grid">
+      <div class="panel panel--header panel--news-header">
+        <h2 class="panel_header">News</h2>
+      </div>
 
-      <section class="footer__section">
-        <h3>Contact & feedback</h3>
-        Please leave feedback or contact via <a href="">facebook</a>
+      <div class="panel panel--news"><h3>Footbag.org renewed</h3></div>
+      <div class="panel panel--news"><h3>Words 2020 in Colombia</h3></div>
+      <div class="panel panel--news"><h3>other news</h3></div>
+      <div class="panel panel--news"><h3>blaah</h3></div>
+      <div class="panel panel--news"><h3>Footbag.org renewed</h3></div>
+      <div class="panel panel--news"><h3>Words 2020 in Colombia</h3></div>
+      <div class="panel panel--news"><h3>other news</h3></div>
+      <div class="panel panel--news"><h3>blaah</h3></div>
+      <div class="panel panel--news"><h3>Footbag.org renewed</h3></div>
+
+      <div class="panel panel--header panel--events-header">
+        <h2 class="panel_header">Events</h2>
+      </div>
+      <section class="panel panel--events">
+        <article class="event">
+          <h3 class="event_header">Results from Berlin Open</h3>
+          fkjs fosajfoisdajfosdj fojfsdoaj fosaj fsl kdlfj klsda fjksladj fksa
+          jfklsajdfkljs aklfj ksla fjklsajfklsaj flkas
+        </article>
+        <article class="event">
+          <h3 class="event_header">Results from Berlin Open</h3>
+          fkjs fosajfoisdajfosdj fojfsdoaj fosaj fsl kdlfj klsda fjksladj fksa
+          jfklsajdfkljs aklfj ksla fjklsajfklsaj flkas
+        </article>
+        <article class="event">
+          <h3 class="event_header">Results from Berlin Open</h3>
+          fkjs fosajfoisdajfosdj fojfsdoaj fosaj fsl kdlfj klsda fjksladj fksa
+          jfklsajdfkljs aklfj ksla fjklsajfklsaj flkas
+        </article>
+        <article class="event">
+          <h3 class="event_header">Results from Berlin Open</h3>
+          fkjs fosajfoisdajfosdj fojfsdoaj fosaj fsl kdlfj klsda fjksladj fksa
+          jfklsajdfkljs aklfj ksla fjklsajfklsaj flkas
+        </article>
       </section>
-      <br />
-      <button onclick="toggleDebug()">see outlines</button>
-      <script>
-        function toggleDebug() {
-          const styles = document.createElement("style");
-          styles.innerHTML = `* { background-color: rgba(255,0,0,.2); }
-                                    * * { background-color: rgba(0,255,0,.2); }
-                                    * * * { background-color: rgba(0,0,255,.2); }
-                                    * * * * { background-color: rgba(255,0,255,.2); }
-                                    * * * * * { background-color: rgba(0,255,255,.2); }
-                                    * * * * * * { background-color: rgba(255,255,0,.2); }
-                                    * * * * * * * { background-color: rgba(255,0,0,.2); }
-                                    * * * * * * * * { background-color: rgba(0,255,0,.2); }
-                                    * * * * * * * * * { background-color: rgba(0,0,255,.2); }
-                                    `;
-          document.head.appendChild(styles);
-        }
-      </script>
-    </footer>
+    </div>
   </body>
 </html>
