@@ -7,10 +7,11 @@
       rel="stylesheet"
     />
 
-    <script src="./components/eventItem.js"></script>
-    <script src="./components/newsItem.js"></script>
-    <script src="./components/navigationBar.js"></script>
-    <script src="./components/heroVideo.js"></script>
+    <script type="module" src="./components/eventItem.js"></script>
+    <script type="module" src="./components/newsItem.js"></script>
+    <script type="module" src="./components/newsList.js"></script>
+    <script type="module" src="./components/navigationBar.js"></script>
+    <script type="module" src="./components/heroVideo.js"></script>
   </head>
   <body>
     <style>
@@ -165,17 +166,6 @@
         grid-column: 1 / -2;
         margin: 0 var(--grid-gap-negative);
       }
-
-      news-item:nth-child(3n) {
-        grid-row: span 3;
-      }
-
-      news-item:nth-child(3n + 1) {
-        grid-row: span 4;
-      }
-      news-item:nth-child(3n + 2) {
-        grid-row: span 5;
-      }
     </style>
 
     <header class="logo">
@@ -189,6 +179,10 @@
       <header class="panel panel--header panel--news-header">
         <h2 class="panel_header">Footbag</h2>
       </header>
+
+      <news-item header="Footbag.org redesign">
+        Footbag.org has been redesigned
+      </news-item>
 
       <news-item image="images/net.jpg" header="Footbag Net">
         <p>
@@ -259,7 +253,7 @@
 
         <event-item
           header="Lake Erie Footbag Tournament"
-          location="ERIE, Pennsylvania, USA<"
+          location="ERIE, Pennsylvania, USAs"
           contact="Anthony Ritz, anthony.l.ritz@gmail.com, 814-431-4139 (Prize money
         event)"
           date="June 6-7, 2020"
