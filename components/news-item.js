@@ -1,3 +1,5 @@
+import "./content-modal.js";
+
 class NewsItem extends HTMLElement {
   connectedCallback() {
     const style = `

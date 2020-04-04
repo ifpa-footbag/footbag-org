@@ -6,11 +6,6 @@
       href="https://fonts.googleapis.com/css?family=Rubik&display=swap"
       rel="stylesheet"
     />
-
-    <script type="module" src="./components/eventList.js"></script>
-    <script type="module" src="./components/newsList.js"></script>
-    <script type="module" src="./components/navigationBar.js"></script>
-    <script type="module" src="./components/heroVideo.js"></script>
   </head>
   <body>
     <style>
@@ -86,52 +81,31 @@
           display: none;
         }
       }
-
-      /* LOGO */
-
-      .logo {
-        /* anchor for logo-header, which is positioned absolute */
-        position: relative;
-      }
-      .logo-header {
-        background-color: var(--color-white);
-        border-radius: 50%;
-
-        align-items: center;
-        display: flex;
-
-        justify-content: center;
-        position: absolute;
-        top: 0.5rem;
-        left: 0.5rem;
-        width: 7rem;
-        height: 7rem;
-
-        z-index: 1;
-      }
-
-      .main-grid {
-        display: grid;
-        max-width: var(--max-content-width);
-        margin: 0 auto;
-      }
-      @media only screen and (min-width: 520px) {
-        .main-grid {
-          grid-template-columns: 2fr 1fr;
-        }
-      }
     </style>
 
-    <header class="logo">
-      <h1 class="logo-header">FB</h1>
-    </header>
+    <!-- Router injects content here -->
+    <div id="page-placeholder"></div>
+    <!-- end of injected content-->
 
-    <navigation-bar></navigation-bar>
-    <hero-video></hero-video>
+    <!-- Router initialization -->
+    <script src="https://unpkg.com/@vaadin/router/dist/vaadin-router.umd.min.js"></script>
+    <script type="module" src="/components/events-page.js"></script>
+    <script type="module" src="/components/footbag-page.js"></script>
+    <script type="module" src="/components/main-page.js"></script>
+    <script type="module" src="/components/news-page.js"></script>
 
-    <main class="main-grid">
-      <news-list></news-list>
-      <event-list></event-list>
-    </main>
+    <script>
+      var Router = Vaadin.Router;
+
+      const outlet = document.getElementById("page-placeholder");
+      const router = new Router(outlet);
+      router.setRoutes([
+        { path: "/", component: "main-page" },
+        { path: "/footbag", component: "footbag-page" },
+        { path: "/event/:event", component: "events-page" },
+        { path: "/news/:news", component: "news-page" },
+        { path: "(.*)", component: "main-page" }
+      ]);
+    </script>
   </body>
 </html>
