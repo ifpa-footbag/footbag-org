@@ -24,7 +24,7 @@ class FootbagPage extends HTMLElement {
         <header class="header">
         <h2>Footbag Sports</h2>
         </header>
-        <news-item image="images/net.jpg" header="Footbag Net">
+        <news-item image="../images/net.jpg" header="Footbag Net">
         <p>
           Footbag Net is a singles or doubles court game, where players use only
           their feet to kick the footbag over a net. The size of the court and
