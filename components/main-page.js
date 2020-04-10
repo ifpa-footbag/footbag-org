@@ -58,13 +58,13 @@ class MainPage extends HTMLElement {
 
     <main class="main-grid">
         <grid-template>
-            <header>
+            <header class="header">
                 <h2>News</h2>
             </header>
             ${news}
         </grid-template>
         <grid-template class="events">
-            <header class="red">
+            <header class="header red">
                 <h2>Events</h2>
             </header>
             ${events}

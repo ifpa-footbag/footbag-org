@@ -6,6 +6,7 @@ class NewsItem extends HTMLElement {
       :host {
         background-color: var(--color-white);
         display: block;
+        font-size: var(--font-size-medium);
       }
       article {
         padding: var(--grid-panel-padding);
@@ -13,7 +14,7 @@ class NewsItem extends HTMLElement {
 
       h3 {
         color: var(--color-blue);
-        margin: var(--space-s) 0 var(--space-m) 0;
+        margin: 0 0 var(--space-m) 0;
       }
 
       img {
@@ -38,6 +39,18 @@ class NewsItem extends HTMLElement {
       article[highlight-solid] > .news_body {
         color: var(--color-white);
       }
+
+      .read-more {
+        color: var(--color-red);
+        display: block;
+        
+        font-style: italic;s
+        font-weight: var(--font-weight-bold);
+
+        margin: var(--space-l) 0 0 0;
+        text-align: right;
+        text-decoration: underline;
+      }
     `;
 
     const html = `
@@ -51,6 +64,9 @@ class NewsItem extends HTMLElement {
     <div class="news_body">
       <slot>
     </div>
+    <a class="read-more">
+      Read more
+    </a>
   </article>
     `;
 

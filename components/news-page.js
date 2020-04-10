@@ -1,10 +1,14 @@
-import "./grid-two-columns.js";
+import "./page-one-column.js";
 import "./navigation-bar.js";
 import "./hero-video.js";
 
 import { news } from "../news/news.js";
 
 class NewsPage extends HTMLElement {
+  static get observedAttributes() {
+    return ["location"];
+  }
+
   connectedCallback() {
     const style = `
     `;
@@ -12,12 +16,13 @@ class NewsPage extends HTMLElement {
     const html = `
   
     <navigation-bar back></navigation-bar>
-        <grid-two-columns>
-          <header>
+      
+        <page-one-column>
+          <header class="header">
             <h2>News</h2>
           </header>
           ${news}
-        </grid-two-columns>
+        </page-one-column>
     
     `;
 
@@ -28,6 +33,25 @@ class NewsPage extends HTMLElement {
     </style>
     ${html}
     `;
+    setTimeout(() => {
+      this._hideNews();
+    }, 50);
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    console.log(name, oldValue, newValue);
+  }
+
+  _hideNews() {
+    const items = this.shadowRoot
+      .querySelector("page-one-column")
+      .querySelectorAll("news-item");
+
+    items.forEach((item, index) => {
+      if (index !== Number.parseInt(this.location.params.news)) {
+        item.style.display = "none";
+      }
+    });
   }
 }
 

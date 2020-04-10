@@ -1,4 +1,4 @@
-import "./grid-two-columns.js";
+import "./page-two-columns.js";
 import "./navigation-bar.js";
 import "./news-item.js";
 
@@ -20,8 +20,8 @@ class FootbagPage extends HTMLElement {
     const html = `
       <navigation-bar back></navigation-bar>
       
-      <grid-two-columns>
-        <header>
+      <page-two-columns>
+        <header class="header">
         <h2>Footbag Sports</h2>
         </header>
         <news-item image="images/net.jpg" header="Footbag Net">
@@ -61,7 +61,7 @@ class FootbagPage extends HTMLElement {
           components.
         </p>
         </news-item>
-      </grid-two-columns>
+      </page-two-columns>
     `;
 
     this.attachShadow({ mode: "open" });

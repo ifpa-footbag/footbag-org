@@ -1,4 +1,4 @@
-import "./grid-two-columns.js";
+import "./page-one-column.js";
 import "./navigation-bar.js";
 import "./hero-video.js";
 
@@ -12,12 +12,13 @@ class EventsPage extends HTMLElement {
     const html = `
   
     <navigation-bar back></navigation-bar>
-        <grid-two-columns>
-          <header>
+   
+        <page-one-column>
+          <header class="header">
             <h2>events</h2>
           </header>
           ${events}
-        </grid-two-columns>
+        </page-one-column>
     
     `;
 
@@ -28,6 +29,27 @@ class EventsPage extends HTMLElement {
     </style>
     ${html}
     `;
+
+    setTimeout(() => {
+      this._hideEvents();
+    }, 50);
+  }
+
+  _render() {}
+
+  _hideEvents() {
+    const items = this.shadowRoot
+      .querySelector("page-one-column")
+      .querySelectorAll("event-item");
+
+    items.forEach((item, index) => {
+      if (index === Number.parseInt(this.location.params.event)) {
+        item.setAttribute("open", true);
+        item.open = true;
+      } else {
+        item.style.display = "none";
+      }
+    });
   }
 }
 
