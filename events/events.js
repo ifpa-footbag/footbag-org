@@ -40,7 +40,7 @@ const events = `
   >
   </event-item>
   <event-item
-    header="Mud Belt 2020 presented by Memphis Footworks"
+    header="Mud Belt 2020 presented by Memphis Footworks "
     location="Moscow, Tennessee, USA"
     contact="Walt Houston, walthouston7@gmail.com"
     date="May 2-3, 2020"
