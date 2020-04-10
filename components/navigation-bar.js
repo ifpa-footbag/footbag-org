@@ -8,7 +8,7 @@ class NavigationBar extends HTMLElement {
       text-decoration: inherit;
     }
 
-    .nav {
+    nav {
       background-color: var(--color-blue);
       color: var(--color-white);
       display: flex;
@@ -16,6 +16,12 @@ class NavigationBar extends HTMLElement {
 
       margin: 0 auto;
       max-width: var(--max-nav-width);
+
+      position: -webkit-sticky; /* Safari */
+      position: sticky;
+      top: 0;
+
+      z-index: 1;
     }
     .nav-item {
       font-size: var(--font-size-medium);
@@ -26,6 +32,9 @@ class NavigationBar extends HTMLElement {
     .nav-item--selected {
       color: var(--color-orange);
     }
+    .nav-item--back {
+      margin-right: auto;
+    }
 
     .nav-item:last-child {
       border-left: 1px solid var(--color-gray-300);
@@ -33,10 +42,15 @@ class NavigationBar extends HTMLElement {
     `;
 
     const html = `
-    <nav class="nav">
-      <!--a href="./pages/footbag.html" class="nav-item">Footbag</a-->
-      <!--a class="nav-item nav-item--selected">News</a-->
-      <!--a class="nav-item u-hide--small">events</a-->
+    <nav>
+      ${
+        this.getAttribute("back") !== null
+          ? '<a href="/index.html" class="nav-item nav-item--back"><-- BACK</a>'
+          : ""
+      }
+      <a href="/footbag" class="nav-item">Footbag</a>
+      <a href="/news/1" class="nav-item">News</a>
+      <a href="/event/1" class="nav-item u-hide--small">events</a>
       <!--a class="nav-item u-hide--small">
         Media
       </a-->

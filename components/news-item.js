@@ -1,43 +1,47 @@
+import "./content-modal.js";
+
 class NewsItem extends HTMLElement {
   connectedCallback() {
     const style = `
-      :host{
+      :host {
         background-color: var(--color-white);
+        display: block;
       }
+      article {
+        padding: var(--grid-panel-padding);
+      }
+
+      h3 {
+        color: var(--color-blue);
+        margin: var(--space-s) 0 var(--space-m) 0;
+      }
+
       img {
         max-width: 100%;
         padding-bottom: var(--space-m);
       }
 
-      .panel {
-        background-color: white;
-        padding: var(--space-l);
-      }
 
-      .panel--highlight {
+      article[highlight] {
         border: 3px solid var(--color-blue);
       }
 
-      .panel--highlight-solid {
+      article[highlight-solid] {
         background-color: var(--color-blue);
         color: var(--color-white);
       }
-      .panel--highlight-solid > .news_header {
+
+      article[highlight-solid] > .news_header {
         color: var(--color-orange);
       }
 
-      .panel--highlight-solid > .news_body {
+      article[highlight-solid] > .news_body {
         color: var(--color-white);
-      }
-
-      .news_header {
-        color: var(--color-blue);
-        margin-bottom: var(--space-m);
       }
     `;
 
     const html = `
-    <article class="panel panel--news">
+    <article>
     ${
       this.getAttribute("image") !== null
         ? `<img src="${this.getAttribute("image")}" />`
