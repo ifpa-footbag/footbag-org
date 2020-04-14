@@ -21,6 +21,16 @@
 const news = `
 <!-- ADD NEWS RIGHT BELOW THIS -->
 
+<news-item header="Footbag masterclass by Frankystyle (in French)">
+
+    <p>
+    Looking for some advice on starting to play footbag? In French maybe? Look no further, as our dear friend from Paris 
+    France, Frankystyle has released eight episodes of Footbag Masterclass. It’s in French, but don’t worry: You can 
+    certainly follow the instructions just by watching the videos. Check out episode number one 
+    <a href=”https://youtu.be/vPjK2fp1pkk”>here</a>. Have fun!</p>
+
+</news-item>
+
 <news-item header="21st IFPA European Footbag Championships">
 
     <p>
