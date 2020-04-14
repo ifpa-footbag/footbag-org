@@ -96,8 +96,13 @@ const news = `
     </p>
  </news-item>
 
-<news-item header="Footbag.org redesign">
-   Footbag.org has been redesigned
+<news-item header="Footbag.org update in progress">
+    <p>
+    Footbag Worldwide gets a long-awaited redesign! Footbag Worldwide has been a big part of footbag culture since about 
+    two decades, acting as an information source for footbaggers on all levels around the world. We are currently working 
+    on a major update of the site. First thing to do is the front page as you can see. Our aim is to bring footbag.org to 
+    today and prepare it for the future as well. There is a long way to go, but it’s the beginning!</p>
+
  </news-item>
 
  <news-item header="Footbag.org redesign">
