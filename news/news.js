@@ -21,7 +21,7 @@
 const news = `
 <!-- ADD NEWS RIGHT BELOW THIS -->
 
-<news-item header="Footbag is going online in corona time!>
+<news-item header="Footbag is going online in corona time!">
     <p>
     Corona virus affects footbaggers as well. Trainings have been cancelled, gyms are closed and gatherings limited in 
     many places. But footbaggers are not standing still, as freestyle footbag suits isolation really well: You only need 
