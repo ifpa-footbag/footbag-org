@@ -21,6 +21,20 @@
 const news = `
 <!-- ADD NEWS RIGHT BELOW THIS -->
 
+<news-item header="Footbag is going online in corona time!>
+    <p>
+    Corona virus affects footbaggers as well. Trainings have been cancelled, gyms are closed and gatherings limited in 
+    many places. But footbaggers are not standing still, as freestyle footbag suits isolation really well: You only need 
+    your footbag and a little bit of space indoors or outdoors. Some freestylers are even having online shred sessions to 
+    enjoy the social part of footbag as well!</p>
+    <p>
+    Check out for example the results from Pandemic5 online contest <a href=”https://youtu.be/toTrfJ5ekxs”>here</a>. Also, 
+    it’s worth checking out #footbag in Instagram & especially look up for 
+    <a href=”https://www.instagram.com/theparadoxsymposium/”>The Paradox Symposium</a> account for sweet freestyle content!
+    </p>
+
+</news-item>
+
 <news-item header="Footbag masterclass by Frankystyle (in French)">
 
     <p>
