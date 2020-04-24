@@ -22,7 +22,13 @@
 
 const events = `
 <!-- ADD EVENTS RIGHT BELOW THIS -->
-
+ <event-item
+    header="IFPA Online World Footbag Freestyle Championships 2020"
+    location="Worldwide!"
+    contact="Wiktor Debski - IFPA Executive Director, wiktordebski@footbag.org, "
+    date="1st June - 2nd August 2020"
+  >
+  </event-item>
   <event-item
     header="Swiss Footbag Open"
     location="Lausanne, Vaud, Switzerland"
