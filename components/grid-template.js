@@ -9,10 +9,14 @@ class GridTemplate extends HTMLElement {
 
         justify-items: stretch;
         align-items: stretch;
-        margin: 0 var(--grid-gap) var(--grid-gap) var(--grid-gap);
+        margin: var(--grid-gap);
       }
 
-      ::slotted(.header) {
+      ::slotted(:nth-child(odd)) {
+        grid-row: span 2;
+      }
+
+      .header {
         background-color: var(--color-blue);
         color: var(--color-white);
        
@@ -22,19 +26,22 @@ class GridTemplate extends HTMLElement {
         text-transform: uppercase;
 
         grid-column: 1 / -1;
-        padding: 0 var(--grid-panel-padding);
-        margin: 0 var(--grid-gap-negative);
+        padding: var(--space-s) var(--grid-panel-padding);
+        margin: 0;
       }
 
-      ::slotted(header.red) {
+      .header.red {
         background-color: var(--color-red);
       }
 
     `;
 
     const html = `
+    <header class="header ${this.getAttribute('header-color')}">
+      <h2>${this.getAttribute('header') || ''}</h2>
+    </header>
     <slot></slot>`;
-    this.attachShadow({ mode: "open" });
+    this.attachShadow({ mode: 'open' });
     this.shadowRoot.innerHTML = `
     <style>
       ${style}
@@ -44,4 +51,4 @@ class GridTemplate extends HTMLElement {
   }
 }
 
-customElements.define("grid-template", GridTemplate);
+customElements.define('grid-template', GridTemplate);

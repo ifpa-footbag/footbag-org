@@ -1,12 +1,12 @@
-import "./page-one-column.js";
-import "./navigation-bar.js";
-import "./hero-video.js";
+import './page-one-column.js';
+import './navigation-bar.js';
+import './hero-video.js';
 
-import { news } from "../news/news.js";
+import { news } from '../news/news.js';
 
 class NewsPage extends HTMLElement {
   static get observedAttributes() {
-    return ["location"];
+    return ['location'];
   }
 
   connectedCallback() {
@@ -26,7 +26,7 @@ class NewsPage extends HTMLElement {
     
     `;
 
-    this.attachShadow({ mode: "open" });
+    this.attachShadow({ mode: 'open' });
     this.shadowRoot.innerHTML = `
     <style>
       ${style}
@@ -44,15 +44,17 @@ class NewsPage extends HTMLElement {
 
   _hideNews() {
     const items = this.shadowRoot
-      .querySelector("page-one-column")
-      .querySelectorAll("news-item");
+      .querySelector('page-one-column')
+      .querySelectorAll('news-item');
 
     items.forEach((item, index) => {
-      if (index !== Number.parseInt(this.location.params.news)) {
-        item.style.display = "none";
+      if (index === Number.parseInt(this.location.params.news)) {
+        item.setAttribute('open', true);
+      } else {
+        item.style.display = 'none';
       }
     });
   }
 }
 
-customElements.define("news-page", NewsPage);
+customElements.define('news-page', NewsPage);

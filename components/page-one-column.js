@@ -40,7 +40,7 @@ class PageOneColumn extends HTMLElement {
 
     const html = `
     <slot></slot>`;
-    this.attachShadow({ mode: "open" });
+    this.attachShadow({ mode: 'open' });
     this.shadowRoot.innerHTML = `
     <style>
       ${style}
@@ -50,4 +50,4 @@ class PageOneColumn extends HTMLElement {
   }
 }
 
-customElements.define("page-one-column", PageOneColumn);
+customElements.define('page-one-column', PageOneColumn);

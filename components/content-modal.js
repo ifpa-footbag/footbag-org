@@ -239,7 +239,7 @@ class ContentModal extends HTMLElement {
       <slot>
     `;
 
-    this.attachShadow({ mode: "open" });
+    this.attachShadow({ mode: 'open' });
     this.shadowRoot.innerHTML = `
     <style>
       ${style}
@@ -249,4 +249,4 @@ class ContentModal extends HTMLElement {
   }
 }
 
-customElements.define("content-modal", ContentModal);
+customElements.define('content-modal', ContentModal);

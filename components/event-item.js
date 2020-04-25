@@ -1,4 +1,4 @@
-import "./content-modal.js";
+import './content-modal.js';
 
 class EventItem extends HTMLElement {
   constructor() {
@@ -7,7 +7,7 @@ class EventItem extends HTMLElement {
   }
 
   connectedCallback() {
-    this.attachShadow({ mode: "open" });
+    this.attachShadow({ mode: 'open' });
     this._render();
   }
 
@@ -59,15 +59,15 @@ class EventItem extends HTMLElement {
 
     const html = `
       <content-modal open="${this.open}">
-        <article class="${this._addClassIfAttribute("highlight", "highlight")}">
-          <h3><a class="">${this._getAttribute("header")}</a></h3>
-          <div class="event_location">${this._getAttribute("location")}</div>
+        <article class="${this._addClassIfAttribute('highlight', 'highlight')}">
+          <h3><a class="">${this._getAttribute('header')}</a></h3>
+          <div class="event_location">${this._getAttribute('location')}</div>
 
           <div class="event_contact">
-            ${this._getAttribute("contact")}
+            ${this._getAttribute('contact')}
           </div>
-          <div class="event_date">${this._getAttribute("date")}</div>
-            ${this.open === true ? "<slot>" : ""}
+          <div class="event_date">${this._getAttribute('date')}</div>
+            ${this.open === true ? '<slot>' : ''}
         </article>
       </content-modal>
     `;
@@ -78,19 +78,19 @@ class EventItem extends HTMLElement {
     </style>
     ${html}`;
 
-    this.shadowRoot.querySelector("a").addEventListener("click", () => {
+    this.shadowRoot.querySelector('a').addEventListener('click', () => {
       this.open = !this.open;
       this._render();
     });
   }
 
   _addClassIfAttribute(className, attributeName) {
-    return this.getAttribute(attributeName) === null ? "" : className;
+    return this.getAttribute(attributeName) === null ? '' : className;
   }
 
   _getAttribute(attributeName) {
-    return this.getAttribute(attributeName) || "";
+    return this.getAttribute(attributeName) || '';
   }
 }
 
-customElements.define("event-item", EventItem);
+customElements.define('event-item', EventItem);

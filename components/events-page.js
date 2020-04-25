@@ -1,8 +1,8 @@
-import "./page-one-column.js";
-import "./navigation-bar.js";
-import "./hero-video.js";
+import './page-one-column.js';
+import './navigation-bar.js';
+import './hero-video.js';
 
-import { events } from "../events/events.js";
+import { events } from '../events/events.js';
 
 class EventsPage extends HTMLElement {
   connectedCallback() {
@@ -22,7 +22,7 @@ class EventsPage extends HTMLElement {
     
     `;
 
-    this.attachShadow({ mode: "open" });
+    this.attachShadow({ mode: 'open' });
     this.shadowRoot.innerHTML = `
     <style>
       ${style}
@@ -39,18 +39,18 @@ class EventsPage extends HTMLElement {
 
   _hideEvents() {
     const items = this.shadowRoot
-      .querySelector("page-one-column")
-      .querySelectorAll("event-item");
+      .querySelector('page-one-column')
+      .querySelectorAll('event-item');
 
     items.forEach((item, index) => {
       if (index === Number.parseInt(this.location.params.event)) {
-        item.setAttribute("open", true);
+        item.setAttribute('open', true);
         item.open = true;
       } else {
-        item.style.display = "none";
+        item.style.display = 'none';
       }
     });
   }
 }
 
-customElements.define("events-page", EventsPage);
+customElements.define('events-page', EventsPage);

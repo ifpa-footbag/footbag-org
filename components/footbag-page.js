@@ -1,6 +1,6 @@
-import "./page-two-columns.js";
-import "./navigation-bar.js";
-import "./news-item.js";
+import './page-two-columns.js';
+import './navigation-bar.js';
+import './news-item.js';
 
 class FootbagPage extends HTMLElement {
   connectedCallback() {
@@ -64,7 +64,7 @@ class FootbagPage extends HTMLElement {
       </page-two-columns>
     `;
 
-    this.attachShadow({ mode: "open" });
+    this.attachShadow({ mode: 'open' });
     this.shadowRoot.innerHTML = `
     <style>
       ${style}
@@ -74,4 +74,4 @@ class FootbagPage extends HTMLElement {
   }
 }
 
-customElements.define("footbag-page", FootbagPage);
+customElements.define('footbag-page', FootbagPage);

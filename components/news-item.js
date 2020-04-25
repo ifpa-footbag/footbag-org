@@ -1,11 +1,40 @@
-import "./content-modal.js";
+import './content-modal.js';
 
 class NewsItem extends HTMLElement {
+  constructor() {
+    super();
+    this.open = false;
+    this.short = true;
+  }
+
   connectedCallback() {
+    this.attachShadow({ mode: 'open' });
+    this._render();
+  }
+
+  attributeChangedCallback() {
+    console.log('Custom square element attributes changed.');
+    this._render();
+  }
+
+  set open(value) {
+    const open = Boolean(value);
+    if (open) {
+      this.setAttribute('open', '');
+    } else {
+      this.removeAttribute('open');
+    }
+  }
+
+  get checked() {
+    return this.hasAttribute('open');
+  }
+
+  _render() {
     const style = `
       :host {
         background-color: var(--color-white);
-        display: block;
+        display: inline-block;
         font-size: var(--font-size-medium);
       }
       article {
@@ -55,22 +84,23 @@ class NewsItem extends HTMLElement {
 
     const html = `
     <article>
-    ${
-      this.getAttribute("image") !== null
-        ? `<img src="${this.getAttribute("image")}" />`
-        : ``
-    } 
-    <h3 class="news_header">${this.getAttribute("header")}</h3>
-    <div class="news_body">
-      <slot>
-    </div>
-    <a class="read-more">
-      Read more
-    </a>
-  </article>
+      ${
+        this.getAttribute('image') !== null
+          ? `<img src="${this.getAttribute('image')}" />`
+          : ``
+      } 
+      <h3 class="news_header">${this.getAttribute('header')}</h3>
+    
+      <div class="news_body">
+        ${this.getAttribute('short')}
+        ${this.open === true ? '<slot>' : ''}
+      </div>
+      <!--a class="read-more">
+        Read more
+      </a-->
+    </article>
     `;
 
-    this.attachShadow({ mode: "open" });
     this.shadowRoot.innerHTML = `
     <style>
       ${style}
@@ -80,4 +110,4 @@ class NewsItem extends HTMLElement {
   }
 }
 
-customElements.define("news-item", NewsItem);
+customElements.define('news-item', NewsItem);

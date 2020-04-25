@@ -50,7 +50,7 @@
 
         --grid-panel-padding: var(--space-l);
 
-        --font-family-primary: "Rubik", sans-serif;
+        --font-family-primary: 'Rubik', sans-serif;
         --font-family-secondary: sans-serif;
 
         --max-nav-width: 2200px;
@@ -98,14 +98,14 @@
     <script>
       var Router = Vaadin.Router;
 
-      const outlet = document.getElementById("page-placeholder");
+      const outlet = document.getElementById('page-placeholder');
       const router = new Router(outlet);
       router.setRoutes([
-        { path: "/", component: "main-page" },
-        { path: "/footbag", component: "footbag-page" },
-        { path: "/event/:event", component: "events-page" },
-        { path: "/news/:news", component: "news-page" },
-        { path: "(.*)", component: "main-page" }
+        { path: '/', component: 'main-page' },
+        { path: '/footbag', component: 'footbag-page' },
+        { path: '/event/:event', component: 'events-page' },
+        { path: '/news/:news', component: 'news-page' },
+        { path: '(.*)', component: 'main-page' }
       ]);
     </script>
   </body>

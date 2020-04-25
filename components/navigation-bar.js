@@ -44,9 +44,9 @@ class NavigationBar extends HTMLElement {
     const html = `
     <nav>
       ${
-        this.getAttribute("back") !== null
+        this.getAttribute('back') !== null
           ? '<a href="/index.html" class="nav-item nav-item--back"><-- BACK</a>'
-          : ""
+          : ''
       }
       <a href="/footbag" class="nav-item">Footbag</a>
       <a href="/news/0" class="nav-item">News</a>
@@ -74,7 +74,7 @@ class NavigationBar extends HTMLElement {
     </nav>
     `;
 
-    this.attachShadow({ mode: "open" });
+    this.attachShadow({ mode: 'open' });
     this.shadowRoot.innerHTML = `
     <style>
       ${style}
@@ -84,4 +84,4 @@ class NavigationBar extends HTMLElement {
   }
 }
 
-customElements.define("navigation-bar", NavigationBar);
+customElements.define('navigation-bar', NavigationBar);

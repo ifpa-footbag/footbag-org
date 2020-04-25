@@ -1,10 +1,10 @@
-import "./grid-template.js";
-import "./event-item.js";
-import "./navigation-bar.js";
-import "./hero-video.js";
+import './grid-template.js';
+import './event-item.js';
+import './navigation-bar.js';
+import './hero-video.js';
 
-import { events } from "../events/events.js";
-import { news } from "../news/news.js";
+import { events } from '../events/events.js';
+import { news } from '../news/news.js';
 
 class MainPage extends HTMLElement {
   connectedCallback() {
@@ -57,22 +57,16 @@ class MainPage extends HTMLElement {
     <hero-video></hero-video>
 
     <main class="main-grid">
-        <grid-template>
-            <header class="header">
-                <h2>News</h2>
-            </header>
+        <grid-template header="News">
             ${news}
         </grid-template>
-        <grid-template class="events">
-            <header class="header red">
-                <h2>Events</h2>
-            </header>
+        <grid-template class="events" header="Events" header-color="red">
             ${events}
         </grid-template>
     </main>
     `;
 
-    this.attachShadow({ mode: "open" });
+    this.attachShadow({ mode: 'open' });
     this.shadowRoot.innerHTML = `
     <style>
       ${style}
@@ -82,4 +76,4 @@ class MainPage extends HTMLElement {
   }
 }
 
-customElements.define("main-page", MainPage);
+customElements.define('main-page', MainPage);

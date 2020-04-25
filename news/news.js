@@ -21,9 +21,14 @@
 const news = `
 <!-- ADD NEWS RIGHT BELOW THIS -->
 
-<news-item header="Footbag is going online in corona time!">
+<news-item 
+  header="Footbag is going online in corona time!" 
+  short="Corona Virus affects footbaggers as well. Trainings have been cancelled, gyms are closed and gatherings limited in 
+    many places. But footbaggers are not standing still, as freestyle footbag suits isolation really well: You only need 
+    your footbag and a little bit of space indoors or outdoors. Some freestylers are even having online shred sessions to 
+    enjoy the social part of footbag as well!">
     <p>
-    Corona virus affects footbaggers as well. Trainings have been cancelled, gyms are closed and gatherings limited in 
+    Corona Virus affects footbaggers as well. Trainings have been cancelled, gyms are closed and gatherings limited in 
     many places. But footbaggers are not standing still, as freestyle footbag suits isolation really well: You only need 
     your footbag and a little bit of space indoors or outdoors. Some freestylers are even having online shred sessions to 
     enjoy the social part of footbag as well!</p>
@@ -35,7 +40,11 @@ const news = `
 
 </news-item>
 
-<news-item header="Footbag masterclass by Frankystyle (in French)">
+<news-item 
+  header="Footbag masterclass by Frankystyle (in French)"
+  short="Looking for some advice on starting to play footbag? In French maybe? Look no further, as our dear friend from Paris 
+  France, Frankystyle has released eight episodes of Footbag Masterclass. It’s in French, but don’t worry: You can 
+  certainly follow the instructions just by watching the videos.">
 
     <p>
     Looking for some advice on starting to play footbag? In French maybe? Look no further, as our dear friend from Paris 
@@ -45,7 +54,12 @@ const news = `
 
 </news-item>
 
-<news-item header="21st IFPA European Footbag Championships">
+<news-item 
+  header="21st IFPA European Footbag Championships"
+  short="We are excited to announce the 21st European Footbag Championships in Jaworzno, Poland from June 11-14, 2020! 
+  Paweł Nowak, Footbag Freestyle World Champion 2017 (Routines) and 2019 (Overall) in collaboration with Arthur Ledain 
+  and Kerstin Adineh from EFC (European Footbag Committee of IFPA) will host this year's miscellaneous event and 
+  invite you to the beautiful city of Jaworzno in the south of Poland!">
 
     <p>
       We are excited to announce the 21st European Footbag Championships in Jaworzno, Poland from June 11-14, 2020! 
@@ -80,7 +94,7 @@ const news = `
       A beautiful renovated town square and a church with one of the largest stained glass windows in Europe and 
       are just a few reasons to visit this city! 
     </p>
-    <p>
+      <p>
       The festival City Days is a free event that provides the local public as well as tourists from everywhere 
       in Poland and Europe with unlimited access to culture and entertainment, offering large-scale open air concerts,
       fun sports events for children and adolescents and a great variety of food trucks. The festival is organized annually
@@ -96,21 +110,20 @@ const news = `
     </p>
  </news-item>
 
-<news-item header="Footbag.org update in progress">
+<news-item 
+  header="Footbag.org update in progress"
+  short="Footbag Worldwide gets a long-awaited redesign! Footbag Worldwide has been a big part of footbag culture since about 
+  two decades, acting as an information source for footbaggers on all levels around the world. We are currently working 
+  on a major update of the site. First thing to do is the front page as you can see. Our aim is to bring footbag.org to 
+  today and prepare it for the future as well. There is a long way to go, but it’s the beginning!</p>
+  ">
     <p>
+
     Footbag Worldwide gets a long-awaited redesign! Footbag Worldwide has been a big part of footbag culture since about 
     two decades, acting as an information source for footbaggers on all levels around the world. We are currently working 
     on a major update of the site. First thing to do is the front page as you can see. Our aim is to bring footbag.org to 
     today and prepare it for the future as well. There is a long way to go, but it’s the beginning!</p>
 
- </news-item>
-
- <news-item header="Footbag.org redesign">
-   Footbag.org has been redesigned
- </news-item>
-
- <news-item header="Footbag.org redesign">
-   Footbag.org has been redesigned
  </news-item>
 `;
 

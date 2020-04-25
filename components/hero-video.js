@@ -38,7 +38,7 @@ class HeroVideo extends HTMLElement {
     </main>
     `;
 
-    this.attachShadow({ mode: "open" });
+    this.attachShadow({ mode: 'open' });
     this.shadowRoot.innerHTML = `
     <style>
       ${style}
@@ -48,4 +48,4 @@ class HeroVideo extends HTMLElement {
   }
 }
 
-customElements.define("hero-video", HeroVideo);
+customElements.define('hero-video', HeroVideo);
