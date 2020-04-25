@@ -23,7 +23,7 @@ const news = `
 
 <news-item header="Footbag is going online in corona time!">
     <p>
-    Corona virus affects footbaggers as well. Trainings have been cancelled, gyms are closed and gatherings limited in 
+    Corona Virus affects footbaggers as well. Trainings have been cancelled, gyms are closed and gatherings limited in 
     many places. But footbaggers are not standing still, as freestyle footbag suits isolation really well: You only need 
     your footbag and a little bit of space indoors or outdoors. Some freestylers are even having online shred sessions to 
     enjoy the social part of footbag as well!</p>
