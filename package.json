@@ -18,7 +18,7 @@
   "dependencies": {},
   "husky": {
     "hooks": {
-      "pre-commit": "prettier"
+      "pre-commit": "npm run prettier"
     }
   }
 }

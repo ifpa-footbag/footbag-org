@@ -1,7 +1,6 @@
 import './content-modal.js';
 
 class EventItem extends HTMLElement {
-
   _render() {
     const style = `
       article {
@@ -98,10 +97,9 @@ class EventItem extends HTMLElement {
     return ['open'];
   }
 
-
   attributeChangedCallback(name, oldValue, newValue) {
-    if(name === 'open') {
-      this._render();      
+    if (name === 'open') {
+      this._render();
     }
   }
 
