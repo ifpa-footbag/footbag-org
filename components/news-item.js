@@ -1,35 +1,6 @@
 import './content-modal.js';
 
 class NewsItem extends HTMLElement {
-  constructor() {
-    super();
-    this.open = false;
-    this.short = true;
-  }
-
-  connectedCallback() {
-    this.attachShadow({ mode: 'open' });
-    this._render();
-  }
-
-  attributeChangedCallback() {
-    console.log('Custom square element attributes changed.');
-    this._render();
-  }
-
-  set open(value) {
-    const open = Boolean(value);
-    if (open) {
-      this.setAttribute('open', '');
-    } else {
-      this.removeAttribute('open');
-    }
-  }
-
-  get checked() {
-    return this.hasAttribute('open');
-  }
-
   _render() {
     const style = `
       :host {
@@ -37,6 +8,11 @@ class NewsItem extends HTMLElement {
         display: inline-block;
         font-size: var(--font-size-medium);
       }
+      a {
+        color: inherit; 
+        text-decoration: inherit; 
+      }
+
       article {
         padding: var(--grid-panel-padding);
       }
@@ -89,11 +65,15 @@ class NewsItem extends HTMLElement {
           ? `<img src="${this.getAttribute('image')}" />`
           : ``
       } 
-      <h3 class="news_header">${this.getAttribute('header')}</h3>
+      <h3 class="news_header">
+        <a href="/news/${this.getAttribute('header')}" class="nav-item">
+          ${this.getAttribute('header')}
+        </a>
+      </h3>
     
       <div class="news_body">
-        ${this.getAttribute('short')}
-        ${this.open === true ? '<slot>' : ''}
+        ${this.getAttribute('short') || ''}
+        ${Boolean(this.getAttribute('open')) === true ? '<slot></slot>' : ''}
       </div>
       <!--a class="read-more">
         Read more
@@ -107,6 +87,34 @@ class NewsItem extends HTMLElement {
     </style>
     ${html}
     `;
+  }
+
+  constructor() {
+    super();
+  }
+
+  connectedCallback() {
+    this.attachShadow({ mode: 'open' });
+    this._render();
+  }
+
+  static get observedAttributes() {
+    return ['open'];
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (name === 'open') {
+      this._render();
+    }
+  }
+
+  attributeChangedCallback() {
+    console.log('Custom square element attributes changed.');
+    this._render();
+  }
+
+  get checked() {
+    return this.hasAttribute('open');
   }
 }
 

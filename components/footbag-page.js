@@ -24,7 +24,7 @@ class FootbagPage extends HTMLElement {
         <header class="header">
         <h2>Footbag Sports</h2>
         </header>
-        <news-item image="../images/net.jpg" header="Footbag Net">
+        <news-item image="../images/net.jpg" header="Footbag Net" open="true">
         <p>
           Footbag Net is a singles or doubles court game, where players use only
           their feet to kick the footbag over a net. The size of the court and
@@ -43,7 +43,7 @@ class FootbagPage extends HTMLElement {
           preparing to counter attack.
         </p>
         </news-item>
-        <news-item header="Freestyle">
+        <news-item header="Freestyle" open="true">
         <p>
           The object of Freestyle Footbag is perform tricks with the bag. It has
           evolved from its roots into a very technical competitive discipline.

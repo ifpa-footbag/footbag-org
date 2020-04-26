@@ -42,10 +42,12 @@ class EventsPage extends HTMLElement {
       .querySelector('page-one-column')
       .querySelectorAll('event-item');
 
-    items.forEach((item, index) => {
-      if (index === Number.parseInt(this.location.params.event)) {
+    items.forEach(item => {
+      if (
+        item.getAttribute('header') === this.location.params.event ||
+        this.location.params.event === 'all'
+      ) {
         item.setAttribute('open', true);
-        item.open = true;
       } else {
         item.style.display = 'none';
       }

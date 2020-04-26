@@ -1,15 +1,6 @@
 import './content-modal.js';
 
 class EventItem extends HTMLElement {
-  constructor() {
-    super();
-    this.open = false;
-  }
-
-  connectedCallback() {
-    this.attachShadow({ mode: 'open' });
-    this._render();
-  }
 
   _render() {
     const style = `
@@ -21,6 +12,11 @@ class EventItem extends HTMLElement {
 
       article.highlight > h3 {
         color: var(--color-red);
+      }
+
+      a {
+        color: inherit; 
+        text-decoration: inherit; 
       }
 
       h3 {
@@ -60,14 +56,24 @@ class EventItem extends HTMLElement {
     const html = `
       <content-modal open="${this.open}">
         <article class="${this._addClassIfAttribute('highlight', 'highlight')}">
-          <h3><a class="">${this._getAttribute('header')}</a></h3>
+          <h3>
+            <a href="/event/${this.getAttribute('header')}">
+              ${this._getAttribute('header')}
+            </a>
+          </h3>
           <div class="event_location">${this._getAttribute('location')}</div>
 
           <div class="event_contact">
             ${this._getAttribute('contact')}
           </div>
+          <div>
+            ${
+              Boolean(this.getAttribute('open')) === true ? '<slot></slot>' : ''
+            }
+          </div>
+
           <div class="event_date">${this._getAttribute('date')}</div>
-            ${this.open === true ? '<slot>' : ''}
+            
         </article>
       </content-modal>
     `;
@@ -77,11 +83,26 @@ class EventItem extends HTMLElement {
       ${style}
     </style>
     ${html}`;
+  }
 
-    this.shadowRoot.querySelector('a').addEventListener('click', () => {
-      this.open = !this.open;
-      this._render();
-    });
+  constructor() {
+    super();
+  }
+
+  connectedCallback() {
+    this.attachShadow({ mode: 'open' });
+    this._render();
+  }
+
+  static get observedAttributes() {
+    return ['open'];
+  }
+
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    if(name === 'open') {
+      this._render();      
+    }
   }
 
   _addClassIfAttribute(className, attributeName) {

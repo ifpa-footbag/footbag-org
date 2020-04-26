@@ -47,8 +47,11 @@ class NewsPage extends HTMLElement {
       .querySelector('page-one-column')
       .querySelectorAll('news-item');
 
-    items.forEach((item, index) => {
-      if (index === Number.parseInt(this.location.params.news)) {
+    items.forEach(item => {
+      if (
+        item.getAttribute('header') === this.location.params.news ||
+        this.location.params.news === 'all'
+      ) {
         item.setAttribute('open', true);
       } else {
         item.style.display = 'none';
