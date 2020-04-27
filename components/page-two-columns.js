@@ -19,7 +19,7 @@ class PageTwoColumns extends HTMLElement {
        
         font-size: var(--font-size-small);
         font-style: italic;
-        font-weight: var(--font-weight-bold);
+        font-weight: var(--font-weight-boldest);
         text-transform: uppercase;
 
         grid-column: 1 / -1;

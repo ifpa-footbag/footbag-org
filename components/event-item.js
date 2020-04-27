@@ -5,8 +5,9 @@ class EventItem extends HTMLElement {
     const style = `
       article {
         background-color: var(--color-white);
-        padding: var(--space-s) var(--space-m) var(--space-l) var(--space-m);
+        padding: var(--space-m) var(--space-m) var(--space-xl) var(--space-m);
         border-bottom: 1px solid #eee;
+        max-width: 100vw;
       }
 
       article.highlight > h3 {
@@ -21,6 +22,7 @@ class EventItem extends HTMLElement {
       h3 {
         color: var(--color-blue);
         font-size: var(--font-size-large);
+        
         margin: var(--space-s) 0 var(--space-m) 0;
       }
 
@@ -31,7 +33,7 @@ class EventItem extends HTMLElement {
       .event_contact {
         margin-top: var(--space-m);
         color: var(--color-gray-800);
-        font-size: var(--font-size-medium);
+        font-size: var(--font-size-large);
       }
 
       .event_date {

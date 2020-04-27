@@ -38,7 +38,7 @@ class MainPage extends HTMLElement {
         max-width: var(--max-content-width);
         margin: 0 auto;
     }
-    @media only screen and (min-width: 520px) {
+    @media only screen and (min-width: 692px) {
         .main-grid {
         grid-template-columns: 2fr 1fr;
         }

@@ -3,7 +3,7 @@ class GridTemplate extends HTMLElement {
     const style = `
       slot {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
         grid-auto-rows: minmax(44px, auto);
         grid-gap: var(--grid-gap);
 
@@ -28,7 +28,7 @@ class GridTemplate extends HTMLElement {
        
         font-size: var(--font-size-small);
         font-style: italic;
-        font-weight: var(--font-weight-bold);
+        font-weight: var(--font-weight-boldest);
         text-transform: uppercase;
 
         grid-column: 1 / -1;
@@ -38,6 +38,15 @@ class GridTemplate extends HTMLElement {
 
       .header.red {
         background-color: var(--color-red);
+      }
+
+      h2 {
+        font-size: var(--font-size-xlarge);
+        font-weight: 900;
+
+        margin: 0;
+        padding: var(--space-m) 0;
+
       }
 
     `;

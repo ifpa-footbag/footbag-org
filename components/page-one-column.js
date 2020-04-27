@@ -19,7 +19,9 @@ class PageOneColumn extends HTMLElement {
        
         font-size: var(--font-size-small);
         font-style: italic;
-        font-weight: var(--font-weight-bold);
+        font-weight: var(--font-weight-boldest);
+
+        max-width: 100vw;
         text-transform: uppercase;
 
         grid-column: 1 / -1;
@@ -30,7 +32,6 @@ class PageOneColumn extends HTMLElement {
       ::slotted(.header.red) {
         background-color: var(--color-red);
       }
-
 
       ::slotted(h2) {
         font-size: var(--font-size-medium);

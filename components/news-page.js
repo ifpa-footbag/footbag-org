@@ -11,19 +11,18 @@ class NewsPage extends HTMLElement {
 
   connectedCallback() {
     const style = `
+      
     `;
 
     const html = `
-  
-    <navigation-bar back></navigation-bar>
-      
-        <page-one-column>
-          <header class="header">
-            <h2>News</h2>
-          </header>
-          ${news}
-        </page-one-column>
-    
+      <navigation-bar back></navigation-bar>
+        
+      <page-one-column>
+        <header class="header">
+          <h2>News</h2>
+        </header>
+        ${news}
+      </page-one-column>
     `;
 
     this.attachShadow({ mode: 'open' });

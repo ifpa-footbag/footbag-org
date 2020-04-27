@@ -6,7 +6,8 @@ class NewsItem extends HTMLElement {
       :host {
         background-color: var(--color-white);
         display: inline-block;
-        font-size: var(--font-size-medium);
+        font-size: var(--font-size-large);
+        max-width: 100vw;
       }
       a {
         color: inherit; 
@@ -19,6 +20,7 @@ class NewsItem extends HTMLElement {
 
       h3 {
         color: var(--color-blue);
+        font-style: italic;
         margin: 0 0 var(--space-m) 0;
       }
 
@@ -45,16 +47,8 @@ class NewsItem extends HTMLElement {
         color: var(--color-white);
       }
 
-      .read-more {
-        color: var(--color-red);
-        display: block;
-        
-        font-style: italic;s
-        font-weight: var(--font-weight-bold);
-
-        margin: var(--space-l) 0 0 0;
-        text-align: right;
-        text-decoration: underline;
+      .news_body {
+        line-height: var(--line-height-increased);
       }
     `;
 
@@ -75,9 +69,7 @@ class NewsItem extends HTMLElement {
         ${this.getAttribute('short') || ''}
         ${Boolean(this.getAttribute('open')) === true ? '<slot></slot>' : ''}
       </div>
-      <!--a class="read-more">
-        Read more
-      </a-->
+  
     </article>
     `;
 
