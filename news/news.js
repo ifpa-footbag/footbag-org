@@ -22,7 +22,9 @@ const news = `
 <!-- ADD NEWS RIGHT BELOW THIS -->
 
 <news-item 
-  header="Footbag is going online in corona time!" 
+  header="Footbag is going online in corona time!"
+  image="images/net.jpg"
+  long
   short="Corona Virus affects footbaggers as well. Trainings have been cancelled, gyms are closed and gatherings limited in 
     many places. But footbaggers are not standing still, as freestyle footbag suits isolation really well: You only need 
     your footbag and a little bit of space indoors or outdoors. Some freestylers are even having online shred sessions to 
@@ -56,6 +58,7 @@ const news = `
 
 <news-item 
   header="21st IFPA European Footbag Championships"
+
   short="We are excited to announce the 21st European Footbag Championships in Jaworzno, Poland from June 11-14, 2020! 
   Paweł Nowak, Footbag Freestyle World Champion 2017 (Routines) and 2019 (Overall) in collaboration with Arthur Ledain 
   and Kerstin Adineh from EFC (European Footbag Committee of IFPA) will host this year's miscellaneous event and 

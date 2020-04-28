@@ -9,6 +9,11 @@ class NewsItem extends HTMLElement {
         font-size: var(--font-size-large);
         max-width: 100vw;
       }
+
+      :host([long]) {
+        grid-row: span 4 !important;
+      }
+
       a {
         color: inherit; 
         text-decoration: inherit; 
