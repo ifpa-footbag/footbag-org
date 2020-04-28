@@ -3,7 +3,7 @@ class PageOneColumn extends HTMLElement {
     const style = `
       slot {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+        grid-template-columns: 1fr;
         grid-auto-rows: minmax(44px, auto);
         grid-gap: var(--grid-gap);
         margin: 0 var(--grid-gap) var(--grid-gap) var(--grid-gap);
