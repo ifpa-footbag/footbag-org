@@ -39,13 +39,29 @@ class NavigationBar extends HTMLElement {
     .nav-item:last-child {
       border-left: 1px solid var(--color-gray-300);
     }
+
+    .back {
+      background-color: var(--color-blue);
+      color: var(--color-orange);
+      font-weight: var(--font-weight-boldest);
+
+      position: fixed;
+      bottom: 0;
+      left: 0;
+
+      padding: var(--space-m) var(--space-s) var(--space-m) var(--space-s);
+    }
     `;
 
     const html = `
     <nav>
       ${
         this.getAttribute('back') !== null
-          ? '<a href="/footbag-org/" class="nav-item nav-item--back"><-- BACK</a>'
+          ? `<div class="back">
+              <a href="/footbag-org/" class="nav-item nav-item--back">
+                BACK
+              </a>
+             </div>`
           : ''
       }
       <a href="footbag" class="nav-item">Footbag</a>
