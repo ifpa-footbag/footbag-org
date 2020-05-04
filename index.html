@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <base href="/footbag-org/" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link
       href="https://fonts.googleapis.com/css?family=Rubik&display=swap"
@@ -106,9 +107,9 @@
       const router = new Router(outlet);
       router.setRoutes([
         { path: '/', component: 'main-page' },
-        { path: '/footbag', component: 'footbag-page' },
-        { path: '/event/:event', component: 'events-page' },
-        { path: '/news/:news', component: 'news-page' },
+        { path: 'footbag', component: 'footbag-page' },
+        { path: 'event/:event', component: 'events-page' },
+        { path: 'news/:news', component: 'news-page' },
         { path: '(.*)', component: 'main-page' }
       ]);
     </script>
