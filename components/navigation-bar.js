@@ -64,7 +64,7 @@ class NavigationBar extends HTMLElement {
              </div>`
           : ''
       }
-      <a href="footbag" class="nav-item">Footbag</a>
+      <a href="/footbag" class="nav-item">Footbag</a>
       <a href="/news/all" class="nav-item">News</a>
       <a href="/event/all" class="nav-item u-hide--small">events</a>
       <!--a class="nav-item u-hide--small">
