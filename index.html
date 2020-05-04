@@ -132,18 +132,13 @@
       var Router = Vaadin.Router;
 
       const outlet = document.getElementById('page-placeholder');
-      const router = new Router(outlet);
+      const router = new Router(outlet, { baseUrl: '/' });
       router.setRoutes([
-        {
-          path: '/',
-          animate: true,
-          children: [
-            { path: 'footbag', component: 'footbag-page', animate: true },
-            { path: 'event/:event', component: 'events-page', animate: true },
-            { path: 'news/:news', component: 'news-page', animate: true },
-            { path: '(.*)', component: 'main-page', animate: true }
-          ]
-        }
+        { path: '/', component: 'main-page' },
+        { path: 'footbag', component: 'footbag-page' },
+        { path: 'event/:event', component: 'events-page' },
+        { path: 'news/:news', component: 'news-page' },
+        { path: '(.*)', component: 'main-page' }
       ]);
     </script>
   </body>
