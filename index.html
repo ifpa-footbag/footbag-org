@@ -104,7 +104,7 @@
       var Router = Vaadin.Router;
 
       const outlet = document.getElementById('page-placeholder');
-      const router = new Router(outlet);
+      const router = new Router(outlet, { baseUrl: '/' });
       router.setRoutes([
         { path: '/', component: 'main-page' },
         { path: 'footbag', component: 'footbag-page' },
