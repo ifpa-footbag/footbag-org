@@ -45,10 +45,10 @@ class NavigationBar extends HTMLElement {
     <nav>
       ${
         this.getAttribute('back') !== null
-          ? '<a href="javascript:history.back()" class="nav-item nav-item--back"><-- BACK</a>'
+          ? '<a href="/footbag-org/" class="nav-item nav-item--back"><-- BACK</a>'
           : ''
       }
-      <a href="/footbag" class="nav-item">Footbag</a>
+      <a href="footbag" class="nav-item">Footbag</a>
       <a href="/news/all" class="nav-item">News</a>
       <a href="/event/all" class="nav-item u-hide--small">events</a>
       <!--a class="nav-item u-hide--small">
