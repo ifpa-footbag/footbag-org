@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <base href="/footbag-org/" />
+    <base href="/" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link
       href="https://fonts.googleapis.com/css?family=Rubik&display=swap"
@@ -87,6 +87,35 @@
           display: none;
         }
       }
+
+
+      #page-placeholder > .leaving {
+        animation: 0.2s fadeOut ease-in-out;
+      }
+
+      #page-placeholder > .entering {
+        animation: 0.2s fadeIn linear;
+      }
+
+      @keyframes fadeOut {
+        from {
+          opacity: 1;
+        }
+
+        to {
+          opacity: 0;
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
     </style>
 
     <!-- Router injects content here -->
@@ -104,13 +133,18 @@
       var Router = Vaadin.Router;
 
       const outlet = document.getElementById('page-placeholder');
-      const router = new Router(outlet, { baseUrl: '/' });
+      const router = new Router(outlet);
       router.setRoutes([
-        { path: '/', component: 'main-page' },
-        { path: 'footbag', component: 'footbag-page' },
-        { path: 'event/:event', component: 'events-page' },
-        { path: 'news/:news', component: 'news-page' },
-        { path: '(.*)', component: 'main-page' }
+        {
+          path: '/',
+          animate: true,
+          children: [
+            { path: 'footbag', component: 'footbag-page', animate: true },
+            { path: 'event/:event', component: 'events-page', animate: true },
+            { path: 'news/:news', component: 'news-page', animate: true },
+            { path: '(.*)', component: 'main-page', animate: true }
+          ]
+        }
       ]);
     </script>
   </body>

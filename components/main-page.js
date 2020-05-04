@@ -16,8 +16,8 @@ class MainPage extends HTMLElement {
       position: relative;
       z-index: 2;
     }
-    .logo-header {
-      background-color: var(--color-white);
+    .logo-image {
+      
       border-radius: 50%;
 
       align-items: center;
@@ -25,12 +25,18 @@ class MainPage extends HTMLElement {
 
       justify-content: center;
       position: absolute;
-      top: 0.5rem;
-      left: 0.5rem;
+      top: var(--space-m);
+      left: var(--space-m);
       width: 7rem;
       height: 7rem;
-
       z-index: 1;
+    }
+
+    @media only screen and (max-width: 500px) {
+      .logo-image {
+        width: 5rem;
+        height: 5rem;
+      }
     }
 
     .main-grid {
@@ -50,7 +56,8 @@ class MainPage extends HTMLElement {
 
     const html = `
     <header class="logo">
-        <h1 class="logo-header"><a href="/index.html">FB</a></h1>
+        <img class="logo-image" src="images/freestyle-footbag.png">
+        <!-- h1 class="logo-header"><a href="/index.html">FB</a></h1 -->
     </header>
 
     <navigation-bar></navigation-bar>

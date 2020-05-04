@@ -25,10 +25,18 @@ class NavigationBar extends HTMLElement {
     }
     .nav-item {
       font-size: var(--font-size-medium);
-      padding: 1.25rem;
+      padding: var(--space-xl);
       text-transform: uppercase;
       white-space: nowrap;
     }
+
+    @media only screen and (max-width: 500px) {
+      .nav-item {
+        padding-left: var(--space-l);
+        padding-right: var(--space-l);
+      }
+    }
+
     .nav-item--selected {
       color: var(--color-orange);
     }
