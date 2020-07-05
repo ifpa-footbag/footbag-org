@@ -8,33 +8,22 @@ class HeroVideo extends HTMLElement {
         --max-video-height: calc(var(--max-content-width) * var(--video-ratio));
       }
       .hero {
-        height: 0;
         max-width: var(--max-content-width);
         max-height: 100%;
-        margin: 0 auto;
-
-        position: relative;
-        padding-bottom: min(var(--video-ratio)*100%, var(--max-video-height));
       }
 
-      .video-iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
+      .embedded-video {
+        height: auto;
         width: 100%;
-        height: 100%;
-        max-height: var(--max-video-height);
       }
     `;
 
     const html = `
     <main class="hero">
-      <iframe
-        class="video-iframe"
-        src="https://www.youtube.com/embed/NeY-Ok9K1fU"
-        frameborder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-      ></iframe>
+    <video class="embedded-video" poster="images/casual.jpg">
+      <source src="videos/promo.mp4" type="video/mp4">
+      Video not supported, please try another browser
+    </video>
     </main>
     `;
 
@@ -45,6 +34,11 @@ class HeroVideo extends HTMLElement {
     </style>
     ${html}
     `;
+  }
+  connectedCallback() {
+    this.shadowRoot.querySelector('video').addEventListener('click', () => {
+      this.shadowRoot.querySelector('video').play();
+    });
   }
 }
 
