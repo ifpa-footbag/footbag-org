@@ -9,15 +9,14 @@ import { news } from '../news/news.js';
 class MainPage extends HTMLElement {
   connectedCallback() {
     const style = `
-    /* LOGO */
-
-    .logo {
+    header {
       /* anchor for logo-header, which is positioned absolute */
       position: relative;
       z-index: 2;
     }
+
     .logo-image {
-      
+      opacity: 0.3;
       border-radius: 50%;
 
       align-items: center;
@@ -39,31 +38,39 @@ class MainPage extends HTMLElement {
       }
     }
 
-    .main-grid {
+    aside  {
+      margin: var(--space-l) var(--space-l) var(--space-m); var(--space-l);
+    }
+
+    main {
         display: grid;
         max-width: var(--max-content-width);
         margin: 0 auto;
     }
     @media only screen and (min-width: 692px) {
-        .main-grid {
-        grid-template-columns: 2fr 1fr;
+        main {
+          grid-template-columns: 2fr 1fr;
         }
     }
+
+    
+
     .events{
       background-color: var(--color-white);
     }
     `;
 
     const html = `
-    <header class="logo">
+    <header>
         <img class="logo-image" src="images/freestyle-footbag.png">
         <!-- h1 class="logo-header"><a href="/index.html">FB</a></h1 -->
     </header>
 
     <navigation-bar></navigation-bar>
-    <hero-video></hero-video>
-
-    <main class="main-grid">
+    <aside>
+      <hero-video></hero-video>
+    </aside>
+    <main>
         <grid-template header="News">
             ${news}
         </grid-template>

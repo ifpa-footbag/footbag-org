@@ -4,10 +4,11 @@ class HeroVideo extends HTMLElement {
 
     const style = `
       :host{
-        --video-ratio: 9/16;
-        --max-video-height: calc(var(--max-content-width) * var(--video-ratio));
+        display: block;
       }
+
       .hero {
+        margin: 0 auto;
         max-width: var(--max-content-width);
         max-height: 100%;
       }
@@ -20,7 +21,7 @@ class HeroVideo extends HTMLElement {
 
     const html = `
     <main class="hero">
-    <video class="embedded-video" poster="images/casual.jpg">
+    <video class="embedded-video" poster="images/casual.jpg" controls>
       <source src="videos/promo.mp4" type="video/mp4">
       Video not supported, please try another browser
     </video>
