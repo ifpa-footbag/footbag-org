@@ -88,7 +88,7 @@ class HeroVideo extends HTMLElement {
         into a popular sport that is played all over the world.
 
         <section>
-        <button>start kicking</button>
+        <button>How to get started?</button>
       </section>
       </figcaption>
 
