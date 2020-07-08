@@ -5,7 +5,7 @@ class EventItem extends HTMLElement {
     const style = `
       article {
         background-color: var(--color-white);
-        padding: var(--space-m) var(--space-m) var(--space-xl) var(--space-m);
+        padding: var(--space-m) var(--space-m) var(--space-l) var(--space-m);
         border-bottom: 1px solid #eee;
         max-width: 100vw;
       }
@@ -31,16 +31,17 @@ class EventItem extends HTMLElement {
       }
 
       .event_contact {
-        margin-top: var(--space-m);
+        margin: var(--space-m) 0;
         color: var(--color-gray-800);
         font-size: var(--font-size-large);
       }
 
       .event_date {
         color: var(--color-red);
-        margin: var(--space-l) auto 0 0;
+        margin: var(--space-xl) auto 0 0;
         font-size: var(--font-size-medium);
 
+        text-align: right;
         text-transform: uppercase;
       }
       .modal {
@@ -73,7 +74,9 @@ class EventItem extends HTMLElement {
             }
           </div>
 
-          <div class="event_date">${this._getAttribute('date')}</div>
+          <div class="event_date">
+            ${this._getAttribute('date')}
+          </div>
             
         </article>
       </content-modal>

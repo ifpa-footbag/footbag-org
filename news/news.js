@@ -28,7 +28,8 @@ const news = `
   short="Corona Virus affects footbaggers as well. Trainings have been cancelled, gyms are closed and gatherings limited in 
     many places. But footbaggers are not standing still, as freestyle footbag suits isolation really well: You only need 
     your footbag and a little bit of space indoors or outdoors. Some freestylers are even having online shred sessions to 
-    enjoy the social part of footbag as well!">
+    enjoy the social part of footbag as well!"
+    date="July 2020">
     <p>
     Corona Virus affects footbaggers as well. Trainings have been cancelled, gyms are closed and gatherings limited in 
     many places. But footbaggers are not standing still, as freestyle footbag suits isolation really well: You only need 
@@ -47,7 +48,8 @@ const news = `
   image="images/masterclass-frankystyle.jpg"
   short="Looking for some advice on starting to play footbag? In French maybe? Look no further, as our dear friend from Paris 
   France, Frankystyle has released eight episodes of Footbag Masterclass. It’s in French, but don’t worry: You can 
-  certainly follow the instructions just by watching the videos.">
+  certainly follow the instructions just by watching the videos."
+  date="July 2020">
 
     <p>
     Looking for some advice on starting to play footbag? In French maybe? Look no further, as our dear friend from Paris 
@@ -60,12 +62,11 @@ const news = `
 <news-item 
   header="21st IFPA European Footbag Championships"
   image="images/euros-jaworzno.jpg"
-
   short="We are excited to announce the 21st European Footbag Championships in Jaworzno, Poland from June 11-14, 2020! 
   Paweł Nowak, Footbag Freestyle World Champion 2017 (Routines) and 2019 (Overall) in collaboration with Arthur Ledain 
   and Kerstin Adineh from EFC (European Footbag Committee of IFPA) will host this year's miscellaneous event and 
-  invite you to the beautiful city of Jaworzno in the south of Poland!">
-
+  invite you to the beautiful city of Jaworzno in the south of Poland!"
+  date="May 2020">
     <p>
       We are excited to announce the 21st European Footbag Championships in Jaworzno, Poland from June 11-14, 2020! 
       Paweł Nowak, Footbag Freestyle World Champion 2017 (Routines) and 2019 (Overall) in collaboration with Arthur Ledain 
@@ -122,7 +123,8 @@ const news = `
   two decades, acting as an information source for footbaggers on all levels around the world. We are currently working 
   on a major update of the site. First thing to do is the front page as you can see. Our aim is to bring footbag.org to 
   today and prepare it for the future as well. There is a long way to go, but it’s the beginning!</p>
-  ">
+  "
+  date="March 2020">
     <p>
 
     Footbag Worldwide gets a long-awaited redesign! Footbag Worldwide has been a big part of footbag culture since about 

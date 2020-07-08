@@ -55,6 +55,17 @@ class NewsItem extends HTMLElement {
       .news_body {
         line-height: var(--line-height-increased);
       }
+
+      footer {
+        
+          color: var(--color-blue);
+          margin: var(--space-xl) auto 0 0;
+          font-size: var(--font-size-medium);
+  
+          text-align: right;
+          text-transform: uppercase;
+        
+      }
     `;
 
     const html = `
@@ -74,6 +85,10 @@ class NewsItem extends HTMLElement {
         ${this.getAttribute('short') || ''}
         ${Boolean(this.getAttribute('open')) === true ? '<slot></slot>' : ''}
       </div>
+
+      <footer>
+        ${this.getAttribute('date') || ''}
+      </footer>
   
     </article>
     `;
