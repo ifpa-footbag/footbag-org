@@ -25,7 +25,6 @@ class NewsItem extends HTMLElement {
 
       h3 {
         color: var(--color-blue);
-        font-style: italic;
         margin: 0 0 var(--space-m) 0;
       }
 
@@ -58,11 +57,9 @@ class NewsItem extends HTMLElement {
 
       footer {
         
-          color: var(--color-blue);
-          margin: var(--space-xl) auto 0 0;
-          font-size: var(--font-size-medium);
-  
-          text-align: right;
+          color: var(--color-gray-800);
+          margin: var(--space-l) auto 0 0;
+          font-size: var(--font-size-small);
           text-transform: uppercase;
         
       }

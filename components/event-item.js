@@ -28,20 +28,19 @@ class EventItem extends HTMLElement {
 
       .event_location {
         color: var(--color-blue);
+        font-size: var(--font-size-medium);
       }
 
       .event_contact {
-        margin: var(--space-m) 0;
+        margin: var(--space-m) auto 0 0;
         color: var(--color-gray-800);
-        font-size: var(--font-size-large);
+        font-size: var(--font-size-small);
       }
 
       .event_date {
         color: var(--color-red);
-        margin: var(--space-xl) auto 0 0;
+        margin: var(--space-xs) auto 0 0;
         font-size: var(--font-size-medium);
-
-        text-align: right;
         text-transform: uppercase;
       }
       .modal {
@@ -63,21 +62,20 @@ class EventItem extends HTMLElement {
               ${this._getAttribute('header')}
             </a>
           </h3>
-          <div class="event_location">${this._getAttribute('location')}</div>
-
+          <div class="event_date">
+          ${this._getAttribute('date')}
+          </div>
+          <div class="event_location">
+          ${this._getAttribute('location')}
+          </div>
           <div class="event_contact">
-            ${this._getAttribute('contact')}
+          ${this._getAttribute('contact')}
           </div>
           <div>
             ${
               Boolean(this.getAttribute('open')) === true ? '<slot></slot>' : ''
             }
           </div>
-
-          <div class="event_date">
-            ${this._getAttribute('date')}
-          </div>
-            
         </article>
       </content-modal>
     `;

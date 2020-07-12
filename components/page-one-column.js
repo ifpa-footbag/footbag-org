@@ -16,9 +16,7 @@ class PageOneColumn extends HTMLElement {
       ::slotted(.header) {
         background-color: var(--color-blue);
         color: var(--color-white);
-       
         font-size: var(--font-size-small);
-        font-style: italic;
         font-weight: var(--font-weight-boldest);
 
         max-width: 100vw;
