@@ -18,7 +18,6 @@ class PageTwoColumns extends HTMLElement {
         color: var(--color-white);
        
         font-size: var(--font-size-small);
-        font-style: italic;
         font-weight: var(--font-weight-boldest);
         text-transform: uppercase;
 

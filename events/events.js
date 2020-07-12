@@ -5,17 +5,18 @@
  *
  * <event-item
  *   header="Swiss Footbag Open"
+ *   date="March 28-29, 2020"
  *   location="Lausanne, Vaud, Switzerland"
  *   contact="Karim Daouk, kshred@footbag.org, 0041 79 238 78 87"
- *   date="March 28-29, 2020"
+ *
  * >
  *
  * To highlight the event, add highlight attribute:
  * <event-item
  *   header="Swiss Footbag Open"
+ *   date="March 28-29, 2020"
  *   location="Lausanne, Vaud, Switzerland"
  *   contact="Karim Daouk, kshred@footbag.org, 0041 79 238 78 87"
- *   date="March 28-29, 2020"
  *   highlight
  * >
  */
@@ -24,48 +25,45 @@ const events = `
 <!--  ADD EVENTS RIGHT BELOW THIS  -->
  <event-item
     header="IFPA Online World Footbag Freestyle Championships 2020"
+    date="1st June - 2nd August 2020"
     location="Worldwide!"
     contact="Wiktor Debski - IFPA Executive Director, wiktordebski@footbag.org, "
-    date="1st June - 2nd August 2020"
   >
   </event-item>
   <event-item
     header="Swiss Footbag Open"
+    date="March 28-29, 2020"
     location="Lausanne, Vaud, Switzerland"
     contact="Karim Daouk, kshred@footbag.org, 0041 79 238 78 87"
-    date="March 28-29, 2020"
   >
   </event-item>
-  
   <event-item
     header="Bulgarian Footbag Championships"
     location="Stara Zagora, Bulgaria"
+    date="May 1-3, 2020"
     contact="Ivan Stanev, navi6venats9@gmail.com, +359883512133, Radoslav Rusev,
     radoslavrusev@gmail.com, 00359894273320"
-    date="May 1-3, 2020"
   >
   </event-item>
   <event-item
     header="Mud Belt 2020 presented by Memphis Footworks"
+    date="May 2-3, 2020"
     location="Moscow, Tennessee, USA"
     contact="Walt Houston, walthouston7@gmail.com"
-    date="May 2-3, 2020"
   >
   </event-item>
-
   <event-item
     header="Lake Erie Footbag Tournament"
-    location="ERIE, Pennsylvania, USA"
-    contact="Anthony Ritz, anthony.l.ritz@gmail.com, 814-431-4139 (Prize money
-  event)"
     date="June 6-7, 2020"
+    location="ERIE, Pennsylvania, USA"
+    contact="Anthony Ritz, anthony.l.ritz@gmail.com, 814-431-4139"
   >
   </event-item>
-
   <event-item
     header="21st IFPA European Footbag Championships"
-    location="Jaworzno, Poland"
     date="June 11-14, 2020"
+    location="Jaworzno, Poland"
+    contact="Wiktor Debski, wiktordebski@footbag.org"
     highlight
   >
     <p>

@@ -43,7 +43,7 @@ class FootbagPage extends HTMLElement {
           preparing to counter attack.
         </p>
         </news-item>
-        <news-item header="Freestyle" open="true">
+        <news-item image="images/freestyle.jpg" header="Footbag Freestyle" open="true">
         <p>
           The object of Freestyle Footbag is perform tricks with the bag. It has
           evolved from its roots into a very technical competitive discipline.

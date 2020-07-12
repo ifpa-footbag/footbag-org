@@ -25,12 +25,9 @@ class GridTemplate extends HTMLElement {
       .header {
         background-color: var(--color-blue);
         color: var(--color-white);
-       
         font-size: var(--font-size-small);
-        font-style: italic;
         font-weight: var(--font-weight-boldest);
         text-transform: uppercase;
-
         grid-column: 1 / -1;
         padding: var(--space-s) var(--grid-panel-padding);
         margin: 0;
