@@ -18,6 +18,9 @@ class NewsItem extends HTMLElement {
         color: inherit; 
         text-decoration: inherit; 
       }
+      a:hover {
+        color: var(--color-bluehover);
+       }
 
       article {
         padding: var(--grid-panel-padding);

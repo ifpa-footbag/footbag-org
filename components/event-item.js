@@ -10,20 +10,30 @@ class EventItem extends HTMLElement {
         max-width: 100vw;
       }
 
-      article.highlight > h3 {
-        color: var(--color-red);
+      article.highlight {
+        background-color: var(--color-redlight);
       }
 
       a {
         color: inherit; 
         text-decoration: inherit; 
       }
+      a:hover {
+        color: var(--color-bluehover);
+       }
 
       h3 {
         color: var(--color-blue);
         font-size: var(--font-size-large);
         
         margin: var(--space-s) 0 var(--space-m) 0;
+      }
+
+      .event_date {
+        color: var(--color-red);
+        margin: var(--space-xs) auto 0 0;
+        font-size: var(--font-size-medium);
+        text-transform: uppercase;
       }
 
       .event_location {
@@ -37,12 +47,6 @@ class EventItem extends HTMLElement {
         font-size: var(--font-size-small);
       }
 
-      .event_date {
-        color: var(--color-red);
-        margin: var(--space-xs) auto 0 0;
-        font-size: var(--font-size-medium);
-        text-transform: uppercase;
-      }
       .modal {
         position: fixed;
         background-color: rgba(255, 255, 255, 1);
