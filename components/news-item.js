@@ -29,8 +29,10 @@ class NewsItem extends HTMLElement {
       }
 
       img {
-        max-width: 100%;
         padding-bottom: var(--space-m);
+        max-height: 8rem;
+        float: right;
+        margin: 0 var(--space-l);
       }
 
 
@@ -56,27 +58,26 @@ class NewsItem extends HTMLElement {
       }
 
       footer {
-        
-          color: var(--color-gray-800);
-          margin: var(--space-l) auto 0 0;
-          font-size: var(--font-size-small);
-          text-transform: uppercase;
-        
+        color: var(--color-gray-800);
+        margin: var(--space-l) auto 0 0;
+        font-size: var(--font-size-small);
+        text-transform: uppercase;
       }
     `;
 
     const html = `
-    <article>
-      ${
-        this.getAttribute('image') !== null
-          ? `<img src="${this.getAttribute('image')}" />`
-          : ``
-      } 
+    <article> 
       <h3 class="news_header">
         <a href="/news/${this.getAttribute('header')}" class="nav-item">
           ${this.getAttribute('header')}
         </a>
       </h3>
+
+      ${
+        this.getAttribute('image') !== null
+          ? `<img src="${this.getAttribute('image')}" />`
+          : ``
+      }
     
       <div class="news_body">
         ${this.getAttribute('short') || ''}
