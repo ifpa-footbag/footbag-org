@@ -7,6 +7,10 @@ class HeroVideo extends HTMLElement {
         display: block;
       }
 
+      .hero {
+        box-sizing: border-box;
+      }
+
       figure {
         background-color: var(--color-white);
         padding: var(--space-l);

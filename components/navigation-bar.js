@@ -16,9 +16,7 @@ class NavigationBar extends HTMLElement {
 
       margin: 0 auto;
       max-width: var(--max-nav-width);
-
-      position: -webkit-sticky; /* Safari */
-      position: sticky;
+      
       top: 0;
 
       z-index: 1;
