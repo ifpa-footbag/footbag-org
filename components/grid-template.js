@@ -4,7 +4,7 @@ class GridTemplate extends HTMLElement {
       slot {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-        grid-auto-rows: minmax(44px, auto);
+        grid-auto-rows: minmax(22px, auto);
         grid-gap: var(--grid-gap);
 
         justify-items: stretch;
