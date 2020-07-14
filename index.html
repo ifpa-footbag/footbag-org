@@ -131,7 +131,8 @@
     <script type="module" src="./components/news-page.js"></script>
 
     <script>
-      var Router = Vaadin.Router;
+      // eslint-disable-next-line no-undef
+      const { Router } = Vaadin;
 
       const outlet = document.getElementById('page-placeholder');
       const router = new Router(outlet, { baseUrl: '/' });

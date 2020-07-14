@@ -3,6 +3,11 @@ import './navigation-bar.js';
 import './news-item.js';
 
 class FootbagPage extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+  }
+
   connectedCallback() {
     const style = `
       .main-grid {
@@ -64,7 +69,6 @@ class FootbagPage extends HTMLElement {
       </page-two-columns>
     `;
 
-    this.attachShadow({ mode: 'open' });
     this.shadowRoot.innerHTML = `
     <style>
       ${style}

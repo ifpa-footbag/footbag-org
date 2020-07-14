@@ -1,4 +1,9 @@
 class GridTemplate extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+  }
+
   connectedCallback() {
     const style = `
       slot {
@@ -53,7 +58,6 @@ class GridTemplate extends HTMLElement {
       <h2>${this.getAttribute('header') || ''}</h2>
     </header>
     <slot></slot>`;
-    this.attachShadow({ mode: 'open' });
     this.shadowRoot.innerHTML = `
     <style>
       ${style}

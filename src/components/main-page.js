@@ -7,6 +7,11 @@ import { events } from '../events/events.js';
 import { news } from '../news/news.js';
 
 class MainPage extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+  }
+
   connectedCallback() {
     const style = `
     header {
@@ -80,7 +85,6 @@ class MainPage extends HTMLElement {
     </main>
     `;
 
-    this.attachShadow({ mode: 'open' });
     this.shadowRoot.innerHTML = `
     <style>
       ${style}

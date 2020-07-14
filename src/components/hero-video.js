@@ -1,7 +1,10 @@
 class HeroVideo extends HTMLElement {
   constructor() {
     super();
+    this.attachShadow({ mode: 'open' });
+  }
 
+  connectedCallback() {
     const style = `
       :host{
         display: block;
@@ -96,15 +99,13 @@ class HeroVideo extends HTMLElement {
     
     `;
 
-    this.attachShadow({ mode: 'open' });
     this.shadowRoot.innerHTML = `
     <style>
       ${style}
     </style>
     ${html}
     `;
-  }
-  connectedCallback() {
+
     this.shadowRoot.querySelector('video').addEventListener('click', () => {
       this.shadowRoot.querySelector('video').play();
     });

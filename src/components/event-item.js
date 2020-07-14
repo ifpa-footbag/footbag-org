@@ -1,5 +1,3 @@
-import './content-modal.js';
-
 class EventItem extends HTMLElement {
   _render() {
     const style = `
@@ -89,10 +87,10 @@ class EventItem extends HTMLElement {
 
   constructor() {
     super();
+    this.attachShadow({ mode: 'open' });
   }
 
   connectedCallback() {
-    this.attachShadow({ mode: 'open' });
     this._render();
   }
 
@@ -100,7 +98,7 @@ class EventItem extends HTMLElement {
     return ['open'];
   }
 
-  attributeChangedCallback(name, oldValue, newValue) {
+  attributeChangedCallback(name) {
     if (name === 'open') {
       this._render();
     }

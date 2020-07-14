@@ -1,4 +1,9 @@
 class PageOneColumn extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+  }
+
   connectedCallback() {
     const style = `
       slot {
@@ -39,7 +44,6 @@ class PageOneColumn extends HTMLElement {
 
     const html = `
     <slot></slot>`;
-    this.attachShadow({ mode: 'open' });
     this.shadowRoot.innerHTML = `
     <style>
       ${style}

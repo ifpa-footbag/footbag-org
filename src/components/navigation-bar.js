@@ -1,7 +1,10 @@
 class NavigationBar extends HTMLElement {
   constructor() {
     super();
+    this.attachShadow({ mode: 'open' });
+  }
 
+  connectedCallback() {
     const style = `
     a {
       color: inherit;
@@ -98,7 +101,6 @@ class NavigationBar extends HTMLElement {
     </nav>
     `;
 
-    this.attachShadow({ mode: 'open' });
     this.shadowRoot.innerHTML = `
     <style>
       ${style}

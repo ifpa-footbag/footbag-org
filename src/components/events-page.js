@@ -5,8 +5,16 @@ import './hero-video.js';
 import { events } from '../events/events.js';
 
 class EventsPage extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+  }
+
   connectedCallback() {
     const style = `
+      [hidden] {
+        display: none;
+      }
     `;
 
     const html = `
@@ -22,7 +30,6 @@ class EventsPage extends HTMLElement {
     
     `;
 
-    this.attachShadow({ mode: 'open' });
     this.shadowRoot.innerHTML = `
     <style>
       ${style}
@@ -34,8 +41,6 @@ class EventsPage extends HTMLElement {
       this._hideEvents();
     }, 50);
   }
-
-  _render() {}
 
   _hideEvents() {
     const items = this.shadowRoot
@@ -49,7 +54,7 @@ class EventsPage extends HTMLElement {
       ) {
         item.setAttribute('open', true);
       } else {
-        item.style.display = 'none';
+        item.setAttribute('hidden', true);
       }
     });
   }

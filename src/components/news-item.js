@@ -1,5 +1,3 @@
-import './content-modal.js';
-
 class NewsItem extends HTMLElement {
   _render() {
     const style = `
@@ -100,10 +98,10 @@ class NewsItem extends HTMLElement {
 
   constructor() {
     super();
+    this.attachShadow({ mode: 'open' });
   }
 
   connectedCallback() {
-    this.attachShadow({ mode: 'open' });
     this._render();
   }
 
@@ -111,15 +109,10 @@ class NewsItem extends HTMLElement {
     return ['open'];
   }
 
-  attributeChangedCallback(name, oldValue, newValue) {
+  attributeChangedCallback(name) {
     if (name === 'open') {
       this._render();
     }
-  }
-
-  attributeChangedCallback() {
-    console.log('Custom square element attributes changed.');
-    this._render();
   }
 
   get checked() {
