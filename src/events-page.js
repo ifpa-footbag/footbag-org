@@ -1,8 +1,8 @@
-import './page-one-column.js';
-import './navigation-bar.js';
-import './hero-video.js';
+import './components/page-one-column.js';
+import './components/navigation-bar.js';
+import './components/hero-video.js';
 
-import { events } from '../events/events.js';
+import { events } from './events/events.js';
 
 class EventsPage extends HTMLElement {
   constructor() {

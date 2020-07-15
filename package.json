@@ -4,7 +4,7 @@
   "description": "New footbag.org site",
   "main": "index.js",
   "scripts": {
-    "start": "http-server -o index.html",
+    "start": "es-dev-server --base-path footbag-org --app-index index.html --node-resolve --watch --open",
     "test": "karma start --coverage",
     "prettier": "prettier --write **/*.{js,json,html}",
     "lint:eslint": "eslint --ext .js,.html . --ignore-path .gitignore",
@@ -20,7 +20,6 @@
   "author": "Jani Säntti",
   "license": "ISC",
   "devDependencies": {
-    "http-server": "^0.12.1",
     "husky": "^1.0.0",
     "prettier": "^2.0.4",
     "eslint": "^6.1.0",
@@ -34,7 +33,9 @@
     "rimraf": "^2.6.3",
     "rollup": "^2.3.4"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@vaadin/router": "^1.7.2"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
@@ -45,7 +46,9 @@
       "@open-wc/eslint-config",
       "eslint-config-prettier"
     ],
-    "ignorePatterns": ["dist/"]
+    "ignorePatterns": [
+      "dist/"
+    ]
   },
   "prettier": {
     "singleQuote": true,
