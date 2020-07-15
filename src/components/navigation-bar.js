@@ -58,7 +58,7 @@ class NavigationBar extends HTMLElement {
       ${
         this.getAttribute('back') !== null
           ? `<div class="back">
-              <a href="/footbag-org/" class="nav-item nav-item--back">
+              <a href="/" class="nav-item nav-item--back">
                 BACK
               </a>
              </div>`

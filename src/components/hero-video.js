@@ -70,8 +70,8 @@ class HeroVideo extends HTMLElement {
 
     const html = `
       <figure class="hero">
-        <video poster="../src/images/casual.jpg" controls>
-          <source src="../src/videos/promo.mp4" type="video/mp4">
+        <video poster="images/casual.jpg" controls>
+          <source src="videos/promo.mp4" type="video/mp4">
           <track label="English" kind="subtitles" srclang="en" src="videos/promo.vtt" default>
           Video not supported, please try another browser
         </video>

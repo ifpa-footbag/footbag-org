@@ -68,7 +68,7 @@ class MainPage extends HTMLElement {
     const html = `
 
     <header>
-        <img class="logo-image" src="../src/images/freestyle-footbag.png">
+        <img class="logo-image" src="images/freestyle-footbag.png">
         <!-- h1 class="logo-header"><a href="/index.html">FB</a></h1 -->
     </header>
 

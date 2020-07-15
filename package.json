@@ -4,7 +4,7 @@
   "description": "New footbag.org site",
   "main": "index.js",
   "scripts": {
-    "start": "es-dev-server --base-path footbag-org --app-index index.html --node-resolve --watch --open",
+    "start": "es-dev-server --app-index index.html --node-resolve --watch --open",
     "test": "karma start --coverage",
     "prettier": "prettier --write **/*.{js,json,html}",
     "lint:eslint": "eslint --ext .js,.html .",
@@ -15,23 +15,25 @@
     "format": "npm run format:eslint && npm run format:prettier",
     "test:watch": "karma start --auto-watch=true --single-run=false",
     "build": "rimraf docs && rollup -c rollup.config.js",
-    "start:build": "npm run build && es-dev-server --root-dir docs --base-path footbag-org --app-index index.html --open --compatibility none"
+    "start:build": "npm run build && es-dev-server --root-dir docs --app-index index.html --open --compatibility none"
   },
   "author": "Jani Säntti",
   "license": "ISC",
   "devDependencies": {
-    "husky": "^1.0.0",
-    "prettier": "^2.0.4",
-    "eslint": "^6.1.0",
-    "@open-wc/eslint-config": "^2.0.0",
-    "eslint-config-prettier": "^6.11.0",
-    "lint-staged": "^8.0.0",
-    "@open-wc/testing-karma": "^3.0.0",
-    "deepmerge": "^3.2.0",
-    "@open-wc/testing": "^2.0.0",
     "@open-wc/building-rollup": "^1.0.0",
+    "@open-wc/eslint-config": "^2.0.0",
+    "@open-wc/testing": "^2.0.0",
+    "@open-wc/testing-karma": "^3.0.0",
+    "@rollup/plugin-replace": "^2.3.3",
+    "deepmerge": "^3.2.0",
+    "eslint": "^6.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "husky": "^1.0.0",
+    "lint-staged": "^8.0.0",
+    "prettier": "^2.0.4",
     "rimraf": "^2.6.3",
-    "rollup": "^2.3.4"
+    "rollup": "^2.3.4",
+    "rollup-plugin-copy": "^3.3.0"
   },
   "dependencies": {
     "@vaadin/router": "^1.7.2"
