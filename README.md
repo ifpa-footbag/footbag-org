@@ -25,6 +25,12 @@ Before pushing the changes, run `npm run format` to run linting (eslint) and cod
 
 Github pages is used for hosting. It serves the content of `dist` directory and that is why that folder is pushed to Github. `npm run build` builds the app into dist folder.
 
+## Technology
+
+- Open-wc (https://open-wc.org/) configurations are used for serving, packaging and testing application
+- Common UI components are build with Web Components (https://developer.mozilla.org/en-US/docs/Web/Web_Components)
+- Vaadin router (https://vaadin.com/router) is used
+
 ## Component Structure
 
 ```
