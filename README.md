@@ -23,7 +23,7 @@ Before pushing the changes, run `npm run format` to run linting (eslint) and cod
 
 ## Publishing
 
-Github pages is used for hosting. It serves the content of `dist` directory and that is why that folder is pushed to Github. `npm run build` builds the app into dist folder.
+Github pages is used for hosting. It serves the content of `docs` directory and that is why that folder is pushed to Github. `npm run build` builds the app into the docs folder.
 
 ## Technology
 
