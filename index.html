@@ -3,8 +3,16 @@
   <head>
     <base href="/footbag-org/" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet"/>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link
+      href="https://fonts.googleapis.com/css?family=Rubik&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
     <style>
@@ -118,29 +126,9 @@
       }
     </style>
 
-    <!-- Router injects content here -->
-    <div id="page-placeholder"></div>
-    <!-- end of injected content-->
+    <script type="module" src="/src/footbag-app.js"></script>
 
-    <!-- Router initialization -->
-    <script src="https://unpkg.com/@vaadin/router/dist/vaadin-router.umd.min.js"></script>
-    <script type="module" src="./components/events-page.js"></script>
-    <script type="module" src="./components/footbag-page.js"></script>
-    <script type="module" src="./components/main-page.js"></script>
-    <script type="module" src="./components/news-page.js"></script>
-
-    <script>
-      var Router = Vaadin.Router;
-
-      const outlet = document.getElementById('page-placeholder');
-      const router = new Router(outlet, { baseUrl: '/' });
-      router.setRoutes([
-        { path: '/', component: 'main-page' },
-        { path: 'footbag', component: 'footbag-page' },
-        { path: 'event/:event', component: 'events-page' },
-        { path: 'news/:news', component: 'news-page' },
-        { path: '(.*)', component: 'main-page' }
-      ]);
-    </script>
+    <!-- see footbag-app.js for router and rest of the application -->
+    <footbag-app>loading...</footbag-app>
   </body>
 </html>

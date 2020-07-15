@@ -1,5 +1,3 @@
-import './content-modal.js';
-
 class EventItem extends HTMLElement {
   _render() {
     const style = `
@@ -9,11 +7,9 @@ class EventItem extends HTMLElement {
         border-bottom: 1px solid #eee;
         max-width: 100vw;
       }
-
       article.highlight {
         background-color: var(--color-redlight);
       }
-
       a {
         color: inherit; 
         text-decoration: inherit; 
@@ -21,32 +17,27 @@ class EventItem extends HTMLElement {
       a:hover {
         color: var(--color-bluehover);
        }
-
       h3 {
         color: var(--color-blue);
         font-size: var(--font-size-large);
         
         margin: var(--space-s) 0 var(--space-m) 0;
       }
-
       .event_date {
         color: var(--color-red);
         margin: var(--space-xs) auto 0 0;
         font-size: var(--font-size-medium);
         text-transform: uppercase;
       }
-
       .event_location {
         color: var(--color-blue);
         font-size: var(--font-size-medium);
       }
-
       .event_contact {
         margin: var(--space-m) auto 0 0;
         color: var(--color-gray-800);
         font-size: var(--font-size-small);
       }
-
       .modal {
         position: fixed;
         background-color: rgba(255, 255, 255, 1);
@@ -93,10 +84,10 @@ class EventItem extends HTMLElement {
 
   constructor() {
     super();
+    this.attachShadow({ mode: 'open' });
   }
 
   connectedCallback() {
-    this.attachShadow({ mode: 'open' });
     this._render();
   }
 
@@ -104,7 +95,7 @@ class EventItem extends HTMLElement {
     return ['open'];
   }
 
-  attributeChangedCallback(name, oldValue, newValue) {
+  attributeChangedCallback(name) {
     if (name === 'open') {
       this._render();
     }

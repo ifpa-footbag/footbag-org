@@ -1,5 +1,3 @@
-import './content-modal.js';
-
 class NewsItem extends HTMLElement {
   _render() {
     const style = `
@@ -9,11 +7,9 @@ class NewsItem extends HTMLElement {
         font-size: var(--font-size-large);
         max-width: 100vw;
       }
-
       :host([long]) {
         grid-row: span 4 !important;
       }
-
       a {
         color: inherit; 
         text-decoration: inherit; 
@@ -21,45 +17,35 @@ class NewsItem extends HTMLElement {
       a:hover {
         color: var(--color-bluehover);
        }
-
       article {
         padding: var(--grid-panel-padding);
       }
-
       h3 {
         color: var(--color-blue);
         margin: 0 0 var(--space-m) 0;
       }
-
       img {
         padding-bottom: var(--space-m);
         max-height: 8rem;
         float: right;
         margin: 0 var(--space-l);
       }
-
-
       article[highlight] {
         border: 3px solid var(--color-blue);
       }
-
       article[highlight-solid] {
         background-color: var(--color-blue);
         color: var(--color-white);
       }
-
       article[highlight-solid] > .news_header {
         color: var(--color-orange);
       }
-
       article[highlight-solid] > .news_body {
         color: var(--color-white);
       }
-
       .news_body {
         line-height: var(--line-height-increased);
       }
-
       footer {
         color: var(--color-gray-800);
         margin: var(--space-l) auto 0 0;
@@ -75,7 +61,6 @@ class NewsItem extends HTMLElement {
           ${this.getAttribute('header')}
         </a>
       </h3>
-
       ${
         this.getAttribute('image') !== null
           ? `<img src="${this.getAttribute('image')}" />`
@@ -86,7 +71,6 @@ class NewsItem extends HTMLElement {
         ${this.getAttribute('short') || ''}
         ${Boolean(this.getAttribute('open')) === true ? '<slot></slot>' : ''}
       </div>
-
       <footer>
         ${this.getAttribute('date') || ''}
       </footer>
@@ -104,10 +88,10 @@ class NewsItem extends HTMLElement {
 
   constructor() {
     super();
+    this.attachShadow({ mode: 'open' });
   }
 
   connectedCallback() {
-    this.attachShadow({ mode: 'open' });
     this._render();
   }
 
@@ -115,15 +99,10 @@ class NewsItem extends HTMLElement {
     return ['open'];
   }
 
-  attributeChangedCallback(name, oldValue, newValue) {
+  attributeChangedCallback(name) {
     if (name === 'open') {
       this._render();
     }
-  }
-
-  attributeChangedCallback() {
-    console.log('Custom square element attributes changed.');
-    this._render();
   }
 
   get checked() {

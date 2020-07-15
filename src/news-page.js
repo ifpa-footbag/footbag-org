@@ -1,17 +1,24 @@
-import './page-one-column.js';
-import './navigation-bar.js';
-import './hero-video.js';
+import './components/page-one-column.js';
+import './components/navigation-bar.js';
+import './components/hero-video.js';
 
-import { news } from '../news/news.js';
+import { news } from './news/news.js';
 
 class NewsPage extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+  }
+
   static get observedAttributes() {
     return ['location'];
   }
 
   connectedCallback() {
     const style = `
-      
+      [hidden] {
+        display: none;
+      }
     `;
 
     const html = `
@@ -25,7 +32,6 @@ class NewsPage extends HTMLElement {
       </page-one-column>
     `;
 
-    this.attachShadow({ mode: 'open' });
     this.shadowRoot.innerHTML = `
     <style>
       ${style}
@@ -35,10 +41,6 @@ class NewsPage extends HTMLElement {
     setTimeout(() => {
       this._hideNews();
     }, 50);
-  }
-
-  attributeChangedCallback(name, oldValue, newValue) {
-    console.log(name, oldValue, newValue);
   }
 
   _hideNews() {
@@ -53,7 +55,7 @@ class NewsPage extends HTMLElement {
       ) {
         item.setAttribute('open', true);
       } else {
-        item.style.display = 'none';
+        item.setAttribute('hidden', true);
       }
     });
   }

@@ -1,8 +1,13 @@
-import './page-two-columns.js';
-import './navigation-bar.js';
-import './news-item.js';
+import './components/page-two-columns.js';
+import './components/navigation-bar.js';
+import './components/news-item.js';
 
 class FootbagPage extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+  }
+
   connectedCallback() {
     const style = `
       .main-grid {
@@ -24,7 +29,7 @@ class FootbagPage extends HTMLElement {
         <header class="header">
         <h2>Footbag Sports</h2>
         </header>
-        <news-item image="images/net.jpg" header="Footbag Net" open="true">
+        <news-item image="../src/images/net.jpg" header="Footbag Net" open="true">
         <p>
           Footbag Net is a singles or doubles court game, where players use only
           their feet to kick the footbag over a net. The size of the court and
@@ -43,7 +48,7 @@ class FootbagPage extends HTMLElement {
           preparing to counter attack.
         </p>
         </news-item>
-        <news-item image="images/freestyle.jpg" header="Footbag Freestyle" open="true">
+        <news-item image="../src/images/freestyle.jpg" header="Footbag Freestyle" open="true">
         <p>
           The object of Freestyle Footbag is perform tricks with the bag. It has
           evolved from its roots into a very technical competitive discipline.
@@ -64,7 +69,6 @@ class FootbagPage extends HTMLElement {
       </page-two-columns>
     `;
 
-    this.attachShadow({ mode: 'open' });
     this.shadowRoot.innerHTML = `
     <style>
       ${style}

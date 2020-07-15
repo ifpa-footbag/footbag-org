@@ -1,12 +1,17 @@
-import './grid-template.js';
-import './event-item.js';
-import './navigation-bar.js';
-import './hero-video.js';
+import './components/grid-template.js';
+import './components/event-item.js';
+import './components/navigation-bar.js';
+import './components/hero-video.js';
 
-import { events } from '../events/events.js';
-import { news } from '../news/news.js';
+import { events } from './events/events.js';
+import { news } from './news/news.js';
 
 class MainPage extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+  }
+
   connectedCallback() {
     const style = `
     header {
@@ -61,8 +66,9 @@ class MainPage extends HTMLElement {
     `;
 
     const html = `
+
     <header>
-        <img class="logo-image" src="images/freestyle-footbag.png">
+        <img class="logo-image" src="../src/images/freestyle-footbag.png">
         <!-- h1 class="logo-header"><a href="/index.html">FB</a></h1 -->
     </header>
 
@@ -80,7 +86,6 @@ class MainPage extends HTMLElement {
     </main>
     `;
 
-    this.attachShadow({ mode: 'open' });
     this.shadowRoot.innerHTML = `
     <style>
       ${style}

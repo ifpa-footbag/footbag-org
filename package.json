@@ -4,21 +4,61 @@
   "description": "New footbag.org site",
   "main": "index.js",
   "scripts": {
-    "start": "http-server -o index.html",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prettier": "prettier --write **/*.{js,json,html}"
+    "start": "es-dev-server --base-path footbag-org --app-index index.html --node-resolve --watch --open",
+    "test": "karma start --coverage",
+    "prettier": "prettier --write **/*.{js,json,html}",
+    "lint:eslint": "eslint --ext .js,.html .",
+    "format:eslint": "eslint --ext .js,.html .",
+    "lint:prettier": "prettier \"**/*.js\" --check",
+    "format:prettier": "prettier \"**/*.js\" --write",
+    "lint": "npm run lint:eslint && npm run lint:prettier",
+    "format": "npm run format:eslint && npm run format:prettier",
+    "test:watch": "karma start --auto-watch=true --single-run=false",
+    "build": "rimraf dist && rollup -c rollup.config.js",
+    "start:build": "npm run build && es-dev-server --root-dir dist --base-path footbag-org --app-index index.html --open --compatibility none"
   },
   "author": "Jani Säntti",
   "license": "ISC",
   "devDependencies": {
-    "http-server": "^0.12.1",
-    "husky": "^3.0.5",
-    "prettier": "^1.19.1"
+    "husky": "^1.0.0",
+    "prettier": "^2.0.4",
+    "eslint": "^6.1.0",
+    "@open-wc/eslint-config": "^2.0.0",
+    "eslint-config-prettier": "^6.11.0",
+    "lint-staged": "^8.0.0",
+    "@open-wc/testing-karma": "^3.0.0",
+    "deepmerge": "^3.2.0",
+    "@open-wc/testing": "^2.0.0",
+    "@open-wc/building-rollup": "^1.0.0",
+    "rimraf": "^2.6.3",
+    "rollup": "^2.3.4"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@vaadin/router": "^1.7.2"
+  },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run prettier"
+      "pre-commit": "lint-staged"
     }
+  },
+  "eslintConfig": {
+    "extends": [
+      "@open-wc/eslint-config",
+      "eslint-config-prettier"
+    ],
+    "ignorePatterns": [
+      "dist/"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "arrowParens": "avoid"
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ]
   }
 }
