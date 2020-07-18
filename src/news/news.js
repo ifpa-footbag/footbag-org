@@ -61,7 +61,7 @@ const news = `
 
 <news-item 
   header="21st IFPA European Footbag Championships"
-  image="/images/euros-jaworzno.jpg"
+  image="images/euros-jaworzno.jpg"
   short="We are excited to announce the 21st European Footbag Championships in Jaworzno, Poland from June 11-14, 2020! 
   Paweł Nowak, Footbag Freestyle World Champion 2017 (Routines) and 2019 (Overall) in collaboration with Arthur Ledain 
   and Kerstin Adineh from EFC (European Footbag Committee of IFPA) will host this year's miscellaneous event and 
