@@ -65,11 +65,12 @@
         --font-family-secondary: sans-serif;
 
         --line-height-increased: 1.35em;
-
-        --max-nav-width: 1200px;
         --max-content-width: 1200px;
 
+        --content-background: #2c204e08;
+
         background-color: var(--color-gray-300);
+
         font-size: 16px;
       }
 
@@ -78,6 +79,8 @@
         font-weight: var(--font-weight-normal);
         margin: 0 auto;
         color: var(--color-blue);
+
+        max-width: var(--max-content-width);
       }
 
       h1,
@@ -94,34 +97,6 @@
       @media only screen and (max-width: 600px) {
         .u-hide--small {
           display: none;
-        }
-      }
-
-      #page-placeholder > .leaving {
-        animation: 0.2s fadeOut ease-in-out;
-      }
-
-      #page-placeholder > .entering {
-        animation: 0.2s fadeIn linear;
-      }
-
-      @keyframes fadeOut {
-        from {
-          opacity: 1;
-        }
-
-        to {
-          opacity: 0;
-        }
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-
-        to {
-          opacity: 1;
         }
       }
     </style>

@@ -1,10 +1,5 @@
 class HeroVideo extends HTMLElement {
-  constructor() {
-    super();
-    this.attachShadow({ mode: 'open' });
-  }
-
-  connectedCallback() {
+  _render() {
     const style = `
     :host{
       display: block;
@@ -58,10 +53,9 @@ class HeroVideo extends HTMLElement {
       figcaption {
         margin-left: var(--space-m);
         margin-bottom: var(--space-xl);
+        width: 33.3%;
       }
-      video {
-        width: 66.6%;
-      }
+      
       button {
         margin-top: var(--space-xl);
       }
@@ -86,14 +80,23 @@ class HeroVideo extends HTMLElement {
         </section>
         </figcaption>
       </figure>
-  `;
+    `;
 
     this.shadowRoot.innerHTML = `
-  <style>
-    ${style}
-  </style>
-  ${html}
+    <style>
+      ${style}
+    </style>
+    ${html}
   `;
+  }
+
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+  }
+
+  connectedCallback() {
+    this._render();
 
     this.shadowRoot.querySelector('video').addEventListener('click', () => {
       this.shadowRoot.querySelector('video').play();

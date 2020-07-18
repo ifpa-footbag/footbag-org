@@ -7,12 +7,7 @@ import { events } from './events/events.js';
 import { news } from './news/news.js';
 
 class MainPage extends HTMLElement {
-  constructor() {
-    super();
-    this.attachShadow({ mode: 'open' });
-  }
-
-  connectedCallback() {
+  _render() {
     const style = `
     header {
       /* anchor for logo-header, which is positioned absolute */
@@ -49,7 +44,6 @@ class MainPage extends HTMLElement {
 
     main {
         display: grid;
-        max-width: var(--max-content-width);
         margin: 0 auto;
     }
     @media only screen and (min-width: 692px) {
@@ -57,11 +51,11 @@ class MainPage extends HTMLElement {
           grid-template-columns: 2fr 1fr;
         }
     }
-
     
 
     .events{
       background-color: var(--color-white);
+      margin-bottom: var(--space-l);
     }
     `;
 
@@ -71,11 +65,11 @@ class MainPage extends HTMLElement {
         <img class="logo-image" src="images/freestyle-footbag.png">
         <!-- h1 class="logo-header"><a href="/index.html">FB</a></h1 -->
     </header>
-
     <navigation-bar></navigation-bar>
     <aside>
       <hero-video></hero-video>
     </aside>
+    
     <main>
         <grid-template header="News">
             ${news}
@@ -84,6 +78,7 @@ class MainPage extends HTMLElement {
             ${events}
         </grid-template>
     </main>
+   
     `;
 
     this.shadowRoot.innerHTML = `
@@ -92,6 +87,15 @@ class MainPage extends HTMLElement {
     </style>
     ${html}
     `;
+  }
+
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+  }
+
+  connectedCallback() {
+    this._render();
   }
 }
 

@@ -4,16 +4,58 @@ import './events-page.js';
 import './footbag-page.js';
 import './main-page.js';
 import './news-page.js';
+import './components/page-footer.js';
 
 class FootbagApp extends HTMLElement {
   _render() {
+    const style = `
+    #page-placeholder {
+      background: var(--content-background);
+      margin: var(--space-l);
+    }
+
+    #page-placeholder > .leaving {
+      animation: 0.2s fadeOut ease-in-out;
+    }
+
+    #page-placeholder > .entering {
+      animation: 0.2s fadeIn linear;
+    }
+
+    @keyframes fadeOut {
+      from {
+        opacity: 1;
+      }
+
+      to {
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+    `;
+
     const html = `
     <!-- Router injects content here -->
     <div id="page-placeholder"></div>
     <!-- end of injected content-->
+    
+    <page-footer>
   `;
 
-    this.shadowRoot.innerHTML = html;
+    this.shadowRoot.innerHTML = `
+  <style>
+    ${style}
+  </style>
+  ${html}`;
   }
 
   constructor() {

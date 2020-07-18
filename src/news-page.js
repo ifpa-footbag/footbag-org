@@ -5,16 +5,7 @@ import './components/hero-video.js';
 import { news } from './news/news.js';
 
 class NewsPage extends HTMLElement {
-  constructor() {
-    super();
-    this.attachShadow({ mode: 'open' });
-  }
-
-  static get observedAttributes() {
-    return ['location'];
-  }
-
-  connectedCallback() {
+  _render() {
     const style = `
       [hidden] {
         display: none;
@@ -41,6 +32,19 @@ class NewsPage extends HTMLElement {
     setTimeout(() => {
       this._hideNews();
     }, 50);
+  }
+
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+  }
+
+  connectedCallback() {
+    this._render();
+  }
+
+  static get observedAttributes() {
+    return ['location'];
   }
 
   _hideNews() {

@@ -1,10 +1,5 @@
 class NavigationBar extends HTMLElement {
-  constructor() {
-    super();
-    this.attachShadow({ mode: 'open' });
-  }
-
-  connectedCallback() {
+  _render() {
     const style = `
     a {
       color: inherit;
@@ -16,7 +11,6 @@ class NavigationBar extends HTMLElement {
       display: flex;
       justify-content: flex-end;
       margin: 0 auto;
-      max-width: var(--max-nav-width);
       
       top: 0;
       z-index: 1;
@@ -94,6 +88,15 @@ class NavigationBar extends HTMLElement {
     </style>
     ${html}
     `;
+  }
+
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+  }
+
+  connectedCallback() {
+    this._render();
   }
 }
 

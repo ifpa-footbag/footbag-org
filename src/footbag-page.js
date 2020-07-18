@@ -3,12 +3,7 @@ import './components/navigation-bar.js';
 import './components/news-item.js';
 
 class FootbagPage extends HTMLElement {
-  constructor() {
-    super();
-    this.attachShadow({ mode: 'open' });
-  }
-
-  connectedCallback() {
+  _render() {
     const style = `
       .main-grid {
         display: grid;
@@ -75,6 +70,15 @@ class FootbagPage extends HTMLElement {
     </style>
     ${html}
     `;
+  }
+
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+  }
+
+  connectedCallback() {
+    this._render();
   }
 }
 
