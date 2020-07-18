@@ -8,7 +8,6 @@ class HeroVideo extends HTMLElement {
       box-sizing: border-box;
     }
     figure {
-      background-color: var(--color-white);
       padding: var(--space-l);
       margin: 0 auto;
       max-width: var(--max-content-width);
@@ -54,6 +53,10 @@ class HeroVideo extends HTMLElement {
         margin-left: var(--space-m);
         margin-bottom: var(--space-xl);
         width: 33.3%;
+      }
+
+      video {
+        width: 66.6%;
       }
       
       button {
