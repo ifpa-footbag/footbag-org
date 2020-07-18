@@ -54,6 +54,7 @@ class MainPage extends HTMLElement {
     
 
     .events{
+      --grid-gap: 0;
       background-color: var(--color-white);
       margin-bottom: var(--space-l);
     }

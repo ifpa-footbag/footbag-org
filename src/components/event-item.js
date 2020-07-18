@@ -3,7 +3,7 @@ class EventItem extends HTMLElement {
     const style = `
       article {
         background-color: var(--color-white);
-        padding: var(--space-m) var(--space-m) var(--space-l) var(--space-m);
+        padding: var(--space-l);
         border-bottom: 1px solid #eee;
         max-width: 100vw;
       }
