@@ -58,7 +58,7 @@ class HeroVideo extends HTMLElement {
     @media only screen and (min-width: 692px) {
       figcaption {     
         position: absolute;
-        top: 10%;
+        top: 5%;
         right: 10%;
         width: 17rem;
       }

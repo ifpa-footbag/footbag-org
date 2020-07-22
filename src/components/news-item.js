@@ -1,3 +1,5 @@
+import { calendarAlt } from './icons.js';
+
 class NewsItem extends HTMLElement {
   _render() {
     const style = `
@@ -52,6 +54,9 @@ class NewsItem extends HTMLElement {
         font-size: var(--font-size-medium);
         text-transform: uppercase;
       }
+      svg {
+        fill: var(--color-gray-800);
+      }
     `;
 
     const html = `
@@ -72,7 +77,7 @@ class NewsItem extends HTMLElement {
         ${Boolean(this.getAttribute('open')) === true ? '<slot></slot>' : ''}
       </div>
       <footer>
-        ${this.getAttribute('date') || ''}
+        ${calendarAlt} ${this.getAttribute('date') || ''}
       </footer>
   
     </article>
