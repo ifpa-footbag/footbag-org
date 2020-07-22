@@ -9,9 +9,13 @@ class HeroVideo extends HTMLElement {
     }
     figure {
       margin: 0;
+      max-width: var(--max-content-width);
+
       padding: 0;
       
-      max-width: var(--max-content-width);
+      /* anchor for absolutely positioned figcaption */
+      position: relative;
+
     }
     figcaption {
       background: var(--color-blue);
@@ -42,14 +46,16 @@ class HeroVideo extends HTMLElement {
       border: 0;
       color: var(--color-blue);
       font-weight: var(--font-weight-bold);
-      padding: var(--space-m) 5rem;
+      padding: var(--space-m);
       text-transform: uppercase;
+
+      width: 100%;
     }
 
     @media only screen and (min-width: 692px) {
       figcaption {     
         position: absolute;
-        top: 6rem;
+        top: 10%;
         right: 10%;
         width: 17rem;
       }
@@ -70,7 +76,7 @@ class HeroVideo extends HTMLElement {
           about in 1972 in North America and has continued evolving
           into a popular sport that is played all over the world.
           <section>
-          <button>How to get started?</button>
+          <button>Learn more</button>
         </section>
         </figcaption>
       </figure>

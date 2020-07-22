@@ -16,10 +16,17 @@ class NavigationBar extends HTMLElement {
       z-index: 1;
     }
 
+    
+    img {
+      height: 24px;
+      width: 24px;
+
+      padding-left: var(--space-l);
+    }
     h1 {
       font-size: var(--font-size-large);
       margin: 0;
-      padding: 0 0 0 var(--space-xl);
+      padding: 0 0 0 var(--space-l);
       margin-right: auto;
     }
 
@@ -32,6 +39,11 @@ class NavigationBar extends HTMLElement {
     }
 
     @media only screen and (min-width: 600px) {
+      img {
+        height: 36px;
+        width: 36px;
+      }
+      
       h1 {
         font-size: var(--font-size-xlarge);
       }
@@ -79,7 +91,10 @@ class NavigationBar extends HTMLElement {
              </div>`
           : ''
       }
-      <h1>Footbag Worldwide</h1>
+      <img width="24px" height="24px" src="images/site-logo.png"></img>
+      <h1>
+        Footbag Worldwide
+        </h1>
       <a href="/footbag">Players
         <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 292.4 292.4" class="handle"><path d="M287 69.4a17.6 17.6 0 0 0-13-5.4H18.4c-5 0-9.3 1.8-12.9 5.4A17.6 17.6 0 0 0 0 82.2c0 5 1.8 9.3 5.4 12.9l128 127.9c3.6 3.6 7.8 5.4 12.8 5.4s9.2-1.8 12.8-5.4L287 95c3.5-3.5 5.4-7.8 5.4-12.8 0-5-1.9-9.2-5.5-12.8z"></path></svg>
       </a>

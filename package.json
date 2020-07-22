@@ -4,7 +4,7 @@
   "description": "New footbag.org site",
   "main": "index.js",
   "scripts": {
-    "start": "es-dev-server --app-index index.html --node-resolve --watch --open",
+    "start": "es-dev-server --app-index index.html --node-resolve --watch --open --debug",
     "test": "karma start --coverage",
     "prettier": "prettier --write **/*.{js,json,html}",
     "lint:eslint": "eslint --ext .js,.html .",
@@ -29,6 +29,7 @@
     "eslint": "^6.1.0",
     "eslint-config-prettier": "^6.11.0",
     "husky": "^1.0.0",
+    "koa-proxies": "^0.11.0",
     "lint-staged": "^8.0.0",
     "prettier": "^2.0.4",
     "rimraf": "^2.6.3",
