@@ -91,7 +91,7 @@ class NavigationBar extends HTMLElement {
              </div>`
           : ''
       }
-      <img width="24px" height="24px" src="images/site-logo.png"></img>
+      <img width="24px" height="24px" src="images/logo.png"></img>
       <h1>
         Footbag Worldwide
         </h1>
