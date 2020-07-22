@@ -38,10 +38,6 @@ class MainPage extends HTMLElement {
       }
     }
 
-    aside  {
-      margin: var(--space-l) var(--space-l) var(--space-m); var(--space-l);
-    }
-
     main {
         display: grid;
         margin: 0 auto;
@@ -58,25 +54,38 @@ class MainPage extends HTMLElement {
       background-color: var(--color-white);
       margin-bottom: var(--space-l);
     }
+    .more {
+      justify-self: center;
+      display: block;
+      grid-column: 1 / -1;
+      margin: var(--space-l);
+      padding: var(--space-l);
+      text-transform: uppercase;
+
+    }
     `;
 
     const html = `
 
     <header>
-        <img class="logo-image" src="images/freestyle-footbag.png">
-        <!-- h1 class="logo-header"><a href="/index.html">FB</a></h1 -->
+      <navigation-bar></navigation-bar> 
     </header>
-    <navigation-bar></navigation-bar>
-    <aside>
-      <hero-video></hero-video>
-    </aside>
+    
+    
+    <hero-video></hero-video>
     
     <main>
         <grid-template header="News">
             ${news}
+            <div class="more">
+              <a href="/news/all" slot="footer">More news</a>
+            </div>
         </grid-template>
         <grid-template class="events" header="Events" header-color="red">
             ${events}
+            <div class="more">
+              <a href="/event/all" slot="footer">More events</a>
+            </div>
         </grid-template>
     </main>
    

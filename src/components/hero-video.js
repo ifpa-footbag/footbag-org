@@ -8,17 +8,16 @@ class HeroVideo extends HTMLElement {
       box-sizing: border-box;
     }
     figure {
-      padding: var(--space-l);
-      margin: 0 auto;
+      margin: 0;
+      padding: 0;
+      
       max-width: var(--max-content-width);
-      max-height: 100%;
     }
     figcaption {
-      border-left: 3px solid var(--color-orange);
-      color: var(--color-blue);
-      font-weight: var(--font-weight-boldest);
-      margin: var(--space-l) 0;
-      padding-left: var(--space-l);
+      background: var(--color-blue);
+      color: var(--color-white);
+      opacity: 0.8;
+      padding: var(--space-l);
     }
     h2 {
       color: var(--color-orange);
@@ -28,6 +27,8 @@ class HeroVideo extends HTMLElement {
       padding: 0;
     }
     video {
+      /* necessary for removing bottom margin*/
+      display: block;
       height: auto;
       width: 100%;
     }
@@ -44,23 +45,13 @@ class HeroVideo extends HTMLElement {
       padding: var(--space-m) 5rem;
       text-transform: uppercase;
     }
-    @media only screen and (min-width: 1024px) {
-      figure {
-        display: flex;
-        align-items: flex-start;
-      }
-      figcaption {
-        margin-left: var(--space-m);
-        margin-bottom: var(--space-xl);
-        width: 33.3%;
-      }
 
-      video {
-        width: 66.6%;
-      }
-      
-      button {
-        margin-top: var(--space-xl);
+    @media only screen and (min-width: 692px) {
+      figcaption {     
+        position: absolute;
+        top: 6rem;
+        right: 10%;
+        width: 17rem;
       }
     }
   `;

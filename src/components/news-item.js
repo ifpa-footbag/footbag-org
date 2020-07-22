@@ -49,7 +49,7 @@ class NewsItem extends HTMLElement {
       footer {
         color: var(--color-gray-800);
         margin: var(--space-l) auto 0 0;
-        font-size: var(--font-size-small);
+        font-size: var(--font-size-medium);
         text-transform: uppercase;
       }
     `;

@@ -36,7 +36,7 @@ class EventItem extends HTMLElement {
       .event_contact {
         margin: var(--space-m) auto 0 0;
         color: var(--color-gray-800);
-        font-size: var(--font-size-small);
+        font-size: var(--font-size-medium);
       }
       .modal {
         position: fixed;

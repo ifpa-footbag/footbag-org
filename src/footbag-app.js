@@ -11,7 +11,6 @@ class FootbagApp extends HTMLElement {
     const style = `
     #page-placeholder {
       background: var(--content-background);
-      margin: var(--space-l);
     }
 
     #page-placeholder > .leaving {

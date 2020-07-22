@@ -30,10 +30,14 @@ class GridTemplate extends HTMLElement {
       background-color: var(--color-red);
     }
     h2 {
-      font-size: var(--font-size-xlarge);
+      font-size: var(--font-size-large);
       font-weight: 900;
       margin: 0;
       padding: var(--space-m) 0;
+    }
+
+    slot[name=footer] {
+      grid-column: 1 / -1;
     }
   `;
 
@@ -41,7 +45,10 @@ class GridTemplate extends HTMLElement {
       <header class="header ${this.getAttribute('header-color')}">
         <h2>${this.getAttribute('header') || ''}</h2>
       </header>
-      <slot></slot>`;
+      <slot></slot>
+      
+      <slot name="footer"></slot>
+      `;
 
     this.shadowRoot.innerHTML = `
     <style>

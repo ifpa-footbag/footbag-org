@@ -2,8 +2,9 @@ class PageFooter extends HTMLElement {
   _render() {
     const style = `
       footer {
-        background: var(--content-background);
-        margin: var(--space-xl) var(--space-l);
+        background: var(--color-blue);
+        color: var(--color-white);
+       
       }
 
       @media only screen and (min-width: 692px) {
