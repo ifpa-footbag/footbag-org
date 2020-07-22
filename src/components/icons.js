@@ -4,8 +4,7 @@ const viewBox448x512 = '0 0 320 512';
 const viewBox512x512 = '0 0 512 512';
 
 function svg(viewBox, inner) {
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" style="vertical-align: middle;
-}"viewBox="${viewBox}">${inner}</svg>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" style="vertical-align: middle;" viewBox="${viewBox}">${inner}</svg>`;
 }
 
 export const angleDown = svg(

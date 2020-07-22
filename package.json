@@ -4,7 +4,7 @@
   "description": "New footbag.org site",
   "main": "index.js",
   "scripts": {
-    "start": "es-dev-server --app-index index.html --node-resolve --watch --open --debug",
+    "start": "es-dev-server --app-index index.html --node-resolve --watch --open",
     "test": "karma start --coverage",
     "prettier": "prettier --write **/*.{js,json,html}",
     "lint:eslint": "eslint --ext .js,.html .",
