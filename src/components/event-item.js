@@ -1,3 +1,5 @@
+import { calendarAlt, mapMarkerAlt } from './icons.js';
+
 class EventItem extends HTMLElement {
   _render() {
     const style = `
@@ -25,13 +27,17 @@ class EventItem extends HTMLElement {
       }
       .event_date {
         color: var(--color-red);
-        margin: var(--space-xs) auto 0 0;
         font-size: var(--font-size-medium);
+        margin: var(--space-xs) auto 0 0;
+
+        padding: var(--space-s) 0;
         text-transform: uppercase;
       }
       .event_location {
-        color: var(--color-blue);
+        color: var(--color-red);
         font-size: var(--font-size-medium);
+        padding: var(--space-xs) 0;
+        text-transform: uppercase;
       }
       .event_contact {
         margin: var(--space-m) auto 0 0;
@@ -47,6 +53,10 @@ class EventItem extends HTMLElement {
         left: 10%;
         padding: 4rem;
       }
+
+      svg {
+        fill: var(--color-red);
+      }
       `;
 
     const html = `
@@ -58,10 +68,10 @@ class EventItem extends HTMLElement {
             </a>
           </h3>
           <div class="event_date">
-          ${this._getAttribute('date')}
+            ${calendarAlt} ${this._getAttribute('date')}
           </div>
           <div class="event_location">
-          ${this._getAttribute('location')}
+            ${mapMarkerAlt} ${this._getAttribute('location')}
           </div>
           <div class="event_contact">
           ${this._getAttribute('contact')}

@@ -3,6 +3,8 @@ import './components/event-item.js';
 import './components/navigation-bar.js';
 import './components/hero-video.js';
 
+import { arrowRight } from './components/icons.js';
+
 import { events } from './events/events.js';
 import { news } from './news/news.js';
 
@@ -61,7 +63,25 @@ class MainPage extends HTMLElement {
       margin: var(--space-l);
       padding: var(--space-l);
       text-transform: uppercase;
+    }
 
+    .more--news a {
+      color: var(--color-blue);
+    }
+    .more--news svg {
+      fill: var(--color-blue);
+    }
+
+    .more--events a {
+      color: var(--color-red);
+    }
+    .more--events svg {
+      color: var(--color-red);
+      fill: var(--color-red);
+    }
+
+    a {
+      text-decoration: none;
     }
     `;
 
@@ -75,16 +95,16 @@ class MainPage extends HTMLElement {
     <hero-video></hero-video>
     
     <main>
-        <grid-template header="News">
+        <grid-template header="Latest News">
             ${news}
-            <div class="more">
-              <a href="/news/all" slot="footer">More news</a>
+            <div class="more more--news">
+              <a href="/news/all" slot="footer">More news ${arrowRight}</a>
             </div>
         </grid-template>
-        <grid-template class="events" header="Events" header-color="red">
+        <grid-template class="events" header="Upcoming Events" header-color="red">
             ${events}
-            <div class="more">
-              <a href="/event/all" slot="footer">More events</a>
+            <div class="more more--events">
+              <a href="/event/all" slot="footer">More events ${arrowRight}</a>
             </div>
         </grid-template>
     </main>

@@ -1,3 +1,5 @@
+import { angleDown } from './icons.js';
+
 class NavigationBar extends HTMLElement {
   _render() {
     const style = `
@@ -12,6 +14,7 @@ class NavigationBar extends HTMLElement {
       align-items: center;
       justify-content: flex-end;
       margin: 0 auto;
+      padding-right: var(--space-m);
       top: 0;
       z-index: 1;
     }
@@ -75,7 +78,7 @@ class NavigationBar extends HTMLElement {
 
     svg {
       fill: var(--color-white);
-      padding-left: var(--space-l);
+      padding-left: var(--space-m);
       padding-bottom: 2px;
     }
     `;
@@ -96,11 +99,11 @@ class NavigationBar extends HTMLElement {
         Footbag Worldwide
         </h1>
       <a href="/footbag">Players
-        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 292.4 292.4" class="handle"><path d="M287 69.4a17.6 17.6 0 0 0-13-5.4H18.4c-5 0-9.3 1.8-12.9 5.4A17.6 17.6 0 0 0 0 82.2c0 5 1.8 9.3 5.4 12.9l128 127.9c3.6 3.6 7.8 5.4 12.8 5.4s9.2-1.8 12.8-5.4L287 95c3.5-3.5 5.4-7.8 5.4-12.8 0-5-1.9-9.2-5.5-12.8z"></path></svg>
+        ${angleDown}
       </a>
       <a>Supporters 
-        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 292.4 292.4" class="handle"><path d="M287 69.4a17.6 17.6 0 0 0-13-5.4H18.4c-5 0-9.3 1.8-12.9 5.4A17.6 17.6 0 0 0 0 82.2c0 5 1.8 9.3 5.4 12.9l128 127.9c3.6 3.6 7.8 5.4 12.8 5.4s9.2-1.8 12.8-5.4L287 95c3.5-3.5 5.4-7.8 5.4-12.8 0-5-1.9-9.2-5.5-12.8z"></path></svg>
-      </a></i>
+        ${angleDown}
+      </a>
   
       <!--a href="http://footbag.org/ifpa/" target="_blank" class="ifpa">
         IFPA

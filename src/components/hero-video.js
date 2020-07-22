@@ -1,3 +1,5 @@
+import { infoCircle } from './icons.js';
+
 class HeroVideo extends HTMLElement {
   _render() {
     const style = `
@@ -45,6 +47,7 @@ class HeroVideo extends HTMLElement {
       background-color: var(--color-orange);
       border: 0;
       color: var(--color-blue);
+      
       font-weight: var(--font-weight-bold);
       padding: var(--space-m);
       text-transform: uppercase;
@@ -76,7 +79,7 @@ class HeroVideo extends HTMLElement {
           about in 1972 in North America and has continued evolving
           into a popular sport that is played all over the world.
           <section>
-          <button>Learn more</button>
+          <button>Learn more ${infoCircle}</button>
         </section>
         </figcaption>
       </figure>
