@@ -33,9 +33,11 @@ Github pages is used for hosting. It serves the content of `docs` directory and 
 
 ### Web Components
 
-Web Components (https://developer.mozilla.org/en-US/docs/Web/Web_Components) is a suite of technologies providing a similar component model as in React, Vue etc. Components are called custom elements. Minimal custom element can look like this:
+Web Components (https://developer.mozilla.org/en-US/docs/Web/Web_Components) is a suite of technologies providing a similar component model as in React, Vue etc. Components are called custom elements. To have a minimal example, let's say that there are news-page.js (parent) and news-item.js (child) files.
 
 ```
+news-item.js:
+
 class NewsItem extends HTMLElement {
   constructor() {
     super();
@@ -63,25 +65,40 @@ Notice how element is wrapped inside shadowDOM. Once doing it, elements are refe
 customElement.define registers the element in the DOM and it can be then used like this
 
 ```
-<news-item></news-item>
+news-page.js
+class NewsPage extends HTMLElement {
+  ...
+  _render() {
+    ...
+   <news-item></news-item>
+    ...
+  }
+}
 ```
 
-For inter-component communication, pass in attributes (or properties) and raise and listen CustomEvents
+For inter-component communication, news-page component can pass in attributes (or properties) and listen CustomEvents raised by
+news-item
 
 ```
-Attribute:
+News-page.js
+
+Attribute (String only):
 <news-item header="Breaking news"></news-item>
 
-Property:
+Property (Any type):
 this.shadowRoot.querySelector(news-item).header = "Breaking news"
-
-Raising event:
-const event = new CustomEvent('my-event', { detail: 'any data here' });
 
 listening event: 
 this.shadowRoot.addEventListener('my-event', (event) => this.myFunctionToBeCalled(event));
 
+News-item.js
+
+Raising event:
+const event = new CustomEvent('my-event', { detail: 'any data here' });
 ```
+
+More information about Web components:
+https://developers.google.com/web/fundamentals/web-components/customelements
 
 ## Component Structure
 
