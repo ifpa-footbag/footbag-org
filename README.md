@@ -31,6 +31,58 @@ Github pages is used for hosting. It serves the content of `docs` directory and 
 - Common UI components are build with Web Components (https://developer.mozilla.org/en-US/docs/Web/Web_Components)
 - Vaadin router (https://vaadin.com/router) is used
 
+### Web Components
+
+Web Components (https://developer.mozilla.org/en-US/docs/Web/Web_Components) is a suite of technologies providing a similar component model as in React, Vue etc. Components are called custom elements. Minimal custom element can look like this:
+
+```
+class NewsItem extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+    this._render();
+  }
+  
+  _render() {
+    const html = `
+       <article> 
+         Add some content here
+       </article>
+    `;
+
+    this.shadowRoot.innerHTML = `
+       ${html}
+    `;
+  }
+}
+
+customElements.define('news-item', NewsItem);
+```
+Notice how element is wrapped inside shadowDOM. Once doing it, elements are referred by "this.shadowRoot", e.g. this.shadowRoot.querySelector('article');
+
+customElement.define registers the element in the DOM and it can be then used like this
+
+```
+<news-item></news-item>
+```
+
+For inter-component communication, pass in attributes (or properties) and raise and listen CustomEvents
+
+```
+Attribute:
+<news-item header="Breaking news"></news-item>
+
+Property:
+this.shadowRoot.querySelector(news-item).header = "Breaking news"
+
+Raising event:
+const event = new CustomEvent('my-event', { detail: 'any data here' });
+
+listening event: 
+this.shadowRoot.addEventListener('my-event', (event) => this.myFunctionToBeCalled(event));
+
+```
+
 ## Component Structure
 
 ```
