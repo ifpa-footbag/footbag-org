@@ -140,6 +140,7 @@ const event = new CustomEvent('my-event', { detail: 'any data here' });
 
 More information about Web components:
 https://developers.google.com/web/fundamentals/web-components/customelements
+https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements
 
 
 ## Component Structure
