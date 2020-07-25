@@ -72,11 +72,50 @@ class NewsPage extends HTMLElement {
   ...
   _render() {
     ...
-   <news-item></news-item>
+   <news-it</news-item>
     ...
   }
 }
 ```
+
+#### Lifecycle callbacks
+
+Main lifecycle callbacks for custom elements are constructor, connectedCallback, observedAttributes and attributeChangedCallback. Constructor is the place to attach shadowRoot, define event listeners and init values. 
+
+```
+constructor() {
+   super();
+   this.attachShadow({ mode: 'open' });
+   
+   this._count = 0;
+   this.shadowRoot.addEventListener('my-event', (event) => this.myFunctionToBeCalled(event));
+}
+```
+
+ConnectedCallback is called when the element is added into the DOM. E.g. rendering and fetching resources are typically done in this function
+
+```
+connectedCallback(){
+   this._render();
+   fetch('http://example.com/resource')
+}
+```
+
+ObservedAttributes defines which attributes are observed - or which attributes trigger attributeChangedCallback()
+```
+static get observedAttributes() { return ['header']; }
+```
+
+When attribute is defined to be observed, then its change triggers attributeChangedCallback() function. Typically you want to re-render HTML, orfetch some data
+```
+attributeChangedCallback(name, oldValue, newValue) {
+  console.log('One of the attributes changed');
+  this._render();
+}
+```
+
+
+#### Inter-component communication
 
 For inter-component communication, news-page component can pass in attributes (or properties) and listen CustomEvents raised by
 news-item
@@ -101,6 +140,7 @@ const event = new CustomEvent('my-event', { detail: 'any data here' });
 
 More information about Web components:
 https://developers.google.com/web/fundamentals/web-components/customelements
+
 
 ## Component Structure
 
