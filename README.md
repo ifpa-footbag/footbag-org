@@ -46,6 +46,7 @@ class NewsItem extends HTMLElement {
   }
   
   _render() {
+    const styles = `article { color: red }`;
     const html = `
        <article> 
          Add some content here
@@ -53,6 +54,7 @@ class NewsItem extends HTMLElement {
     `;
 
     this.shadowRoot.innerHTML = `
+       <style>${styles}</style>
        ${html}
     `;
   }
@@ -60,9 +62,9 @@ class NewsItem extends HTMLElement {
 
 customElements.define('news-item', NewsItem);
 ```
-Notice how element is wrapped inside shadowDOM. Once doing it, elements are referred by "this.shadowRoot", e.g. this.shadowRoot.querySelector('article');
+Notice how shadowDOM is attached to the element and HTML and CSS appended to the shadowDOM. That way, HTML and CSS are encapsulated inside shadowDOM and not leaking outside. They can be referred using "this.shadowRoot", e.g. this.shadowRoot.querySelector('article'). 
 
-customElement.define registers the element in the DOM and it can be then used like this
+customElement.define registers the element in the DOM and it can then be used like native HTML elements:
 
 ```
 news-page.js
