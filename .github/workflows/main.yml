@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  #push:
+    #branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Run a multi-line script
+      run: |
+        npm install
+        npm run lint
+        #npm run test
+        npm run build
+
+    - uses: actions/upload-artifact@v2
+      if: ${{ failure() }}
+      with:
+        name: logs
+        path: /home/runner/.npm/_logs/*.log
+
+    - name: Publish docs to GitHub Pages
+      if: github.event.pull_request.merged
+      uses: JamesIves/github-pages-deploy-action@3.5.9
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: master # The branch the action should deploy to.
+        FOLDER: docs # The folder the action should deploy.
