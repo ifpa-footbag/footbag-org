@@ -21,9 +21,9 @@ jobs:
         npm run build
 
     - uses: actions/upload-artifact@v2
-    with:
-      name: logs
-      path: /home/runner/.npm/_logs/*.log
+      with:
+        name: logs
+        path: /home/runner/.npm/_logs/*.log
 
     - name: Publish docs to GitHub Pages
       if: github.event.pull_request.merged
