@@ -50,6 +50,7 @@
       "eslint-config-prettier"
     ],
     "ignorePatterns": [
+      "coverage/",
       "docs/"
     ]
   },
