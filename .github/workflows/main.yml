@@ -1,10 +1,7 @@
 name: CI
 
 on:
-  #push:
-    #branches: [ master ]
-  pull_request:
-    branches: [ master ]
+  push:
   workflow_dispatch:
 
 jobs:
@@ -28,7 +25,7 @@ jobs:
         path: /home/runner/.npm/_logs/*.log
 
     - name: Publish docs to GitHub Pages
-      if: github.event.pull_request.merged
+      if: github.ref == 'refs/heads/master'
       uses: JamesIves/github-pages-deploy-action@3.5.9
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
