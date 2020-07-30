@@ -23,13 +23,6 @@
 
 const events = `
 <!--  ADD EVENTS RIGHT BELOW THIS  -->
-  <event-item
-    header="test"
-    date="no date"
-    location="Worldwide!"
-    contact="me"
-  >
-  </event-item>
 
  <event-item
     header="IFPA Online World Footbag Freestyle Championships 2020"
