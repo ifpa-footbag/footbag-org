@@ -9,7 +9,7 @@ import copy from 'rollup-plugin-copy';
 
 const baseConfig = createSpaConfig({
   // use the outputdir option to modify where files are output
-  outputDir: 'docs',
+  outputDir: './docs',
 
   // if you need to support older browsers, such as IE11, set the legacyBuild
   // option to generate an additional build just for this browser
