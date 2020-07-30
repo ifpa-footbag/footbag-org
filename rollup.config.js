@@ -9,7 +9,7 @@ import copy from 'rollup-plugin-copy';
 
 const baseConfig = createSpaConfig({
   // use the outputdir option to modify where files are output
-  outputDir: './docs',
+  outputDir: './dist',
 
   // if you need to support older browsers, such as IE11, set the legacyBuild
   // option to generate an additional build just for this browser
@@ -34,8 +34,8 @@ export default merge(baseConfig, {
   plugins: [
     copy({
       targets: [
-        { src: 'images/**/*', dest: 'docs/images/' },
-        { src: 'videos/**/*', dest: 'docs/videos/' },
+        { src: './images/**/*', dest: './dist/images/' },
+        { src: './videos/**/*', dest: './dist/videos/' },
       ],
       // set flatten to false to preserve folder structure
       flatten: false,
