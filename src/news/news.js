@@ -22,12 +22,6 @@ const news = `
 <!-- ADD NEWS RIGHT BELOW THIS -->
 
 <news-item 
-  header="testing"
-  short="testing"
-    date="July 2020">
-</news-item>
-
-<news-item 
   header="Footbag is going online in corona time!"
   image="images/net.jpg"
   long
