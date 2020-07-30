@@ -25,7 +25,9 @@ Before pushing the changes, run `npm run format` to run linting (eslint) and cod
 
 ## Publishing
 
-Github pages is used for hosting. It serves the content of `docs` directory and that is why that folder is pushed to Github. `npm run build` builds the app into the docs folder.
+Latest code from master branch is deployed automatically to the production (https://ifpa-footbag.github.io/footbag-org/).
+
+Github pages is used for hosting. It serves the content of `docs` directory. Docs directory is build by Github actions based pipeline.
 
 ## Technology
 
