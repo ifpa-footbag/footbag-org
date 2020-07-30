@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Run a multi-line script
+      - name: Build
         run: |
           npm install
           npm run lint
@@ -25,9 +25,9 @@ jobs:
           path: /home/runner/.npm/_logs/*.log
 
       - name: Publish docs to GitHub Pages
-        if: github.ref == 'refs/heads/master'
-        uses: JamesIves/github-pages-deploy-action@3.5.9
+        uses: crazy-max/ghaction-github-pages@v2
         with:
+          target_branch: master
+          build_dir: docs
+        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: master # The branch the action should deploy to.
-          FOLDER: docs # The folder the action should deploy.
