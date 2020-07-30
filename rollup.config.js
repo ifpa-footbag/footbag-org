@@ -34,8 +34,13 @@ export default merge(baseConfig, {
   plugins: [
     copy({
       targets: [
+<<<<<<< HEAD
         { src: './images/**/*', dest: './dist/' },
         { src: './videos/**/*', dest: './dist/' },
+=======
+        { src: './images/**/*', dest: './dist/images/' },
+        { src: './videos/**/*', dest: './dist/videos/' },
+>>>>>>> master
       ],
       // set flatten to false to preserve folder structure
       flatten: false,
