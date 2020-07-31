@@ -1,5 +1,6 @@
 import { Router } from '@vaadin/router';
 
+import './getting-started-page.js';
 import './events-page.js';
 import './footbag-page.js';
 import './main-page.js';
@@ -71,6 +72,7 @@ class FootbagApp extends HTMLElement {
       { path: '/', component: 'main-page' },
       { path: 'footbag', component: 'footbag-page' },
       { path: 'event/:event', component: 'events-page' },
+      { path: 'getting-started', component: 'getting-started-page' },
       { path: 'news/:news', component: 'news-page' },
       { path: '(.*)', component: 'main-page' },
     ]);
