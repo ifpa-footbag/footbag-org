@@ -24,13 +24,13 @@ class GettingStartedPage extends HTMLElement {
         <header class="header">
         <h2>Getting Started</h2>
         </header>
-        <news-item image="images/casual.jpg" header="Circle Kicking" open="true">
+        <news-item image="images/casual.jpg" header="" open="true">
         <p>
           Want to start playing footbag? Not sure where to start? We are here to help.
 		  This guide will help you take your first step into this incredible world of 
 		  dexterity and skill.
         </p>
-		<h2>Choosing a footbag</h2>
+		<h3>Choosing a footbag</h2>
         <p>
           If you are just starting out, and want to learn basic kicks and tricks, an 8 panel 
 		  footbag will be the best choice. A local toy shop might have them in stock, and if 
@@ -38,7 +38,7 @@ class GettingStartedPage extends HTMLElement {
 		  should be perfectly fine! You can even make a bag yourself, a short tutorial for that can be 
 		  found <a href="https://www.youtube.com/watch?v=MUyzG4aEh_c">here</a>.
         </p>
-		<h2>Kicks and stalls</h2>
+		<h3>Kicks and stalls</h2>
 		<p>
 		  If you have your footbag, you are ready to start your journey. Start by watching a great tutorial 
 		  made by Franck Remy also known as FrankyStyle:
@@ -46,7 +46,7 @@ class GettingStartedPage extends HTMLElement {
 		<p>
 		<iframe width="560" height="315" src="https://www.youtube.com/embed/wkYxne1sq0Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 		</p>
-		<h2>Find a club near you</h2>
+		<h3>Find a club near you</h2>
 		Want to find other people who play? Check the club listings at <a href="http://footbag.org/clubs/">http://footbag.org/clubs/</a> 
 		or start your own if you already have a group kicking together.
         </news-item>
@@ -71,4 +71,4 @@ class GettingStartedPage extends HTMLElement {
   }
 }
 
-customElements.define('footbag-page', FootbagPage);
+customElements.define('getting-started-page', GettingStartedPage);

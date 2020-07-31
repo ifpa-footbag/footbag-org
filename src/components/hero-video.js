@@ -79,7 +79,7 @@ class HeroVideo extends HTMLElement {
           about in 1972 in North America and has continued evolving
           into a popular sport that is played all over the world.
           <section>
-          <button>Learn more ${infoCircle}</button>
+          <a href="/getting-started"><button>Learn more ${infoCircle}</button></a>
         </section>
         </figcaption>
       </figure>
