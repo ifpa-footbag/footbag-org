@@ -14,7 +14,7 @@
     "lint": "npm run lint:eslint && npm run lint:prettier",
     "format": "npm run format:eslint && npm run format:prettier",
     "test:watch": "karma start --auto-watch=true --single-run=false",
-    "build": "rimraf docs && rollup -c rollup.config.js",
+    "build": "rimraf ./dist && rimraf ./docs && rollup -c rollup.config.js",
     "start:build": "npm run build && es-dev-server --root-dir docs --app-index index.html --open --compatibility none"
   },
   "author": "Jani Säntti",

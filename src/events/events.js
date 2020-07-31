@@ -23,6 +23,7 @@
 
 const events = `
 <!--  ADD EVENTS RIGHT BELOW THIS  -->
+
  <event-item
     header="IFPA Online World Footbag Freestyle Championships 2020"
     date="1st June - 2nd August 2020"
