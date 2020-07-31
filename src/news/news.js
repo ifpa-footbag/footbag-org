@@ -20,6 +20,34 @@
 
 const news = `
 <!-- ADD NEWS RIGHT BELOW THIS -->
+<news-item 
+  header="Online Freestyle WFC 2020 Finals start today!"
+  image="images/worlds2020.png"
+  long
+  short="This weekend will be unforgettable! The first Online Freestyle Footbag World Championships has brought us unseen tricks, 
+	unforgettable battles, breathtaking routines, the hardest Sick 3s of all time, and more players than in any of the previous 
+	10 years. And it all comes to a close at the same time in every corner of the World with a professionally streamed live show 
+	that you can watch online."
+    date="July 2020">
+    <p>
+    To watch the finals follow the link below:</p>
+	<p>
+	<a href="https://www.footbag.online/stream/">https://www.footbag.online/stream/</a>
+	</p>
+	<p>
+	or on the IFPA YouTube channel in two parts:
+	</p>
+	<p>First, we will have Intermediate finals on Friday July 31st at 21:00 CET where the future of footbag will show us the results 
+	of their skills and hard work. Then on Saturday August 1st, the best players in freestyle footbag will fight for a place on the 
+	footbag throne in four different events: Sick3, Shred30, Shred-Off and Routines.
+	</p>
+	<p>
+	This is an unprecedented moment in footbag 
+	history, and we can all show our love of footbag to the world! Share this video with all your family and friends so nobody 
+	will miss the event of the year!
+	</p>
+
+</news-item>
 
 <news-item 
   header="Footbag is going online in corona time!"
