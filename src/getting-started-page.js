@@ -1,6 +1,7 @@
 import './components/page-one-column.js';
 import './components/navigation-bar.js';
 import './components/news-item.js';
+import './components/youtube-video.js';
 
 class GettingStartedPage extends HTMLElement {
   _render() {
@@ -43,9 +44,11 @@ class GettingStartedPage extends HTMLElement {
 		  If you have your footbag, you are ready to start your journey. Start by watching a great tutorial 
 		  made by Franck Remy also known as FrankyStyle:
 		</p>
-		<p>
-		<iframe width="560" height="315" src="https://www.youtube.com/embed/wkYxne1sq0Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-		</p>
+    
+    <youtube-video 
+      src="https://www.youtube.com/embed/wkYxne1sq0Y"
+      caption="Getting started tutorial"></youtube-video>
+		
 		<h3>Find a club near you</h2>
 		Want to find other people who play? Check the club listings at <a href="http://footbag.org/clubs/">http://footbag.org/clubs/</a> 
 		or start your own if you already have a group kicking together.
