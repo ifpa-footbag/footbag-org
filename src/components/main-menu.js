@@ -1,4 +1,4 @@
-import { angleDown, arrowRight } from './icons.js';
+import { angleDown, arrowRight, externalLinkAlt } from './icons.js';
 
 class MainMenu extends HTMLElement {
   _render() {
@@ -39,6 +39,19 @@ class MainMenu extends HTMLElement {
         li {
             padding: var(--space-m) 0;
         }
+
+        h4 {
+            color: var(--color-gray-500);
+            font-size: var(--font-size-medium);
+            padding-top: var(--space-xl);
+
+            text-transform: uppercase;
+          }
+
+          svg {
+            fill: var(--color-gray-500);
+            margin-left: var(--space-m);
+          }
     `;
 
     const html = `
@@ -49,13 +62,16 @@ class MainMenu extends HTMLElement {
             <ul>
                 <li><a href="/">${arrowRight} Home</a></li>
                 <li><a href="/getting-started">${arrowRight} Getting started</a></li>
-                <li><a href="http://footbag.org/reference/-/Footbag_Reference_Area">${arrowRight} Footbag disciplines</a></li>
-                <li><a href="http://footbag.org/rules/">${arrowRight} Rules</a></li>
-                <li><a href="http://footbag.org/faq/">${arrowRight} FAQ</a></li>
-                <li><a href="http://footbag.org/events/results">${arrowRight} Tournament results</a></li>
-                <li><a href="http://footbag.org/clubs/index">${arrowRight} Footbag clubs</a></li>
-                <li><a href="http://footbag.org/members/home">${arrowRight} Member area</a></li>
-                <li><a href="https://www.justgiving.com/internationalfootbagplayersassociationincorporated">${arrowRight} Donate</a></li>
+            </ul>
+            <h4>Old site ${externalLinkAlt}</h4>
+            <ul>
+                <li>${arrowRight} <a href="http://footbag.org/reference/-/Footbag_Reference_Area">Footbag disciplines</a></li>
+                <li>${arrowRight} <a href="http://footbag.org/rules/">Rules</a></li>
+                <li>${arrowRight} <a href="http://footbag.org/faq/">FAQ</a></li>
+                <li>${arrowRight} <a href="http://footbag.org/events/results">Tournament results</a></li>
+                <li>${arrowRight} <a href="http://footbag.org/clubs/index">Footbag clubs</a></li>
+                <li>${arrowRight} <a href="http://footbag.org/members/home">Member area</a></li>
+                <li>${arrowRight} <a href="https://www.justgiving.com/internationalfootbagplayersassociationincorporated">Donate</a></li>
             </ul>
         </div>
     `;
