@@ -69,7 +69,6 @@ class MainMenu extends HTMLElement {
                 <li>${arrowRight} <a href="http://footbag.org/rules/">Rules</a></li>
                 <li>${arrowRight} <a href="http://footbag.org/faq/">FAQ</a></li>
                 <li>${arrowRight} <a href="http://footbag.org/events/results">Tournament results</a></li>
-                <li>${arrowRight} <a href="http://footbag.org/clubs/index">Footbag clubs</a></li>
                 <li>${arrowRight} <a href="http://footbag.org/members/home">Member area</a></li>
                 <li>${arrowRight} <a href="https://www.justgiving.com/internationalfootbagplayersassociationincorporated">Donate</a></li>
             </ul>
