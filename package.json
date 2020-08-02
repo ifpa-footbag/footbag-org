@@ -51,6 +51,7 @@
     ],
     "ignorePatterns": [
       "coverage/",
+      "dist/",
       "docs/"
     ]
   },
