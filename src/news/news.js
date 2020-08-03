@@ -21,16 +21,37 @@
 const news = `
 <!-- ADD NEWS RIGHT BELOW THIS -->
 <news-item 
+  header="Watch Worlds Videos on IFPA YouTube channel"
+  image="images/videos.png"
+  long
+  short="Thanks to the online format of this year's Worlds we have a lot of great footage availiable for your eyes to feast on. The videos 
+	will be published to our official YouTube channel so if you missed our live broadcast we invite you to check out the action there."
+    date="June 2020">
+    <p>
+	The official IFPA YouTube channel can be found under the link below:
+	</p>
+	<p>
+	<a href="https://www.youtube.com/channel/UCs3hULDHOVOknWExWBVlLBw/">https://www.youtube.com/channel/UCs3hULDHOVOknWExWBVlLBw/</a>
+	</p>
+	<p>
+	And while we're at it here's the winning performance in Open Routines by our currect champion Jan Weber:
+	<youtube-video 
+      src="https://www.youtube.com/watch?v=xhVuZtDgjEw"
+      caption=""></youtube-video>
+	<p>
+	What a show! There were some amazing submissions in other categories as well, make sure to check them out!
+	</p>
+
+</news-item>
+
+<news-item 
   header="Online Freestyle WFC 2020 Finals results are here"
   image="images/worlds2020.png"
   long
-  short=""
-    date="June 2020">
-    <p>
-    The culminating point of this year's footbag season for Freestyle is now history. For the first time ever the IFPA organized 
+  short="The culminating point of this year's footbag season for Freestyle is now history. For the first time ever the IFPA organized 
 	an online-only competition with a live studio internet broadcast for the Finals Show. It was a massive success, gathering all 
-	the top players from all around the world who gave their best showcasing some unforgettable performances.
-	</p>
+	the top players from all around the world who gave their best showcasing some unforgettable performances."
+    date="June 2020">
 	<p>
 	All results have been posted on the Footbag Reference, and can be found under the following link:
 	</p>
