@@ -1,4 +1,4 @@
-import { angleDown } from './icons.js';
+import './main-menu.js';
 
 class NavigationBar extends HTMLElement {
   _render() {
@@ -47,7 +47,7 @@ class NavigationBar extends HTMLElement {
         width: 36px;
       }
       
-      h1 {
+      h1 a {
         font-size: var(--font-size-xlarge);
       }
 
@@ -94,16 +94,13 @@ class NavigationBar extends HTMLElement {
              </div>`
           : ''
       }
+      
       <img width="24px" height="24px" src="images/logo.png"></img>
       <h1>
-        Footbag Worldwide
-        </h1>
-      <a href="/footbag">Players
-        ${angleDown}
-      </a>
-      <a>Supporters 
-        ${angleDown}
-      </a>
+        <a href="/">Footbag Worldwide</a>
+      </h1>
+    
+      <main-menu></main-menu>
   
       <!--a href="http://footbag.org/ifpa/" target="_blank" class="ifpa">
         IFPA

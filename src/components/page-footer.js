@@ -64,6 +64,11 @@ class PageFooter extends HTMLElement {
 
         max-width: 10rem;        
       }
+
+      a {
+        color: var(--color-white);
+        text-decoration: none;
+      }
       `;
 
     const html = `
@@ -83,13 +88,13 @@ class PageFooter extends HTMLElement {
     
         <section>
           <h4>Discuss online</h4>
-          <p>${arrowRight}&nbsp;Facebook</p>
-          <p>${arrowRight}&nbsp;Instagram</p>  
+          <p><a href="https://www.facebook.com/footbag.org/">${arrowRight}&nbsp;Facebook</a></p>
+          <p><a href="https://www.instagram.com/footbag_sports/">${arrowRight}&nbsp;Instagram</a></p>  
         </section>
 
         <aside>
           <img src="images/ifpa.png" width="170px"></img>
-          <button>Contact us</button>
+          <!--button>Contact us</button-->
         </aside>
 
         </main>
