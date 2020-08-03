@@ -5,9 +5,9 @@ class EventItem extends HTMLElement {
     const style = `
       article {
         background-color: var(--color-white);
-        padding: var(--space-l);
+        padding: var(--grid-panel-padding);
         border-bottom: 1px solid #eee;
-        max-width: 100vw;
+        max-width: 100%;
       }
       article.highlight {
         background-color: var(--color-redlight);
@@ -23,7 +23,7 @@ class EventItem extends HTMLElement {
         color: var(--color-blue);
         font-size: var(--font-size-large);
         
-        margin: var(--space-s) 0 var(--space-m) 0;
+        margin: var(--space-s) 0 var(--space-l) 0;
       }
       .event_date {
         color: var(--color-red);
@@ -40,7 +40,7 @@ class EventItem extends HTMLElement {
         text-transform: uppercase;
       }
       .event_contact {
-        margin: var(--space-m) auto 0 0;
+        margin: var(--space-l) auto 0 0;
         color: var(--color-gray-800);
         font-size: var(--font-size-medium);
       }

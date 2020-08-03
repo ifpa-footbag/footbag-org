@@ -57,17 +57,28 @@ class PageFooter extends HTMLElement {
         margin-left: auto;
       }
 
-      button {
-        background: var(--color-white);
-        border-radius: 5rem;
-        padding: var(--space-m);
-
-        max-width: 10rem;        
+      .button {
+      
       }
 
       a {
         color: var(--color-white);
         text-decoration: none;
+      }
+
+      .button a {
+        background: var(--color-white);
+        border-radius: 5rem;
+        color: var(--color-blue);
+        display: block;
+
+        width: 10rem; 
+        padding: var(--space-m);      
+        text-align: center;
+      }
+
+      .button a svg {
+        fill: var(--color-blue);
       }
       `;
 
@@ -94,7 +105,9 @@ class PageFooter extends HTMLElement {
 
         <aside>
           <img src="images/ifpa.png" width="170px"></img>
-          <!--button>Contact us</button-->
+          <div class="button">
+            <a href="https://www.justgiving.com/internationalfootbagplayersassociationincorporated">${arrowRight}&nbsp;Donate</a>
+          </div>
         </aside>
 
         </main>
