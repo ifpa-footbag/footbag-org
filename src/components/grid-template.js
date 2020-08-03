@@ -10,12 +10,6 @@ class GridTemplate extends HTMLElement {
       align-items: stretch;
       margin: var(--grid-gap);
     }
-    ::slotted(:nth-child(even)) {
-      grid-row: span 3;
-    }
-    ::slotted(:nth-child(odd)) {
-      grid-row: span 2;
-    }
     .header {
       background-color: var(--color-blue);
       color: var(--color-white);

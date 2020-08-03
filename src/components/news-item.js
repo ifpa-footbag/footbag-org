@@ -5,53 +5,52 @@ class NewsItem extends HTMLElement {
     const style = `
       :host {
         background-color: var(--color-white);
-        display: inline-block;
+        display: flex;
+        flex-direction: column;
         font-size: var(--font-size-large);
-        max-width: 100vw;
+        max-width: 100%;
       }
-      :host([long]) {
-        grid-row: span 4 !important;
-      }
+
       a {
         color: inherit; 
         text-decoration: inherit; 
       }
+
       a:hover {
         color: var(--color-bluehover);
-       }
-      article {
-        padding: var(--grid-panel-padding);
       }
+    
       h3 {
         color: var(--color-blue);
         margin: 0 0 var(--space-m) 0;
       }
-      img {
-        padding-bottom: var(--space-m);
-        max-height: 8rem;
-        float: right;
-        margin: 0 var(--space-l);
+
+      img {   
+        max-width: 100%;
+        width: 100%;
       }
-      article[highlight] {
-        border: 3px solid var(--color-blue);
+
+
+      .news_header {
+        padding: var(--grid-panel-padding);
+        margin: 0;
       }
-      article[highlight-solid] {
-        background-color: var(--color-blue);
-        color: var(--color-white);
+
+      .news_body {
+        padding: 0 var(--grid-panel-padding);
       }
-      article[highlight-solid] > .news_header {
-        color: var(--color-orange);
-      }
-      article[highlight-solid] > .news_body {
-        color: var(--color-white);
-      }
+
       .news_body {
         line-height: var(--line-height-increased);
       }
+
       footer {
         color: var(--color-gray-800);
-        margin: var(--space-l) auto 0 0;
         font-size: var(--font-size-medium);
+
+        padding: var(--grid-panel-padding);
+        margin-top: auto;
+
         text-transform: uppercase;
       }
       svg {
@@ -59,19 +58,19 @@ class NewsItem extends HTMLElement {
       }
     `;
 
-    const html = `
-    <article> 
-      <h3 class="news_header">
-        <a href="/news/${this.getAttribute('header')}" class="nav-item">
-          ${this.getAttribute('header')}
-        </a>
-      </h3>
+    const html = ` 
       ${
         this.getAttribute('image') !== null
           ? `<img src="${this.getAttribute('image')}" />`
           : ``
       }
-    
+      
+      <h3 class="news_header">
+        <a href="/news/${this.getAttribute('header')}" class="nav-item">
+          ${this.getAttribute('header')}
+        </a>
+      </h3>
+      
       <div class="news_body">
         ${this.getAttribute('short') || ''}
         ${Boolean(this.getAttribute('open')) === true ? '<slot></slot>' : ''}
@@ -79,8 +78,6 @@ class NewsItem extends HTMLElement {
       <footer>
         ${calendarAlt} ${this.getAttribute('date') || ''}
       </footer>
-  
-    </article>
     `;
 
     this.shadowRoot.innerHTML = `

@@ -98,13 +98,13 @@ class MainPage extends HTMLElement {
         <grid-template header="Latest News">
             ${news}
             <div class="more more--news">
-              <a href="/news/all" slot="footer">More news ${arrowRight}</a>
+              <a href="/news/all" slot="footer">${arrowRight}&nbsp;More news</a>
             </div>
         </grid-template>
         <grid-template class="events" header="Upcoming Events" header-color="red">
             ${events}
             <div class="more more--events">
-              <a href="/event/all" slot="footer">More events ${arrowRight}</a>
+              <a href="/event/all" slot="footer">${arrowRight}&nbsp;More events</a>
             </div>
         </grid-template>
     </main>
