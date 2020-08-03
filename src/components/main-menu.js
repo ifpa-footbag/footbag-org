@@ -66,7 +66,7 @@ class MainMenu extends HTMLElement {
             <h4>Old site ${externalLinkAlt}</h4>
             <ul>
                 <li>${arrowRight} <a href="http://footbag.org/reference/-/Footbag_Reference_Area">Footbag disciplines</a></li>
-                <li>${arrowRight} <a href="http://footbag.org/rules/">Rules</a></li>
+                <li>${arrowRight} <a href="/rules">Rules</a></li>
                 <li>${arrowRight} <a href="http://footbag.org/faq/">FAQ</a></li>
                 <li>${arrowRight} <a href="http://footbag.org/events/results">Tournament results</a></li>
                 <li>${arrowRight} <a href="http://footbag.org/members/home">Member area</a></li>
