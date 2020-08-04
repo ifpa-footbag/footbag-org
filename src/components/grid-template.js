@@ -10,8 +10,9 @@ class GridTemplate extends HTMLElement {
       align-items: stretch;
       margin: var(--grid-gap);
     }
-    .header {
-      background-color: var(--color-blue);
+
+    header {
+      background: var(--header-color, var(--color-blue));
       color: var(--color-white);
       font-size: var(--font-size-small);
       font-weight: var(--font-weight-boldest);
@@ -20,9 +21,13 @@ class GridTemplate extends HTMLElement {
       padding: var(--space-s) var(--grid-panel-padding);
       margin: 0;
     }
-    .header.red {
-      background-color: var(--color-red);
+    
+
+    img {   
+      max-width: 100%;
+      width: 100%;
     }
+
     h2 {
       font-size: var(--font-size-large);
       font-weight: 900;
@@ -36,9 +41,14 @@ class GridTemplate extends HTMLElement {
   `;
 
     const html = `
-      <header class="header ${this.getAttribute('header-color')}">
+      <header>
         <h2>${this.getAttribute('header') || ''}</h2>
       </header>
+      ${
+        this.getAttribute('image') !== null
+          ? `<img src="${this.getAttribute('image')}" />`
+          : ``
+      }
       <slot></slot>
       
       <slot name="footer"></slot>

@@ -2,6 +2,7 @@ import './components/grid-template.js';
 import './components/event-item.js';
 import './components/navigation-bar.js';
 import './components/hero-video.js';
+import './components/players-association.js';
 
 import { arrowRight } from './components/icons.js';
 
@@ -40,20 +41,33 @@ class MainPage extends HTMLElement {
       }
     }
 
-    main {
+    .events-and-news {
         display: grid;
         margin: 0 auto;
     }
     @media only screen and (min-width: 692px) {
-        main {
-          grid-template-columns: 2fr 1fr;
-        }
+      .events-and-news {
+        grid-template-columns: 2fr 1fr;
+      }
+    }
+
+    .intro-and-links {
+      display: grid;
+      padding: 0 var(--grid-gap);
+      margin: 0 auto;
+    }
+
+    @media only screen and (min-width: 692px) {
+      .intro-and-links {
+        grid-template-columns: 1fr 1fr;
+        grid-gap: var(--grid-gap);
+      }
     }
     
 
     .events{
       --grid-gap: 0;
-      background-color: var(--color-white);
+      --header-color: var(--color-red);
       margin-bottom: var(--space-l);
     }
     .more {
@@ -91,24 +105,29 @@ class MainPage extends HTMLElement {
       <navigation-bar></navigation-bar> 
     </header>
     
-    
     <hero-video></hero-video>
     
-    <main>
+    <section class="events-and-news">
         <grid-template header="Latest News">
             ${news}
             <div class="more more--news">
               <a href="/news/all" slot="footer">${arrowRight}&nbsp;More news</a>
             </div>
         </grid-template>
-        <grid-template class="events" header="Upcoming Events" header-color="red">
+        <grid-template class="events" header="Upcoming Events">
             ${events}
             <div class="more more--events">
               <a href="/event/all" slot="footer">${arrowRight}&nbsp;More events</a>
             </div>
         </grid-template>
-    </main>
-   
+    </section>
+    
+    <section class="intro-and-links"> 
+      <players-association></players-association>
+      <players-association style="--header-color: var(--color-red)"></players-association>
+      <players-association style="--header-color: var(--color-red)"></players-association>
+      <players-association></players-association>
+    <section>
     `;
 
     this.shadowRoot.innerHTML = `

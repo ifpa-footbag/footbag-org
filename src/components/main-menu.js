@@ -61,6 +61,7 @@ class MainMenu extends HTMLElement {
         <div role="menu" ${this.open === true ? '' : 'hidden'}>
             <ul>
                 <li><a href="/">${arrowRight} Home</a></li>
+                <li><a href="/footbag">${arrowRight} What is footbag?</a></li>
                 <li><a href="/getting-started">${arrowRight} Getting started</a></li>
             </ul>
             <h4>Old site ${externalLinkAlt}</h4>
