@@ -48,11 +48,11 @@ class NewsItem extends HTMLElement {
     this.attachShadow({ mode: 'open' });
     this._render();
   }
-  
+
   _render() {
     const styles = `article { color: red }`;
     const html = `
-       <article> 
+       <article>
          Add some content here
        </article>
     `;
@@ -66,7 +66,8 @@ class NewsItem extends HTMLElement {
 
 customElements.define('news-item', NewsItem);
 ```
-Notice how shadowDOM is attached to the element and HTML and CSS appended to the shadowDOM. That way, HTML and CSS are encapsulated inside shadowDOM and not leaking outside. They can be referred using "this.shadowRoot", e.g. this.shadowRoot.querySelector('article'). 
+
+Notice how shadowDOM is attached to the element and HTML and CSS appended to the shadowDOM. That way, HTML and CSS are encapsulated inside shadowDOM and not leaking outside. They can be referred using "this.shadowRoot", e.g. this.shadowRoot.querySelector('article').
 
 customElement.define registers the element in the DOM and it can then be used like native HTML elements:
 
@@ -84,13 +85,13 @@ class NewsPage extends HTMLElement {
 
 #### Lifecycle callbacks
 
-Main lifecycle callbacks for custom elements are constructor, connectedCallback, observedAttributes and attributeChangedCallback. Constructor is the place to attach shadowRoot, define event listeners and init values. 
+Main lifecycle callbacks for custom elements are constructor, connectedCallback, observedAttributes and attributeChangedCallback. Constructor is the place to attach shadowRoot, define event listeners and init values.
 
 ```
 constructor() {
    super();
    this.attachShadow({ mode: 'open' });
-   
+
    this._count = 0;
    this.shadowRoot.addEventListener('my-event', (event) => this.myFunctionToBeCalled(event));
 }
@@ -106,18 +107,19 @@ connectedCallback(){
 ```
 
 ObservedAttributes defines which attributes are observed - or which attributes trigger attributeChangedCallback()
+
 ```
 static get observedAttributes() { return ['header']; }
 ```
 
 When attribute is defined to be observed, then its change triggers attributeChangedCallback() function. Typically you want to re-render HTML, orfetch some data
+
 ```
 attributeChangedCallback(name, oldValue, newValue) {
   console.log('One of the attributes changed');
   this._render();
 }
 ```
-
 
 #### Inter-component communication
 
@@ -133,7 +135,7 @@ Attribute (String only):
 Property (Any type):
 this.shadowRoot.querySelector(news-item).header = "Breaking news"
 
-listening event: 
+listening event:
 this.shadowRoot.addEventListener('my-event', (event) => this.myFunctionToBeCalled(event));
 
 News-item.js
@@ -146,34 +148,34 @@ More information about Web components:
 https://developers.google.com/web/fundamentals/web-components/customelements
 https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements
 
-
 ## Component Structure
 
 ```
 index.html (includes HTML <head>)
     footbag-app (includes router, which takes care of switching pages)
         main-page
-            navigation-bar
-            hero-video
-            grid-template columns="2" header="News"
-                news.js
-                    news-item
-                    news-item
-                ...
+          navigation-bar
+          hero-video
+          card-element (news, 2 columns)
+              news.js
+                  news-item
+                  news-item
+              ...
 
-            grid-template columns="1" header="Events"
-                event-item
-                event-item
-                ...
+          card-element (events, 1 column)
+              event-item
+              event-item
+              ...
+        getting-started-page
+          navigation-bar
+          page-one-column
+            news-item
+            ...
+
         footbag-page
-            grid-template columns="2" header="Footbag Sports"
-                    navigation-bar
-
+          page-two-columns
         event-page
-            grid-template columns="1" header="event name"
-                event-item
+          page-one-column
         news-page
-            grid-template columns="1" header="news name"
-                news-page
-
+          page-one-column
 ```

@@ -1,4 +1,16 @@
-class GridTemplate extends HTMLElement {
+/**
+ * Card Element
+ *
+ * Container to show content from the single subject. Having
+ *  - header
+ *  - image
+ *  - content
+ *  - footer
+ * sections. Take a look at Latest news, upcoming events or players association for example.
+ * Notice that card can contain smaller elements, that are card-like as well.
+ * E.g. news-item and event-item
+ */
+class CardElement extends HTMLElement {
   _render() {
     const style = `
     slot {
@@ -72,4 +84,4 @@ class GridTemplate extends HTMLElement {
   }
 }
 
-customElements.define('grid-template', GridTemplate);
+customElements.define('card-element', CardElement);

@@ -1,4 +1,4 @@
-import './grid-template.js';
+import './card-element.js';
 import { arrowRight } from './icons.js';
 
 class PlayersAssociation extends HTMLElement {
@@ -34,7 +34,7 @@ class PlayersAssociation extends HTMLElement {
         `;
 
     const html = ` 
-      <grid-template header="Players's association" image="images/front-page/players-association.jpg"> 
+      <card-element header="Players's association" image="images/front-page/players-association.jpg"> 
           <p>
             The International Footbag Players' Association is a volunteer-run,
             charitable non-profit corporation, dedicated to the growth of
@@ -46,7 +46,7 @@ class PlayersAssociation extends HTMLElement {
             <a href="">${arrowRight}&nbsp;Join now</a>
             <a href="">${arrowRight}&nbsp;Official rules</a>
           </div>
-        </grid-template>
+        </card-element>
       `;
 
     this.shadowRoot.innerHTML = `

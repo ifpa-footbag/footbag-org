@@ -1,4 +1,4 @@
-import './components/grid-template.js';
+import './components/card-element.js';
 import './components/event-item.js';
 import './components/navigation-bar.js';
 import './components/hero-video.js';
@@ -108,18 +108,18 @@ class MainPage extends HTMLElement {
     <hero-video></hero-video>
     
     <section class="events-and-news">
-        <grid-template header="Latest News">
+        <card-element header="Latest News">
             ${news}
             <div class="more more--news">
               <a href="/news/all" slot="footer">${arrowRight}&nbsp;More news</a>
             </div>
-        </grid-template>
-        <grid-template class="events" header="Upcoming Events">
+        </card-element>
+        <card-element class="events" header="Upcoming Events">
             ${events}
             <div class="more more--events">
               <a href="/event/all" slot="footer">${arrowRight}&nbsp;More events</a>
             </div>
-        </grid-template>
+        </card-element>
     </section>
     
     <section class="intro-and-links"> 
