@@ -2,7 +2,7 @@ import './components/card-element.js';
 import './components/event-item.js';
 import './components/navigation-bar.js';
 import './components/hero-video.js';
-import './components/players-association.js';
+import './components/info-and-links.js';
 
 import { arrowRight } from './components/icons.js';
 
@@ -50,20 +50,6 @@ class MainPage extends HTMLElement {
         grid-template-columns: 2fr 1fr;
       }
     }
-
-    .intro-and-links {
-      display: grid;
-      padding: 0 var(--grid-gap);
-      margin: 0 auto;
-    }
-
-    @media only screen and (min-width: 692px) {
-      .intro-and-links {
-        grid-template-columns: 1fr 1fr;
-        grid-gap: var(--grid-gap);
-      }
-    }
-    
 
     .events{
       --grid-gap: 0;
@@ -122,12 +108,8 @@ class MainPage extends HTMLElement {
         </card-element>
     </section>
     
-    <section class="intro-and-links"> 
-      <players-association></players-association>
-      <players-association style="--header-color: var(--color-red)"></players-association>
-      <players-association style="--header-color: var(--color-red)"></players-association>
-      <players-association></players-association>
-    <section>
+    
+    <info-and-links></info-and-links>
     `;
 
     this.shadowRoot.innerHTML = `

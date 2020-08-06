@@ -80,6 +80,10 @@ class PageFooter extends HTMLElement {
       .button a svg {
         fill: var(--color-blue);
       }
+
+      a {
+        display: block;
+      }
       `;
 
     const html = `
@@ -92,9 +96,13 @@ class PageFooter extends HTMLElement {
       </header>
       <main>
         <section>
-          <h4>Feedback</h4>
-          <p>${arrowRight}&nbsp;Organizing event? events@footbag.org</p>
-          <p>${arrowRight}&nbsp;Any other matters? other@footbag.org</p>  
+          <h4>Contact us</h4>
+          <p>What is missing from the site? Give us feedback! 
+            <a href="mailto:feedback@footbag.org">${arrowRight}&nbsp;feedback@footbag.org</a>
+          </p>
+          <p>Any other matters? 
+            <a href="mailto:contact@footbag.org">${arrowRight}&nbsp;contact@footbag.org</a>
+          </p>  
         </section>
     
         <section>

@@ -23,7 +23,6 @@ const news = `
 <news-item 
   header="Watch Worlds Videos on IFPA YouTube channel"
   image="images/videos.png"
-  long
   short="Thanks to the online format of this year's Worlds we have a lot of great footage availiable for your eyes to feast on. The videos 
 	will be published to our official YouTube channel so if you missed our live broadcast we invite you to check out the action there."
     date="June 2020">
@@ -47,7 +46,6 @@ const news = `
 <news-item 
   header="Online Freestyle WFC 2020 Finals results are here"
   image="images/worlds2020.png"
-  long
   short="The culminating point of this year's footbag season for Freestyle is now history. For the first time ever the IFPA organized 
 	an online-only competition with a live studio internet broadcast for the Finals Show. It was a massive success, gathering all 
 	the top players from all around the world who gave their best showcasing some unforgettable performances."
@@ -77,7 +75,6 @@ const news = `
 <news-item 
   header="Online Freestyle WFC 2020 Finals start today!"
   image="images/worlds2020.png"
-  long
   short="This weekend will be unforgettable! The first Online Freestyle Footbag World Championships has brought us unseen tricks, 
 	unforgettable battles, breathtaking routines, the hardest Sick 3s of all time, and more players than in any of the previous 
 	10 years. And it all comes to a close at the same time in every corner of the World with a professionally streamed live show 
@@ -106,7 +103,6 @@ const news = `
 <news-item 
   header="Footbag is going online in corona time!"
   image="images/net.jpg"
-  long
   short="Corona Virus affects footbaggers as well. Trainings have been cancelled, gyms are closed and gatherings limited in 
     many places. But footbaggers are not standing still, as freestyle footbag suits isolation really well: You only need 
     your footbag and a little bit of space indoors or outdoors. Some freestylers are even having online shred sessions to 
