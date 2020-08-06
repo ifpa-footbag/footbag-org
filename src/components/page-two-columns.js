@@ -3,7 +3,6 @@ class PageTwoColumns extends HTMLElement {
     const style = `
     slot {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       grid-auto-rows: minmax(44px, auto);
       grid-gap: var(--grid-gap);
       margin: 0 var(--grid-gap) var(--grid-gap) var(--grid-gap);
@@ -12,6 +11,18 @@ class PageTwoColumns extends HTMLElement {
       margin: 0 auto;
       margin-top: 2rem;
     }
+
+    .events-and-news {
+      display: grid;
+      margin: 0 auto;
+  }
+  @media only screen and (min-width: 692px) {
+    .slot {
+      grid-template-columns: 2fr 1fr;
+    }
+  }
+
+
     ::slotted(.header) {
       background-color: var(--color-blue);
       color: var(--color-white);

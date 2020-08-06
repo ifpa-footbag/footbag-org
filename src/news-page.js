@@ -1,4 +1,4 @@
-import './components/page-one-column.js';
+import './components/page-two-columns.js';
 import './components/navigation-bar.js';
 import './components/hero-video.js';
 
@@ -15,12 +15,9 @@ class NewsPage extends HTMLElement {
     const html = `
       <navigation-bar back></navigation-bar>
         
-      <page-one-column>
-        <header class="header">
-          <h2>News</h2>
-        </header>
+      <page-two-columns>
         ${news}
-      </page-one-column>
+      </page-two-columns>
     `;
 
     this.shadowRoot.innerHTML = `
@@ -29,9 +26,8 @@ class NewsPage extends HTMLElement {
     </style>
     ${html}
     `;
-    setTimeout(() => {
-      this._hideNews();
-    }, 50);
+
+    this._hideNews();
   }
 
   constructor() {
@@ -49,7 +45,7 @@ class NewsPage extends HTMLElement {
 
   _hideNews() {
     const items = this.shadowRoot
-      .querySelector('page-one-column')
+      .querySelector('page-two-columns')
       .querySelectorAll('news-item');
 
     items.forEach(item => {
