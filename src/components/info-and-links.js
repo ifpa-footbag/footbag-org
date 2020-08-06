@@ -60,7 +60,7 @@ class InfoAndLinks extends HTMLElement {
     const html = `
       <section>
         <!-- LEARN MORE ABOUT FOOTBAG -->
-        <card-element header="Footbag" image="images/front-page/players-association.jpg"> 
+        <card-element header="Footbag" image="images/front-page/footbag.jpg"> 
             <p>
               is a series of sports where players use their feet to
               kick a small round bag or ball. Footbag's current form came
