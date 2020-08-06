@@ -9,17 +9,22 @@ class NewsItem extends HTMLElement {
         flex-direction: column;
         font-size: var(--font-size-large);
         max-width: 100%;
+        overflow-wrap: anywhere;
+      }
+
+      :host([open]) {
+        padding: var(--space-xl);
       }
 
       a {
         color: inherit; 
-        text-decoration: inherit; 
+        text-decoration: inherit;
       }
 
       a:hover {
         color: var(--color-bluehover);
       }
-    
+      
       h3 {
         color: var(--color-blue);
         margin: 0 0 var(--space-m) 0;
@@ -30,10 +35,20 @@ class NewsItem extends HTMLElement {
         width: 100%;
       }
 
+      .image--open {
+        margin-top: var(--space-l);
+        margin-bottom: var(--space-xl);
+      }
 
       .news_header {
         padding: var(--grid-panel-padding);
         margin: 0;
+      }
+
+      .large {
+        font-size: var(--font-size-xxxlarge);
+        padding-right: 0;
+        padding-left: 0;
       }
 
       .news_body {
@@ -60,16 +75,26 @@ class NewsItem extends HTMLElement {
 
     const html = ` 
       ${
-        this.getAttribute('image') !== null
+        this.getAttribute('image') !== null &&
+        this.getAttribute('open') === null
           ? `<img src="${this.getAttribute('image')}" />`
           : ``
       }
       
-      <h3 class="news_header">
+      <h3 class="news_header ${
+        this.getAttribute('open') !== null ? `large` : ``
+      }">
         <a href="/news/${this.getAttribute('header')}" class="nav-item">
           ${this.getAttribute('header')}
         </a>
       </h3>
+
+      ${
+        this.getAttribute('image') !== null &&
+        this.getAttribute('open') !== null
+          ? `<img class="image--open" src="${this.getAttribute('image')}" />`
+          : ``
+      }
       
       <div class="news_body">
         ${this.getAttribute('short') || ''}

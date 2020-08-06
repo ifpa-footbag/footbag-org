@@ -65,15 +65,18 @@ class NavigationBar extends HTMLElement {
     .back {
       background-color: var(--color-blue);
       color: var(--color-orange);
+      display: flex;
+      justify-content: center;
+      align-items: center;
       font-weight: var(--font-weight-boldest);
       position: fixed;
-      bottom: 0;
-      left: 0;
-      padding: var(--space-m) var(--space-s) var(--space-m) var(--space-s);
-    }
+      bottom: 5%;
+      left: 5%;
 
-    .back-link {
-      margin-right: auto;
+      text-align: center;
+      border-radius: 50%;
+      height: 5rem;
+      width: 5rem;
     }
 
     svg {
