@@ -1,6 +1,6 @@
 import './components/page-one-column.js';
 import './components/navigation-bar.js';
-import './components/news-item.js';
+import './components/card-element.js';
 import './components/youtube-video.js';
 
 class GettingStartedPage extends HTMLElement {
@@ -21,11 +21,8 @@ class GettingStartedPage extends HTMLElement {
     const html = `
       <navigation-bar back></navigation-bar>
       
-      <page-one-column>
-        <header class="header">
-        <h2>Getting Started</h2>
-        </header>
-        <news-item image="images/casual.jpg" header="" open="true">
+      <page-one-column header="Getting Started Playing Footbag">
+        <card-element image="images/casual.jpg">
         <p>
           Want to start playing footbag? Not sure where to start? We are here to help.
 		  This guide will help you take your first step into this incredible world of 
@@ -52,8 +49,8 @@ class GettingStartedPage extends HTMLElement {
 		<h3>Find a club near you</h2>
 		Want to find other people who play? Check the club listings at <a href="http://footbag.org/clubs/">http://footbag.org/clubs/</a> 
 		or start your own if you already have a group kicking together.
-        </news-item>
-      </page-two-columns>
+        </card-element>
+      </page-one-column>
     `;
 
     this.shadowRoot.innerHTML = `

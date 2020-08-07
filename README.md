@@ -173,7 +173,7 @@ index.html (includes HTML <head>)
             ...
 
         footbag-page
-          page-two-columns
+          page-one-column
         event-page
           page-one-column
         news-page

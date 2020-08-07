@@ -10,10 +10,13 @@ class NewsItem extends HTMLElement {
         font-size: var(--font-size-large);
         max-width: 100%;
         overflow-wrap: anywhere;
+
+        --content-padding: var(--grid-panel-padding);
       }
 
       :host([open]) {
-        padding: var(--space-xl);
+        padding: 0;
+        --content-padding: 0;
       }
 
       a {
@@ -28,6 +31,7 @@ class NewsItem extends HTMLElement {
       h3 {
         color: var(--color-blue);
         margin: 0 0 var(--space-m) 0;
+        padding: var(--grid-panel-padding);
       }
 
       img {   
@@ -35,24 +39,19 @@ class NewsItem extends HTMLElement {
         width: 100%;
       }
 
-      .image--open {
+      :host([open]) img {
         margin-top: var(--space-l);
         margin-bottom: var(--space-xl);
       }
 
-      .news_header {
-        padding: var(--grid-panel-padding);
-        margin: 0;
-      }
-
-      .large {
+      :host([open]) h3 {
         font-size: var(--font-size-xxxlarge);
         padding-right: 0;
         padding-left: 0;
       }
 
       .news_body {
-        padding: 0 var(--grid-panel-padding);
+        padding: 0 var(--content-padding);
       }
 
       .news_body {
@@ -63,7 +62,7 @@ class NewsItem extends HTMLElement {
         color: var(--color-gray-800);
         font-size: var(--font-size-medium);
 
-        padding: var(--grid-panel-padding);
+        padding: var(--content-padding);
         margin-top: auto;
 
         text-transform: uppercase;
@@ -81,9 +80,7 @@ class NewsItem extends HTMLElement {
           : ``
       }
       
-      <h3 class="news_header ${
-        this.getAttribute('open') !== null ? `large` : ``
-      }">
+      <h3>
         <a href="/news/${this.getAttribute('header')}" class="nav-item">
           ${this.getAttribute('header')}
         </a>
@@ -92,7 +89,7 @@ class NewsItem extends HTMLElement {
       ${
         this.getAttribute('image') !== null &&
         this.getAttribute('open') !== null
-          ? `<img class="image--open" src="${this.getAttribute('image')}" />`
+          ? `<img src="${this.getAttribute('image')}" />`
           : ``
       }
       

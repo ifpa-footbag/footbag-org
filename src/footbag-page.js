@@ -1,4 +1,4 @@
-import './components/page-two-columns.js';
+import './components/page-one-column.js';
 import './components/navigation-bar.js';
 import './components/card-element.js';
 
@@ -11,9 +11,9 @@ class FootbagPage extends HTMLElement {
     const html = `
       <navigation-bar back></navigation-bar>
       
-      <page-two-columns>
+      <page-one-column header="What is Footbag?">
         
-        <card-element header="Footbag net" image="images/net.jpg"> 
+        <card-element image="images/net.jpg"> 
         <p>
           Footbag Net is a singles or doubles court game, where players use only
           their feet to kick the footbag over a net. The size of the court and
@@ -32,7 +32,8 @@ class FootbagPage extends HTMLElement {
           preparing to counter attack.
         </p>
         </card-element>
-        <card-element image="images/freestyle.jpg" header="Footbag Freestyle">
+        <h3>Footbag freestyle</h3>
+        <card-element image="images/freestyle.jpg">
         <p>
           The object of Freestyle Footbag is perform tricks with the bag. It has
           evolved from its roots into a very technical competitive discipline.
@@ -50,7 +51,7 @@ class FootbagPage extends HTMLElement {
           components.
         </p>
         </card-element>
-      </page-two-columns>
+      </page-one-column>
     `;
 
     this.shadowRoot.innerHTML = `

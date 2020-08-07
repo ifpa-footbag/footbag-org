@@ -57,8 +57,18 @@ class MainPage extends HTMLElement {
       margin-bottom: var(--space-l);
     }
 
-    .news {
+    .card-element-news {
       --card-background: transparent;
+      --content-margin: var(--space-l);
+    }
+
+    .news {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      grid-auto-rows: minmax(22px, auto);
+      grid-gap: var(--grid-gap);
+      justify-items: stretch;
+      align-items: stretch;
     }
 
     .more {
@@ -99,11 +109,13 @@ class MainPage extends HTMLElement {
     <hero-video></hero-video>
     
     <section class="events-and-news">
-        <card-element class="news" header="Latest News">
+        <card-element class="card-element-news" header="Latest News">
+          <div class="news">
             ${news}
             <div class="more more--news">
               <a href="/news/all" slot="footer">${arrowRight}&nbsp;More news</a>
             </div>
+          </div>
         </card-element>
         <card-element class="events" header="Upcoming Events">
             ${events}

@@ -1,45 +1,43 @@
 class PageOneColumn extends HTMLElement {
   _render() {
     const style = `
-    slot {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-auto-rows: minmax(44px, auto);
-      grid-gap: var(--grid-gap);
-      margin: 0 var(--grid-gap) var(--grid-gap) var(--grid-gap);
+    :host {
+      display: block;
+      background: var(--color-white);
       
       max-width: 765px;
       margin: 0 auto;
-      margin-top: 2rem;
+    
+      padding: var(--space-xl);
     }
-    ::slotted(.header) {
-      background-color: var(--color-blue);
-      color: var(--color-white);
-      font-size: var(--font-size-small);
-      font-weight: var(--font-weight-boldest);
-      max-width: 100vw;
-      text-transform: uppercase;
-      grid-column: 1 / -1;
-      padding: 0 var(--grid-panel-padding);
-      margin: 0 var(--grid-gap-negative);
+
+    @media only screen and (min-width: 692px) {
+      :host {     
+        margin-top: var(--space-xl);
+        margin-bottom: var(--space-xl);
+      }
     }
-    ::slotted(.header.red) {
-      background-color: var(--color-red);
+
+
+    h2 {
+      font-size: var(--font-size-xxxlarge);
+      margin-top: var(--space-xl);
+      padding: 0;
     }
-    ::slotted(h2) {
-      font-size: var(--font-size-medium);
-      margin: 0;
+
+    slot {
     }
   `;
 
     const html = `
-  <slot></slot>`;
+    <h2>${this.getAttribute('header') || ''}</h2>
+    <slot></slot>`;
 
     this.shadowRoot.innerHTML = `
-  <style>
-    ${style}
-  </style>
-  ${html}
+    <style>
+      ${style}
+    </style>
+    ${html}
   `;
   }
 

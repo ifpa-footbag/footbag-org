@@ -63,6 +63,7 @@ class MainMenu extends HTMLElement {
                 <li><a href="/">${arrowRight} Home</a></li>
                 <li><a href="/footbag">${arrowRight} What is footbag?</a></li>
                 <li><a href="/getting-started">${arrowRight} Getting started</a></li>
+                <li><a href="/rules">${arrowRight} Rules</a></li>
             </ul>
             <h4>Old site ${externalLinkAlt}</h4>
             <ul>

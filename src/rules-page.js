@@ -196,7 +196,7 @@ class RulesPage extends HTMLElement {
 		<h3>111.02. Inspection</h3>
 		A copy of the IFC rules, then in effect, shall be present for inspection by any player upon request at any IFPA-sanctioned tournament. A player may request a copy of the rules for his own use and shall be provided with same upon receipt of the request by the IFPA or its agent and upon payment of a nominal fee as set by the IFPA.
 		</news-item>
-      </page-two-columns>
+      </page-one-column>
     `;
 
     this.shadowRoot.innerHTML = `
