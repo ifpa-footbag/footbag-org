@@ -56,6 +56,11 @@ class MainPage extends HTMLElement {
       --header-color: var(--color-red);
       margin-bottom: var(--space-l);
     }
+
+    .news {
+      --card-background: transparent;
+    }
+
     .more {
       justify-self: center;
       display: block;
@@ -94,7 +99,7 @@ class MainPage extends HTMLElement {
     <hero-video></hero-video>
     
     <section class="events-and-news">
-        <card-element header="Latest News">
+        <card-element class="news" header="Latest News">
             ${news}
             <div class="more more--news">
               <a href="/news/all" slot="footer">${arrowRight}&nbsp;More news</a>

@@ -78,6 +78,10 @@ class FootbagApp extends HTMLElement {
       { path: 'news/:news', component: 'news-page' },
       { path: '(.*)', component: 'main-page' },
     ]);
+
+    window.addEventListener('vaadin-router-location-changed', () => {
+      window.scrollTo(0, 0);
+    });
   }
 }
 

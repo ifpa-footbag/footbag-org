@@ -13,6 +13,11 @@
 class CardElement extends HTMLElement {
   _render() {
     const style = `
+    :host {
+      display: block;
+      background: var(--card-background, var(--color-white));
+    }
+    
     slot {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
