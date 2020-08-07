@@ -64,6 +64,8 @@ class NavigationBar extends HTMLElement {
     
     .back {
       background-color: var(--color-blue);
+      box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.7);
+
       color: var(--color-orange);
       display: flex;
       justify-content: center;
@@ -77,6 +79,8 @@ class NavigationBar extends HTMLElement {
       border-radius: 50%;
       height: 5rem;
       width: 5rem;
+
+      z-index: 2;
     }
 
     svg {

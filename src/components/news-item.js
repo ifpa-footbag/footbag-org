@@ -30,8 +30,8 @@ class NewsItem extends HTMLElement {
       
       h3 {
         color: var(--color-blue);
-        margin: 0 0 var(--space-m) 0;
-        padding: var(--grid-panel-padding);
+        margin: 0;
+        padding: var(--space-xl) var(--content-padding);
       }
 
       img {   
@@ -40,14 +40,17 @@ class NewsItem extends HTMLElement {
       }
 
       :host([open]) img {
-        margin-top: var(--space-l);
         margin-bottom: var(--space-xl);
       }
 
       :host([open]) h3 {
-        font-size: var(--font-size-xxxlarge);
-        padding-right: 0;
-        padding-left: 0;
+        font-size: var(--font-size-xxlarge);
+      }
+
+      @media only screen and (min-width: 765px) {
+        :host([open]) h3 {
+          font-size: var(--font-size-xxxlarge);
+        } 
       }
 
       .news_body {

@@ -3,12 +3,21 @@ import { calendarAlt, mapMarkerAlt } from './icons.js';
 class EventItem extends HTMLElement {
   _render() {
     const style = `
+      :host {
+        display: block;
+      }
+
       article {
         background-color: var(--color-white);
         padding: var(--grid-panel-padding);
         border-bottom: 1px solid #eee;
         max-width: 100%;
       }
+
+      :host([open]) article {
+        border-bottom: none;
+      }
+
       article.highlight {
         background-color: var(--color-redlight);
       }
@@ -25,6 +34,17 @@ class EventItem extends HTMLElement {
         
         margin: var(--space-s) 0 var(--space-l) 0;
       }
+
+      :host([open]) h3 {
+        font-size: var(--font-size-xxlarge);
+      }
+
+      @media only screen and (min-width: 765px) {
+        :host([open]) h3 {
+          font-size: var(--font-size-xxxlarge);
+        } 
+      }
+
       .event_date {
         color: var(--color-red);
         font-size: var(--font-size-medium);

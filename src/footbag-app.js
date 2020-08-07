@@ -11,6 +11,10 @@ import './components/page-footer.js';
 class FootbagApp extends HTMLElement {
   _render() {
     const style = `
+    :host {
+      display: block;
+    }
+
     #page-placeholder {
       background: var(--content-background);
     }

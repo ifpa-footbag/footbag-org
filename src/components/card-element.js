@@ -16,7 +16,7 @@ class CardElement extends HTMLElement {
     :host {
       display: block;
       background: var(--card-background, var(--color-white));
-      --content-margin: 1rem;
+      --content-margin: var(--space-l) 0;
     }
 
     header {
@@ -38,7 +38,7 @@ class CardElement extends HTMLElement {
 
     h2 {
       font-size: var(--font-size-large);
-      font-weight: 900;
+      font-weight: var(--font-weight-boldest);
       margin: 0;
       padding: var(--space-m) 0;
     }
@@ -46,10 +46,6 @@ class CardElement extends HTMLElement {
     slot {
       display: block;
       margin: var(--content-margin);
-    }
-
-    slot[name=footer] {
-      grid-column: 1 / -1;
     }
   `;
 

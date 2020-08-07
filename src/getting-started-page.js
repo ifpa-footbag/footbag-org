@@ -6,15 +6,8 @@ import './components/youtube-video.js';
 class GettingStartedPage extends HTMLElement {
   _render() {
     const style = `
-      .main-grid {
-        display: grid;
-        max-width: var(--max-content-width);
-        margin: 0 auto;
-      }
-      @media only screen and (min-width: 520px) {
-          .main-grid {
-          grid-template-columns: 2fr 1fr;
-          }
+      :host {
+        display: block;
       }
     `;
 

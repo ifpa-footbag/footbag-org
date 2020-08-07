@@ -17,9 +17,6 @@ class EventsPage extends HTMLElement {
   <navigation-bar back></navigation-bar>
  
       <page-one-column>
-        <header class="header">
-          <h2>events</h2>
-        </header>
         ${events}
       </page-one-column>
   

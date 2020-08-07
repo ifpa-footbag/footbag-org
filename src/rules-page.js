@@ -1,6 +1,6 @@
 import './components/page-one-column.js';
 import './components/navigation-bar.js';
-import './components/news-item.js';
+import './components/card-element.js';
 
 class RulesPage extends HTMLElement {
   _render() {
@@ -20,11 +20,9 @@ class RulesPage extends HTMLElement {
     const html = `
       <navigation-bar back></navigation-bar>
       
-      <page-one-column>
-        <header class="header">
-        <h2>Official Rules of Footbag Sports</h2>
-        </header>
-        <news-item image="" header="" open="true">
+      <page-one-column header="Official Rules of Footbag Sports">
+        
+        <card-element>
         <p>
         Published by the International Footbag Committee under the auspices of the International Footbag Players' Association.
 		</p>
@@ -195,7 +193,7 @@ class RulesPage extends HTMLElement {
 		The IFC rules shall be published and appear in a book, pamphlet or other printed material. The effective date of the rules shall be conspicuously noted on the initial page or cover of said printed edition.
 		<h3>111.02. Inspection</h3>
 		A copy of the IFC rules, then in effect, shall be present for inspection by any player upon request at any IFPA-sanctioned tournament. A player may request a copy of the rules for his own use and shall be provided with same upon receipt of the request by the IFPA or its agent and upon payment of a nominal fee as set by the IFPA.
-		</news-item>
+		</card-element>
       </page-one-column>
     `;
 
