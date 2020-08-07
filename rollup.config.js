@@ -36,6 +36,7 @@ export default merge(baseConfig, {
       targets: [
         { src: './images/**/*', dest: './dist/' },
         { src: './videos/**/*', dest: './dist/' },
+        { src: './404.html', dest: './dist/' },
       ],
       // set flatten to false to preserve folder structure
       flatten: false,
