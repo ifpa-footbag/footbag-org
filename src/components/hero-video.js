@@ -24,6 +24,8 @@ class HeroVideo extends HTMLElement {
       color: var(--color-white);
       opacity: 0.8;
       padding: var(--space-l);
+
+      transition: 0.4s;
     }
     h2 {
       color: var(--color-orange);
@@ -63,11 +65,18 @@ class HeroVideo extends HTMLElement {
         width: 17rem;
       }
     }
+
+    figcaption[playing] {
+      position: absolute;
+      right: 0;
+      top:0;
+      transform: scale(0, 0);
+    }
   `;
 
     const html = `
       <figure class="hero">
-        <video poster="images/casual.jpg" controls>
+        <video poster="images/casual.jpg" controls onclick="this.play()">
           <source src="videos/promo.mp4" type="video/mp4">
           <track label="English" kind="subtitles" srclang="en" src="videos/promo.vtt" default>
           Video not supported, please try another browser
@@ -101,8 +110,17 @@ class HeroVideo extends HTMLElement {
   connectedCallback() {
     this._render();
 
-    this.shadowRoot.querySelector('video').addEventListener('click', () => {
-      this.shadowRoot.querySelector('video').play();
+    this.shadowRoot.querySelector('video').addEventListener('play', () => {
+      this.shadowRoot
+        .querySelector('figcaption')
+        .setAttribute('playing', 'true');
+
+      console.log('PLAYING');
+    });
+
+    this.shadowRoot.querySelector('video').addEventListener('pause', () => {
+      this.shadowRoot.querySelector('figcaption').removeAttribute('playing');
+      console.log('STOPPED');
     });
   }
 }
