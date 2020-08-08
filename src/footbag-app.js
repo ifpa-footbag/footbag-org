@@ -16,7 +16,7 @@ class FootbagApp extends HTMLElement {
     }
 
     #page-placeholder {
-      background: var(--content-background);
+      background: linear-gradient(90deg, #2c204e0f, #2c204e03);
     }
 
     #page-placeholder > .leaving {

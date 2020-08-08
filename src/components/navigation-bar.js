@@ -27,14 +27,14 @@ class NavigationBar extends HTMLElement {
       padding-left: var(--space-l);
     }
     h1 {
-      font-size: var(--font-size-large);
+      font-size: var(--font-size-l);
       margin: 0;
       padding: 0 0 0 var(--space-l);
       margin-right: auto;
     }
 
     a {
-      font-size: var(--font-size-medium);
+      font-size: var(--font-size-m);
       font-weight: var(--font-weight-bold);
       padding: var(--space-xl) var(--space-m);
       text-transform: uppercase;
@@ -48,7 +48,7 @@ class NavigationBar extends HTMLElement {
       }
       
       h1 a {
-        font-size: var(--font-size-xlarge);
+        font-size: var(--font-size-xl);
       }
 
       a {
@@ -64,7 +64,7 @@ class NavigationBar extends HTMLElement {
     
     .back {
       background-color: var(--color-blue);
-      box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.7);
+      box-shadow: var(--box-shadow);
 
       color: var(--color-orange);
       display: flex;

@@ -7,11 +7,11 @@ class NewsItem extends HTMLElement {
         background-color: var(--color-white);
         display: flex;
         flex-direction: column;
-        font-size: var(--font-size-large);
+        font-size: var(--font-size-l);
         max-width: 100%;
         overflow-wrap: anywhere;
 
-        --content-padding: var(--grid-panel-padding);
+        --content-padding: var(--space-xl);
       }
 
       :host([open]) {
@@ -44,12 +44,12 @@ class NewsItem extends HTMLElement {
       }
 
       :host([open]) h3 {
-        font-size: var(--font-size-xxlarge);
+        font-size: var(--font-size-xxl);
       }
 
       @media only screen and (min-width: 765px) {
         :host([open]) h3 {
-          font-size: var(--font-size-xxxlarge);
+          font-size: var(--font-size-xxxl);
         } 
       }
 
@@ -63,7 +63,7 @@ class NewsItem extends HTMLElement {
 
       footer {
         color: var(--color-gray-800);
-        font-size: var(--font-size-medium);
+        font-size: var(--font-size-m);
 
         padding: var(--content-padding);
         margin-top: auto;

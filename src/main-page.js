@@ -12,6 +12,12 @@ import { news } from './news/news.js';
 class MainPage extends HTMLElement {
   _render() {
     const style = `
+    :host {
+      display: block;
+      
+      --grid-gap: var(--space-l);
+      --grid-gap-negative: calc(-1 * var(--space-l));
+    }
     header {
       /* anchor for logo-header, which is positioned absolute */
       position: relative;

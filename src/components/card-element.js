@@ -23,11 +23,11 @@ class CardElement extends HTMLElement {
       background: var(--header-color, var(--color-blue));
       color: var(--color-white);
 
-      font-size: var(--font-size-small);
+      font-size: var(--font-size-s);
       font-weight: var(--font-weight-boldest);
       text-transform: uppercase;
       
-      padding: var(--space-s) var(--grid-panel-padding);
+      padding: var(--space-s) var(--space-xl);
       margin: 0;
     }
     
@@ -37,7 +37,7 @@ class CardElement extends HTMLElement {
     }
 
     h2 {
-      font-size: var(--font-size-large);
+      font-size: var(--font-size-l);
       font-weight: var(--font-weight-boldest);
       margin: 0;
       padding: var(--space-m) 0;

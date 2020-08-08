@@ -9,7 +9,7 @@ class EventItem extends HTMLElement {
 
       article {
         background-color: var(--color-white);
-        padding: var(--grid-panel-padding);
+        padding: var(--space-xl);
         border-bottom: 1px solid #eee;
         max-width: 100%;
       }
@@ -30,24 +30,24 @@ class EventItem extends HTMLElement {
        }
       h3 {
         color: var(--color-blue);
-        font-size: var(--font-size-large);
+        font-size: var(--font-size-l);
         
         margin: var(--space-s) 0 var(--space-l) 0;
       }
 
       :host([open]) h3 {
-        font-size: var(--font-size-xxlarge);
+        font-size: var(--font-size-xxl);
       }
 
       @media only screen and (min-width: 765px) {
         :host([open]) h3 {
-          font-size: var(--font-size-xxxlarge);
+          font-size: var(--font-size-xxxl);
         } 
       }
 
       .event_date {
         color: var(--color-red);
-        font-size: var(--font-size-medium);
+        font-size: var(--font-size-m);
         margin: var(--space-xs) auto 0 0;
 
         padding: var(--space-s) 0;
@@ -55,14 +55,14 @@ class EventItem extends HTMLElement {
       }
       .event_location {
         color: var(--color-red);
-        font-size: var(--font-size-medium);
+        font-size: var(--font-size-m);
         padding: var(--space-xs) 0;
         text-transform: uppercase;
       }
       .event_contact {
         margin: var(--space-l) auto 0 0;
         color: var(--color-gray-800);
-        font-size: var(--font-size-medium);
+        font-size: var(--font-size-m);
       }
       .modal {
         position: fixed;

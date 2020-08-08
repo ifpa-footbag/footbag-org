@@ -7,7 +7,7 @@ class InfoAndLinks extends HTMLElement {
     const style = `
         :host {
           display: block;
-          font-size: var(--font-size-large);
+          font-size: var(--font-size-l);
           margin: var(--space-l) 0;
           max-width: 100%;
         }

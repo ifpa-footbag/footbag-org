@@ -9,7 +9,7 @@ class MainMenu extends HTMLElement {
             
             color: var(--color-white);
 
-            font-size: var(--font-size-medium);
+            font-size: var(--font-size-m);
             font-weight: var(--font-weight-bold);
             padding: var(--space-xl) var(--space-m);
             text-transform: uppercase;
@@ -42,7 +42,7 @@ class MainMenu extends HTMLElement {
 
         h4 {
             color: var(--color-gray-500);
-            font-size: var(--font-size-medium);
+            font-size: var(--font-size-m);
             padding-top: var(--space-xl);
 
             text-transform: uppercase;

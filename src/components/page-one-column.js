@@ -14,7 +14,7 @@ class PageOneColumn extends HTMLElement {
     }
 
     h2 {
-      font-size: var(--font-size-xxlarge);
+      font-size: var(--font-size-xxl);
       margin: 0;
       padding: var(--space-xl) 0;
     }
@@ -26,7 +26,7 @@ class PageOneColumn extends HTMLElement {
       }
 
       h2 {
-        font-size: var(--font-size-xxxlarge);
+        font-size: var(--font-size-xxxl);
       }
     }
   `;

@@ -28,7 +28,7 @@ class HeroVideo extends HTMLElement {
     h2 {
       color: var(--color-orange);
       display: inline-block;
-      font-size: var(--font-size-large);
+      font-size: var(--font-size-l);
       margin:  0 var(--space-s) 0 0;;
       padding: 0;
     }

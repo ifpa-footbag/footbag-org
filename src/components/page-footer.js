@@ -31,7 +31,7 @@ class PageFooter extends HTMLElement {
 
       h4 {
         color: var(--color-gray-500);
-        font-size: var(--font-size-medium);
+        font-size: var(--font-size-m);
         text-transform: uppercase;
       }
 
@@ -43,7 +43,7 @@ class PageFooter extends HTMLElement {
       .copyright {
         margin-top: var(--space-xl);
         color: var(--color-gray-500);
-        font-size: var(--font-size-medium);
+        font-size: var(--font-size-m);
         text-align: center;
       }
 
