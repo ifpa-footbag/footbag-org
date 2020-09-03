@@ -95,15 +95,6 @@ class PageFooter extends HTMLElement {
         </h3>
       </header>
       <main>
-        <section>
-          <h4>Contact us</h4>
-          <p>What is missing from the site? Give us feedback! 
-            <a href="mailto:feedback@footbag.org">${arrowRight}&nbsp;feedback@footbag.org</a>
-          </p>
-          <p>Any other matters? 
-            <a href="mailto:contact@footbag.org">${arrowRight}&nbsp;contact@footbag.org</a>
-          </p>  
-        </section>
     
         <section>
           <h4>Discuss online</h4>
@@ -111,11 +102,19 @@ class PageFooter extends HTMLElement {
           <p><a href="https://www.instagram.com/footbag_sports/">${arrowRight}&nbsp;Instagram</a></p>  
         </section>
 
+        <section>
+          <h4>Support Us</h4>
+          <p> 
+          </div>
+            <a href="https://www.justgiving.com/internationalfootbagplayersassociationincorporated">${arrowRight}&nbsp;Donate now</a>
+          </p>
+        </section>
+
         <aside>
           <img src="images/ifpa.png" width="170px"></img>
           <div class="button">
-            <a href="https://www.justgiving.com/internationalfootbagplayersassociationincorporated">${arrowRight}&nbsp;Donate</a>
-          </div>
+          
+            <a href="mailto:info@footbag.org">Contact Us</a></div>
         </aside>
 
         </main>
