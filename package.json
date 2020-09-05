@@ -37,7 +37,8 @@
     "rollup-plugin-copy": "^3.3.0"
   },
   "dependencies": {
-    "@vaadin/router": "^1.7.2"
+    "@vaadin/router": "^1.7.2",
+    "lit-element": "^2.4.0"
   },
   "husky": {
     "hooks": {
