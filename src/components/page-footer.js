@@ -1,5 +1,7 @@
 import { arrowRight } from './icons.js';
 
+import './svg-icon.js';
+
 class PageFooter extends HTMLElement {
   _render() {
     const style = `
@@ -84,15 +86,35 @@ class PageFooter extends HTMLElement {
       a {
         display: block;
       }
+
+      .worldwide-logo {
+        margin-left: var(--space-l);
+        width: 12rem;
+      }
+  
+      @media only screen and (min-width: 450px) {
+        .worldwide-logo {
+          width: 14rem;
+        }
+      }
+  
+      @media only screen and (min-width: 700px) {
+        .worldwide-logo {
+          width: 18rem;
+        }
+      }
+
+      .ifpa-logo {
+        fill: var(--color-white);
+        height: 5rem;
+        width: 10rem;
+      }
       `;
 
     const html = `
     <footer>
       <header>
-        <img width="24px" height="24px" src="images/logo.png"></img>
-        <h3>
-          Footbag Worldwide
-        </h3>
+        <svg-icon class="worldwide-logo" path="images/icons.svg#footbag-worldwide"></svg-icon>
       </header>
       <main>
     
@@ -111,7 +133,8 @@ class PageFooter extends HTMLElement {
         </section>
 
         <aside>
-          <img src="images/ifpa.png" width="170px"></img>
+          <svg-icon class="ifpa-logo" path="images/icons.svg#ifpa-logo"></svg-icon>
+                  
           <div class="button">
           
             <a href="mailto:info@footbag.org">Contact Us</a></div>

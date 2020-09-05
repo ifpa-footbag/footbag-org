@@ -114,13 +114,10 @@ class HeroVideo extends HTMLElement {
       this.shadowRoot
         .querySelector('figcaption')
         .setAttribute('playing', 'true');
-
-      console.log('PLAYING');
     });
 
     this.shadowRoot.querySelector('video').addEventListener('pause', () => {
       this.shadowRoot.querySelector('figcaption').removeAttribute('playing');
-      console.log('STOPPED');
     });
   }
 }
