@@ -9,6 +9,7 @@ class FootbagIntro extends LitElement {
         color: var(--color-blue);
         display: block;
       }
+
       article {
         font-size: var(--font-size-xl);
         padding: var(--space-xl);
@@ -28,23 +29,26 @@ class FootbagIntro extends LitElement {
         margin-top: var(--space-l);
         text-align: center;
       }
+
+      button:first-child {
+        border-top: 2px solid white;
+      }
       button {
-        border-radius: 5rem;
         background-color: transparent;
         border: 0;
+        border-bottom: 2px solid white;
         color: var(--color-blue);
-        float: left;
 
         font-family: var(--font-family-secondary);
         font-size: var(--font-size-xl);
         font-weight: var(--font-weight-bold);
         margin: 0;
 
-        padding: var(--space-m) var(--space-l);
+        padding: var(--space-xl);
         text-align: left;
         /*text-transform: uppercase;*/
 
-        width: 70%;
+        width: 100%;
       }
 
       button:focus {
@@ -62,7 +66,6 @@ class FootbagIntro extends LitElement {
         visibility: hidden;
         margin: 0;
         max-height: 0;
-
         padding-left: var(--space-l);
         text-align: left;
         transition: max-height 0.3s ease-out;
@@ -70,18 +73,10 @@ class FootbagIntro extends LitElement {
       }
 
       .details[open] {
-        padding-bottom: var(--space-l);
+        padding: var(--space-l) 0;
         visibility: visible;
         max-height: 100rem;
         transition: max-height 0.3s ease-out;
-      }
-
-      img {
-        width: 30%;
-        float: right;
-        padding-left: var(--space-m);
-        padding-bottom: var(--space-l);
-        margin-right: -0.75rem;
       }
     `;
   }
@@ -95,9 +90,8 @@ class FootbagIntro extends LitElement {
         while for some, the aim is to work together to keep the bag off the
         ground. While being extremely easy to start, it also has its competitive
         forms played all over the world.
-        
+
         <section>
-          <img src="images/freestyle-portrait.jpg"></img>
           <button @click="${e => this._toggle(e)}">
             What is footbag?
             <svg-icon path="images/icons.svg#angle-down"></svg-icon>
@@ -131,7 +125,7 @@ class FootbagIntro extends LitElement {
             emerged that required much more physical coordination and exertion.
             These are named Footbag Net and Freestyle Footbag, currently the 2
             main disciplines in the sport, played in competition.
-  </div>
+          </div>
 
           <button @click="${e => this._toggle(e)}">
             How to get started?
@@ -164,7 +158,7 @@ class FootbagIntro extends LitElement {
             level Freestyle Footbag players perform a truly incredible amount of
             movements in a very short time. The best players seem to have a
             magnetic attraction to the bag. This discipline requires an
-            </div>
+          </div>
           <button @click="${e => this._toggle(e)}">
             Where to find players?
             <svg-icon path="images/icons.svg#angle-down"></svg-icon>
@@ -196,7 +190,7 @@ class FootbagIntro extends LitElement {
             level Freestyle Footbag players perform a truly incredible amount of
             movements in a very short time. The best players seem to have a
             magnetic attraction to the bag. This discipline requires an
-            </div>
+          </div>
           <button @click="${e => this._toggle(e)}">
             How to reach us?
             <svg-icon path="images/icons.svg#angle-down"></svg-icon>
@@ -228,7 +222,7 @@ class FootbagIntro extends LitElement {
             level Freestyle Footbag players perform a truly incredible amount of
             movements in a very short time. The best players seem to have a
             magnetic attraction to the bag. This discipline requires an
-            </div>
+          </div>
         </section>
       </article>
     `;

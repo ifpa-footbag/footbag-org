@@ -109,8 +109,9 @@ class MainPage extends LitElement {
         <section class="intro">
           <footbag-intro></footbag-intro>
         </section>
-
+       
         <div class="news">
+        
         <img src="images/front-page/players-association.jpg"></img>
           <!--div class="news-filter">
           <div class="filter-item selected">News</div>
