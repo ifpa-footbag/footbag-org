@@ -88,8 +88,8 @@ class PageFooter extends HTMLElement {
       }
 
       .worldwide-logo {
-        margin-left: var(--space-l);
         width: 12rem;
+        height: 45px;
       }
   
       @media only screen and (min-width: 450px) {

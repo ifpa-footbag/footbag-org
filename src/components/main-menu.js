@@ -3,6 +3,9 @@ import { angleDown, arrowRight, externalLinkAlt } from './icons.js';
 class MainMenu extends HTMLElement {
   _render() {
     const style = `
+        :host {
+          z-index: var(--z-index-floating-1);
+        }
         button {
             background: none;
             border: none;

@@ -1,16 +1,17 @@
-import { calendarAlt, mapMarkerAlt } from './icons.js';
+import { css, html, LitElement } from 'lit-element';
 
-class EventItem extends HTMLElement {
-  _render() {
-    const style = `
+class EventItem extends LitElement {
+  static get styles() {
+    return css`
       :host {
         display: block;
       }
 
       article {
         background-color: var(--color-white);
+        /*background-color: #f7f7f8;*/
+
         padding: var(--space-xl);
-        border-bottom: 1px solid #eee;
         max-width: 100%;
       }
 
@@ -18,21 +19,23 @@ class EventItem extends HTMLElement {
         border-bottom: none;
       }
 
-      article.highlight {
+      :host([highlight]) article {
         background-color: var(--color-redlight);
       }
+
       a {
-        color: inherit; 
-        text-decoration: inherit; 
+        display: flex;
+        color: inherit;
+        text-decoration: inherit;
       }
       a:hover {
         color: var(--color-bluehover);
-       }
+      }
       h3 {
+        /*border-left: 3px solid var(--color-red);*/
         color: var(--color-blue);
-        font-size: var(--font-size-l);
-        
-        margin: var(--space-s) 0 var(--space-l) 0;
+        margin: 0;
+        padding: var(--space-xl) var(--content-padding);
       }
 
       :host([open]) h3 {
@@ -42,27 +45,41 @@ class EventItem extends HTMLElement {
       @media only screen and (min-width: 765px) {
         :host([open]) h3 {
           font-size: var(--font-size-xxxl);
-        } 
+        }
       }
 
-      .event_date {
-        color: var(--color-red);
-        font-size: var(--font-size-m);
-        margin: var(--space-xs) auto 0 0;
+      .date {
+        color: var(--color-red); /* #348ba8; */
+        margin-right: var(--space-s);
+        padding-right: var(--space-s);
+        border-right: 2px solid var(--color-red);
+      }
 
-        padding: var(--space-s) 0;
-        text-transform: uppercase;
+      .header {
+        margin-left: var(--space-s);
       }
-      .event_location {
+
+      .details {
+        display: flex;
+        align-items: center;
+      }
+
+      .details-icon {
         color: var(--color-red);
-        font-size: var(--font-size-m);
-        padding: var(--space-xs) 0;
-        text-transform: uppercase;
+        padding-right: var(--space-m);
       }
-      .event_contact {
+
+      .location {
+        color: var(--color-blue);
+        font-size: var(--font-size-m);
+      }
+      .contact {
         margin: var(--space-l) auto 0 0;
         color: var(--color-gray-800);
-        font-size: var(--font-size-m);
+        font-size: var(--font-size-xl);
+      }
+      .body {
+        margin: var(--space-xl);
       }
       .modal {
         position: fixed;
@@ -73,70 +90,71 @@ class EventItem extends HTMLElement {
         left: 10%;
         padding: 4rem;
       }
+    `;
+  }
 
-      svg {
-        fill: var(--color-red);
-      }
-      `;
-
-    const html = `
+  render() {
+    return html`
       <content-modal open="${this.open}">
-        <article class="${this._addClassIfAttribute('highlight', 'highlight')}">
+        <article>
           <h3>
-            <a href="/event/${this.getAttribute('header')}">
-              ${this._getAttribute('header')}
+            <a class="header" href="/event/${this.header}">
+              ${this.open === undefined
+                ? html` <svg-icon
+                    class="details-icon"
+                    path="images/icons.svg#calendar"
+                  ></svg-icon>`
+                : ''}
+              <div class="header-content">
+                <span class="date">
+                  ${this.date}
+                </span>
+
+                ${this.header}
+
+                <div class="location">
+                  ${this.location}
+                </div>
+              </div>
             </a>
           </h3>
-          <div class="event_date">
-            ${calendarAlt} ${this._getAttribute('date')}
-          </div>
-          <div class="event_location">
-            ${mapMarkerAlt} ${this._getAttribute('location')}
-          </div>
-          <div class="event_contact">
-          ${this._getAttribute('contact')}
-          </div>
-          <div>
-            ${
-              Boolean(this.getAttribute('open')) === true ? '<slot></slot>' : ''
-            }
-          </div>
+
+          ${this.open === true
+            ? html`
+                <div class="contact">
+                  ${this.contact}
+                </div>
+                <div class="body">
+                  <slot></slot>
+                </div>
+              `
+            : ''}
         </article>
       </content-modal>
     `;
-
-    this.shadowRoot.innerHTML = `
-    <style>
-      ${style}
-    </style>
-    ${html}`;
   }
 
-  constructor() {
-    super();
-    this.attachShadow({ mode: 'open' });
-  }
-
-  connectedCallback() {
-    this._render();
-  }
-
-  static get observedAttributes() {
-    return ['open'];
-  }
-
-  attributeChangedCallback(name) {
-    if (name === 'open') {
-      this._render();
-    }
-  }
-
-  _addClassIfAttribute(className, attributeName) {
-    return this.getAttribute(attributeName) === null ? '' : className;
-  }
-
-  _getAttribute(attributeName) {
-    return this.getAttribute(attributeName) || '';
+  static get properties() {
+    return {
+      contact: {
+        type: String,
+      },
+      date: {
+        type: String,
+      },
+      header: {
+        type: String,
+      },
+      highlight: {
+        type: Boolean,
+      },
+      location: {
+        type: String,
+      },
+      open: {
+        type: Boolean,
+      },
+    };
   }
 }
 

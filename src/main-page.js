@@ -1,155 +1,139 @@
+import { css, html, LitElement } from 'lit-element';
+
 import './components/card-element.js';
 import './components/event-item.js';
+import './components/footbag-intro.js';
 import './components/navigation-bar.js';
 import './components/hero-video.js';
 import './components/info-and-links.js';
 
-import { arrowRight } from './components/icons.js';
-
 import { events } from './events/events.js';
 import { news } from './news/news.js';
 
-class MainPage extends HTMLElement {
-  _render() {
-    const style = `
-    :host {
-      display: block;
-      
-      --grid-gap: var(--space-l);
-      --grid-gap-negative: calc(-1 * var(--space-l));
-    }
-    header {
-      /* anchor for logo-header, which is positioned absolute */
-      position: relative;
-      z-index: 2;
-    }
-
-    .logo-image {
-      opacity: 0.3;
-      border-radius: 50%;
-
-      align-items: center;
-      display: flex;
-
-      justify-content: center;
-      position: absolute;
-      top: var(--space-m);
-      left: var(--space-m);
-      width: 7rem;
-      height: 7rem;
-      z-index: 1;
-    }
-
-    @media only screen and (max-width: 500px) {
-      .logo-image {
-        width: 5rem;
-        height: 5rem;
+class MainPage extends LitElement {
+  static get styles() {
+    return css`
+      :host {
+        display: block;
       }
-    }
+      header {
+        z-index: 2;
+      }
 
-    .events-and-news {
+      main {
         display: grid;
-        margin: 0 auto;
-    }
-    @media only screen and (min-width: 692px) {
-      .events-and-news {
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          'intro'
+          'news'
+          'events';
       }
-    }
 
-    .events{
-      --grid-gap: 0;
-      --header-color: var(--color-red);
-      margin-bottom: var(--space-l);
-    }
+      @media only screen and (min-width: 1024px) {
+        main {
+          grid-template-columns: 161fr 100fr;
+          grid-template-areas:
+            'news   intro'
+            'events intro';
+        }
+      }
 
-    .card-element-news {
-      --card-background: transparent;
-      --content-margin: var(--space-l);
-    }
+      .card-element-news {
+        --card-background: #f3f3f3;
+      }
 
-    .news {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      grid-auto-rows: minmax(22px, auto);
-      grid-gap: var(--grid-gap);
-      justify-items: stretch;
-      align-items: stretch;
-    }
+      .intro {
+        background: rgb(247, 247, 248);
+        grid-area: intro;
+      }
 
-    .more {
-      justify-self: center;
-      display: block;
-      grid-column: 1 / -1;
-      margin: var(--space-l);
-      padding: var(--space-l);
-      text-transform: uppercase;
-    }
+      .news {
+        background: var(--color-white);
+        grid-area: news;
+      }
 
-    .more--news a {
-      color: var(--color-blue);
-    }
-    .more--news svg {
-      fill: var(--color-blue);
-    }
+      .news img,
+      .events img {
+        width: 100%;
+        max-width: 100%;
+        padding: var(--space-l);
+        width: calc(100% - 1.5rem);
+      }
 
-    .more--events a {
-      color: var(--color-red);
-    }
-    .more--events svg {
-      color: var(--color-red);
-      fill: var(--color-red);
-    }
+      .events {
+        background: #f7f7f8;
 
-    a {
-      text-decoration: none;
-    }
+        grid-area: events;
+      }
+
+      .more {
+        padding: var(--space-xl);
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      .more a {
+        color: #8a8a92;
+        fill: #8a8a92;
+        text-decoration: none;
+      }
+
+      .news-filter {
+        background: var(--color-white);
+        display: flex;
+        padding: 0 var(--space-l);
+      }
+
+      .filter-item {
+        padding: var(--space-l);
+        margin: 0 var(--space-m);
+        background: white;
+        width: 3rem;
+      }
+      .selected {
+        border-bottom: 3px solid var(--color-red);
+        color: var(--color-red);
+        font-weight: var(--font-weight-bold);
+      }
     `;
+  }
 
-    const html = `
+  render() {
+    return html`
+      <header>
+        <navigation-bar></navigation-bar>
+      </header>
+      <hero-video></hero-video>
 
-    <header>
-      <navigation-bar></navigation-bar> 
-    </header>
-    
-    <hero-video></hero-video>
-    
-    <section class="events-and-news">
-        <card-element class="card-element-news" header="Latest News">
-          <div class="news">
-            ${news}
-            <div class="more more--news">
-              <a href="/news/all" slot="footer">${arrowRight}&nbsp;More news</a>
-            </div>
+      <main>
+        <section class="intro">
+          <footbag-intro></footbag-intro>
+        </section>
+
+        <div class="news">
+        <img src="images/front-page/players-association.jpg"></img>
+          <!--div class="news-filter">
+          <div class="filter-item selected">News</div>
+          <div class="filter-item">Freestyle</div>
+          <div class="filter-item">Net</div>
+        </div-->
+
+          ${news}
+        
+         
+          <div class="more">
+            <a slot="footer">Older news</a>
           </div>
-        </card-element>
-        <card-element class="events" header="Upcoming Events">
-            ${events}
-            <div class="more more--events">
-              <a href="/event/all" slot="footer">${arrowRight}&nbsp;More events</a>
-            </div>
-        </card-element>
-    </section>
-    
-    
-    <info-and-links></info-and-links>
+        </div>
+        <section class="events">
+        <img src="images/front-page/players-association.jpg"></img>
+          ${events}
+          <div class="more">
+            <a slot="footer">More events</a>
+          </div>
+        </section>
+      </main>
     `;
-
-    this.shadowRoot.innerHTML = `
-    <style>
-      ${style}
-    </style>
-    ${html}
-    `;
-  }
-
-  constructor() {
-    super();
-    this.attachShadow({ mode: 'open' });
-  }
-
-  connectedCallback() {
-    this._render();
   }
 }
 
