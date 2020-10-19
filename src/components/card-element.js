@@ -16,7 +16,7 @@ class CardElement extends HTMLElement {
     :host {
       display: block;
       background: var(--card-background, var(--color-white));
-      --content-margin: var(--space-l) 0;
+      --content-margin: 0;
     }
 
     header {

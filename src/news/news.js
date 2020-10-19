@@ -1,3 +1,4 @@
+import { html } from 'lit-element';
 /**
  * ADDING NEWS
  *
@@ -17,10 +18,11 @@
  *  </p>
  * </news-item>
  */
+const news = html`
+<!-- ADD NEWS ITEM RIGHT BELOW THIS -->
 
-const news = `
-<!-- ADD NEWS RIGHT BELOW THIS -->
 <news-item 
+  topic="Worlds videos"
   header="Watch Worlds Videos on IFPA YouTube channel"
   image="images/videos.png"
   short="Thanks to the online format of this year's Worlds we have a lot of great footage availiable for your eyes to feast on. The videos 
@@ -37,13 +39,15 @@ const news = `
 	<youtube-video 
       src="https://www.youtube.com/embed/xhVuZtDgjEw"
       caption=""></youtube-video>
-	<p>
+  
+  </p>
+  <p>
 	What a show! There were some amazing submissions in other categories as well, make sure to check them out!
 	</p>
 
 </news-item>
-
-<news-item 
+<news-item
+  topic="Worlds results" 
   header="Online Freestyle WFC 2020 Finals results are here"
   image="images/worlds2020.png"
   short="The culminating point of this year's footbag season for Freestyle is now history. For the first time ever the IFPA organized 
@@ -72,7 +76,8 @@ const news = `
 
 </news-item>
 
-<news-item 
+<news-item
+  topic="Worlds"
   header="Online Freestyle WFC 2020 Finals start today!"
   image="images/worlds2020.png"
   short="This weekend will be unforgettable! The first Online Freestyle Footbag World Championships has brought us unseen tricks, 
@@ -100,9 +105,11 @@ const news = `
 
 </news-item>
 
-<news-item 
+<news-item
+  topic="COVID-19"
   header="Footbag is going online in corona time!"
   image="images/net.jpg"
+  highlight
   short="Corona Virus affects footbaggers as well. Trainings have been cancelled, gyms are closed and gatherings limited in 
     many places. But footbaggers are not standing still, as freestyle footbag suits isolation really well: You only need 
     your footbag and a little bit of space indoors or outdoors. Some freestylers are even having online shred sessions to 
@@ -121,7 +128,8 @@ const news = `
 
 </news-item>
 
-<news-item 
+<news-item
+  topic="Tutorial" 
   header="Footbag masterclass by Frankystyle (in French)"
   image="images/masterclass-frankystyle.jpg"
   short="Looking for some advice on starting to play footbag? In French maybe? Look no further, as our dear friend from Paris 
@@ -137,13 +145,14 @@ const news = `
 
 </news-item>
 
-<news-item 
+<news-item
+  topic="Footbag.org" 
   header="Footbag.org update in progress"
   image="images/footbag-org-redesign.jpg"
   short="Footbag Worldwide gets a long-awaited redesign! Footbag Worldwide has been a big part of footbag culture since about 
   two decades, acting as an information source for footbaggers on all levels around the world. We are currently working 
   on a major update of the site. First thing to do is the front page as you can see. Our aim is to bring footbag.org to 
-  today and prepare it for the future as well. There is a long way to go, but it’s the beginning!</p>
+  today and prepare it for the future as well. There is a long way to go, but it’s the beginning!
   "
   date="March 2020">
     <p>
@@ -154,6 +163,7 @@ const news = `
     today and prepare it for the future as well. There is a long way to go, but it’s the beginning!</p>
 
  </news-item>
+   
 `;
 
 export { news };

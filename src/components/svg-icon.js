@@ -9,8 +9,8 @@ class SvgIcon extends LitElement {
     return css`
       :host {
         display: inline-block;
-        height: 45px;
-        width: 45px;
+        height: 20px;
+        width: 20px;
 
         vertical-align: middle;
       }

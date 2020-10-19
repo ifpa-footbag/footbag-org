@@ -1,5 +1,3 @@
-import { infoCircle } from './icons.js';
-
 class HeroVideo extends HTMLElement {
   _render() {
     const style = `
@@ -20,8 +18,8 @@ class HeroVideo extends HTMLElement {
 
     }
     figcaption {
-      background: var(--color-blue);
-      color: var(--color-white);
+      background: #eaeaeb;
+      color: var(--color-blue);
       opacity: 0.8;
       padding: var(--space-l);
 
@@ -46,15 +44,21 @@ class HeroVideo extends HTMLElement {
     }
     button {
       border-radius: 5rem;
-      background-color: var(--color-orange);
+      background-color: transparent;
       border: 0;
       color: var(--color-blue);
       
       font-weight: var(--font-weight-bold);
       padding: var(--space-m);
+      text-align: left;
       text-transform: uppercase;
 
       width: 100%;
+    }
+    button span {
+      display: inline-block;
+      float: right;
+      fill: var(--color-orange);
     }
 
     @media only screen and (min-width: 692px) {
@@ -81,16 +85,7 @@ class HeroVideo extends HTMLElement {
           <track label="English" kind="subtitles" srclang="en" src="videos/promo.vtt" default>
           Video not supported, please try another browser
         </video>
-        <figcaption>
-          <h2>FOOTBAG</h2>
-          is a series of sports where players use their feet to
-          kick a small round bag or ball. Footbag's current form came
-          about in 1972 in North America and has continued evolving
-          into a popular sport that is played all over the world.
-          <section>
-          <a href="/getting-started"><button>Learn more ${infoCircle}</button></a>
-        </section>
-        </figcaption>
+        
       </figure>
     `;
 

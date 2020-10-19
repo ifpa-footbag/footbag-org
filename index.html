@@ -4,7 +4,7 @@
     <base href="/footbag-org/" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link
-      href="https://fonts.googleapis.com/css?family=Rubik&display=swap"
+      href="https://fonts.googleapis.com/css?family=Rubik&family=Oswald&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -35,7 +35,7 @@
         --color-gray-800: #666;
 
         --font-family-primary: 'Rubik', sans-serif;
-        --font-family-secondary: sans-serif;
+        --font-family-secondary: 'Oswald', sans-serif;
 
         /*
            * Modular scale base 1em, ratio 1.25 (modularscale.com)
@@ -62,6 +62,12 @@
         --space-l: 0.75rem;
         --space-xl: 1.5rem;
 
+        /* Use z-index-1 if you need to order an element in front of other elements */
+        --z-index-1: 1;
+
+        /* Use only for floating/fixed elements that must be in front of everything */
+        --z-index-floating-1: 2;
+
         background-color: var(--color-gray-300);
         font-size: 16px;
       }
@@ -73,6 +79,13 @@
         color: var(--color-blue);
 
         max-width: var(--max-content-width);
+      }
+
+      @media only screen and (min-width: 700px) and (max-width: 1023px) {
+        body {
+          margin-left: 8%;
+          margin-right: 8%;
+        }
       }
 
       h1,

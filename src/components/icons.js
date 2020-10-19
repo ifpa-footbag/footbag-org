@@ -1,3 +1,4 @@
+// DEPRECATED, use icons.svg instead
 const viewBox320x512 = '0 0 320 512';
 const viewBox384x512 = '0 0 384 512';
 const viewBox448x512 = '0 0 320 512';

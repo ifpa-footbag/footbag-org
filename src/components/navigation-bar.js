@@ -45,6 +45,7 @@ class NavigationBar extends HTMLElement {
     svg-icon {
       margin-left: var(--space-l);
       width: 12rem;
+      height: 45px;
     }
 
     @media only screen and (min-width: 450px) {
