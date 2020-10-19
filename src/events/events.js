@@ -97,7 +97,7 @@ const events = html`
     For the qualification days, there are two main event sites: a sports gym (6
     footbag net courts plus additional freestyle area) and a shopping mall (for
     Freestyle events only).
-    <hr />
+
     <p>
       Detailed information for players about schedule, accommodation, airport
       and local transfers, site maps and the *official registration* (by early
@@ -106,7 +106,7 @@ const events = html`
       more than a tournament, shred and spike hard, hang out, celebrate our
       beloved sport and its community and spread the passion!
     </p>
-    <hr />
+
     <p>
       Background information Jaworzno is the 13th-largest city in Poland in
       terms of area, with almost 100,000 population located in the south of
