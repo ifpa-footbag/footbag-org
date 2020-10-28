@@ -45,7 +45,7 @@ class GettingStartedPage extends HTMLElement {
 		</p>
 		<h3>Join us on Social Media</h3>
 		<p>
-		Our maing Facebook page can be found <a href="https://www.facebook.com/footbag.org">here</a>. We also have active groups for <a href="https://www.facebook.com/groups/footbag">Freestyle</a> and <a href="https://www.facebook.com/groups/154116001290293">Net</a> discussion.
+		Our main Facebook page can be found <a href="https://www.facebook.com/footbag.org">here</a>. We also have active groups for <a href="https://www.facebook.com/groups/footbag">Freestyle</a> and <a href="https://www.facebook.com/groups/154116001290293">Net</a> discussion.
 		We are also on Instagram, so follow <a href="https://www.instagram.com/footbag_sports/">footbag_sports</a>, and if you use Discord, an invite to our channel can be found under <a href="https://discord.com/invite/DAtQwG4">this link</a>.
 		</p>
 		<h3>Find a club near you</h3>
