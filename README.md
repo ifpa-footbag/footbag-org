@@ -1,6 +1,6 @@
 ![CI](https://github.com/ifpa-footbag/footbag-org/workflows/CI/badge.svg)
 
-# footbag.org
+# https://ifpa-footbag.github.io/footbag-org/
 
 ## Start development
 
