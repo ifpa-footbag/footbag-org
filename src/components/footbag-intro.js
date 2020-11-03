@@ -165,10 +165,16 @@ class FootbagIntro extends LitElement {
             <svg-icon path="images/icons.svg#angle-down"></svg-icon>
           </button>
           <div class="details">
-            Our main Facebook page can be found here. We also have active groups
-            for Freestyle and Net discussion. We are also on Instagram, so
-            follow footbag_sports, and if you use Discord, an invite to our
-            channel can be found under this link.
+            Our main Facebook page can be found
+            <a href="https://www.facebook.com/footbag.org">here</a>. We also
+            have active groups for
+            <a href="https://www.facebook.com/groups/footbag">Freestyle</a> and
+            <a href="https://www.facebook.com/groups/154116001290293">Net</a>
+            discussion. We are also on Instagram, so follow
+            <a href="https://www.instagram.com/footbag_sports/"
+              >footbag_sports</a
+            >, and if you use Discord, an invite to our channel can be found
+            under <a href="https://discord.com/invite/DAtQwG4">this link</a>.
           </div>
         </section>
       </article>
