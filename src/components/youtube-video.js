@@ -1,3 +1,5 @@
+import { css, html, LitElement } from 'lit-element';
+
 /**
  * Embed youtube video. Usage:
  *
@@ -6,77 +8,66 @@
  *  caption="Optional video caption text here">
  * </youtube-video>
  */
-class YoutubeVideo extends HTMLElement {
-  _render() {
-    const style = `
-        :host {
-            display: block;
-            margin: var(--space-xl) 0;
-        }
-        figure { 
-            display: flex;
-            flex-direction: column;
-            margin: 0;
-        }
+class YoutubeVideo extends LitElement {
+  static get styles() {
+    return css`
+      :host {
+        display: block;
+      }
+      figure {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+      }
 
-        .video-container {
-            position: relative; 
-            padding-bottom: 56.25%; 
-            height: 0; 
-            overflow: hidden;
-            
-            
-            max-width: 100%;
-        }
+      .video-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
 
-        figcaption{
-            background: white;
-            display: block;
-            font-style: italic;
-            padding: var(--space-l) 0;
-        }
-        
-        iframe { 
-            position: absolute; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 100%; 
-        }`;
+        max-width: 100%;
+      }
 
-    const html = `
-        <figure>
-            <div class="video-container">
-                <iframe 
-                    src='${this.getAttribute('src')}' 
-                    frameborder='0' 
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-                </iframe>
-            </div>
-            ${
-              this.getAttribute('caption') === null
-                ? ''
-                : `<figcaption>${this.getAttribute('caption')}</figcaption>`
-            }
-        </figure>
-        `;
+      figcaption {
+        background: white;
+        display: block;
+        font-style: italic;
+        padding: var(--space-l) 0;
+      }
 
-    this.shadowRoot.innerHTML = `
-        <style>
-        ${style}
-        </style>
-        ${html}
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
     `;
   }
 
-  constructor() {
-    super();
-    this.attachShadow({ mode: 'open' });
+  render() {
+    return html`
+      <figure>
+        <div class="video-container">
+          <iframe
+            src="${this.videoSrc}"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          >
+          </iframe>
+        </div>
+      </figure>
+    `;
   }
 
-  connectedCallback() {
-    this._render();
+  static get properties() {
+    return {
+      videoSrc: {
+        type: String,
+      },
+    };
   }
 }
 

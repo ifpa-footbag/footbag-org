@@ -37,7 +37,7 @@ const news = html`
 	<p>
 	And while we're at it here's the winning performance in Open Routines by our currect champion Jan Weber:
 	<youtube-video 
-      src="https://www.youtube.com/embed/xhVuZtDgjEw"
+      videoSrc="https://www.youtube.com/embed/xhVuZtDgjEw"
       caption=""></youtube-video>
   
   </p>

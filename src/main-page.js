@@ -121,17 +121,18 @@ class MainPage extends LitElement {
 
           ${news}
         
-         
-          <div class="more">
+          <!-- not yet implemented -->
+          <!-- div class="more">
             <a slot="footer">Older news</a>
-          </div>
+          </div -->
         </div>
         <section class="events">
         <img src="images/front-page/players-association.jpg"></img>
           ${events}
-          <div class="more">
+          <!-- not yet implemented -->
+          <!-- div class="more">
             <a slot="footer">More events</a>
-          </div>
+          </div -->
         </section>
       </main>
     `;

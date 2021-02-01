@@ -1,5 +1,6 @@
 import { css, html, LitElement } from 'lit-element';
 
+import './page-heading.js';
 import './svg-icon.js';
 
 class NewsItem extends LitElement {
@@ -14,11 +15,6 @@ class NewsItem extends LitElement {
         overflow-wrap: anywhere;
 
         --content-padding: var(--space-xl);
-      }
-
-      :host([open]) {
-        padding: 0;
-        --content-padding: 0;
       }
 
       :host([highlight]) {
@@ -61,20 +57,6 @@ class NewsItem extends LitElement {
         font-size: var(--font-size-m);
       }
 
-      :host([open]) img {
-        margin-bottom: var(--space-xl);
-      }
-
-      :host([open]) h3 {
-        font-size: var(--font-size-xxl);
-      }
-
-      @media only screen and (min-width: 765px) {
-        :host([open]) h3 {
-          font-size: var(--font-size-xxxl);
-        }
-      }
-
       .news_body {
         padding: 0 var(--content-padding);
       }
@@ -107,29 +89,35 @@ class NewsItem extends LitElement {
 
   render() {
     return html`
-      ${this.headerImage !== undefined
-        ? html`<img src="${this.headerImage}" />`
-        : ``}
-      <h3>
-        <a class="header" href="/news/${this.header}">
-          ${this.open === undefined
-            ? html` <svg-icon
-                class="header-icon"
-                path="images/icons.svg#arrow-right"
-              ></svg-icon>`
-            : ''}
-          <div class="header-content">
-            ${this.topic === undefined
-              ? ''
-              : html`<span class="topic">${this.topic}</span> `}
-            ${this.header}
+      ${this.open
+        ? html` <page-heading
+            header="${this.header}"
+            topic="${this.topic}"
+            date="${this.date}"
+          ></page-heading>`
+        : html`
+            ${this.headerImage !== undefined
+              ? html`<img src="${this.headerImage}" />`
+              : ''}
+            <h3>
+              <a class="header" href="/news/${this.header}">
+                <svg-icon
+                  class="header-icon"
+                  path="images/icons.svg#arrow-right"
+                ></svg-icon>
+                <div class="header-content">
+                  ${this.topic === undefined
+                    ? ''
+                    : html`<span class="topic">${this.topic}</span> `}
+                  ${this.header}
 
-            <div class="date">
-              ${this.date || ''}
-            </div>
-          </div>
-        </a>
-      </h3>
+                  <div class="date">
+                    ${this.date || ''}
+                  </div>
+                </div>
+              </a>
+            </h3>
+          `}
 
       <div class="news_body">
         ${this.open === true ? this.short || '' : ''}

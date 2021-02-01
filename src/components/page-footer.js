@@ -1,11 +1,10 @@
-import { arrowRight } from './icons.js';
+import { css, html, LitElement } from 'lit-element';
 
 import './svg-icon.js';
 
-class PageFooter extends HTMLElement {
-  _render() {
-    const style = `
-      
+class PageFooter extends LitElement {
+  static get styles() {
+    return css`
       footer {
         background: var(--color-blue);
         color: var(--color-white);
@@ -26,7 +25,7 @@ class PageFooter extends HTMLElement {
       }
 
       @media only screen and (min-width: 800px) {
-        main{
+        main {
           display: flex;
         }
       }
@@ -39,7 +38,7 @@ class PageFooter extends HTMLElement {
 
       section {
         margin: var(--space-l);
-        padding: var(--space-l)
+        padding: var(--space-l);
       }
 
       .copyright {
@@ -49,18 +48,15 @@ class PageFooter extends HTMLElement {
         text-align: center;
       }
 
-      svg {
+      svg-icon {
         fill: var(--color-white);
+        width: 14px;
+        height: 14px;
       }
-
       aside {
         display: flex;
         flex-direction: column;
         margin-left: auto;
-      }
-
-      .button {
-      
       }
 
       a {
@@ -74,8 +70,8 @@ class PageFooter extends HTMLElement {
         color: var(--color-blue);
         display: block;
 
-        width: 10rem; 
-        padding: var(--space-m);      
+        width: 10rem;
+        padding: var(--space-m);
         text-align: center;
       }
 
@@ -91,13 +87,13 @@ class PageFooter extends HTMLElement {
         width: 12rem;
         height: 45px;
       }
-  
+
       @media only screen and (min-width: 450px) {
         .worldwide-logo {
           width: 14rem;
         }
       }
-  
+
       @media only screen and (min-width: 700px) {
         .worldwide-logo {
           width: 18rem;
@@ -109,9 +105,11 @@ class PageFooter extends HTMLElement {
         height: 5rem;
         width: 10rem;
       }
-      `;
+    `;
+  }
 
-    const html = `
+  render() {
+    return html`
     <footer>
       <header>
         <svg-icon class="worldwide-logo" path="images/icons.svg#footbag-worldwide"></svg-icon>
@@ -120,15 +118,24 @@ class PageFooter extends HTMLElement {
     
         <section>
           <h4>Discuss online</h4>
-          <p><a href="https://www.facebook.com/footbag.org/">${arrowRight}&nbsp;Facebook</a></p>
-          <p><a href="https://www.instagram.com/footbag_sports/">${arrowRight}&nbsp;Instagram</a></p>  
+          <p><a href="https://www.facebook.com/footbag.org/">
+          <svg-icon
+            path="images/icons.svg#arrow-right"
+          ></svg-icon>&nbsp;Facebook</a></p>
+          <p><a href="https://www.instagram.com/footbag_sports/"><svg-icon
+                    path="images/icons.svg#arrow-right"
+                  ></svg-icon>&nbsp;Instagram</a></p>  
         </section>
 
         <section>
           <h4>Support Us</h4>
           <p> 
           </div>
-            <a href="https://www.justgiving.com/internationalfootbagplayersassociationincorporated">${arrowRight}&nbsp;Donate now</a>
+            <a href="https://www.justgiving.com/internationalfootbagplayersassociationincorporated">
+            <svg-icon
+                    path="images/icons.svg#arrow-right"
+                  ></svg-icon>
+            &nbsp;Donate now</a>
           </p>
         </section>
 
@@ -148,21 +155,6 @@ class PageFooter extends HTMLElement {
         </div>
       </footer>
     `;
-
-    this.shadowRoot.innerHTML = `
-    <style>
-      ${style}
-    </style>
-    ${html}`;
-  }
-
-  constructor() {
-    super();
-    this.attachShadow({ mode: 'open' });
-  }
-
-  connectedCallback() {
-    this._render();
   }
 }
 
