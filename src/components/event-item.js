@@ -1,5 +1,7 @@
 import { css, html, LitElement } from 'lit-element';
 
+import './page-heading.js';
+
 class EventItem extends LitElement {
   static get styles() {
     return css`
@@ -9,14 +11,9 @@ class EventItem extends LitElement {
 
       article {
         background-color: var(--color-white);
-        /*background-color: #f7f7f8;*/
 
         padding: var(--space-xl);
         max-width: 100%;
-      }
-
-      :host([open]) article {
-        border-bottom: none;
       }
 
       :host([highlight]) article {
@@ -32,7 +29,6 @@ class EventItem extends LitElement {
         color: var(--color-bluehover);
       }
       h3 {
-        /*border-left: 3px solid var(--color-red);*/
         color: var(--color-blue);
         margin: 0;
         padding: var(--space-xl) var(--content-padding);
@@ -40,16 +36,11 @@ class EventItem extends LitElement {
 
       :host([open]) h3 {
         font-size: var(--font-size-xxl);
-      }
-
-      @media only screen and (min-width: 765px) {
-        :host([open]) h3 {
-          font-size: var(--font-size-xxxl);
-        }
+        margin: var(--space-xl) 0;
       }
 
       .date {
-        color: var(--color-red); /* #348ba8; */
+        color: var(--color-red);
         margin-right: var(--space-s);
         padding-right: var(--space-s);
         border-right: 2px solid var(--color-red);
@@ -95,40 +86,49 @@ class EventItem extends LitElement {
 
   render() {
     return html`
-      <content-modal open="${this.open}">
-        <article>
-          <h3>
-            <a class="header" href="/event/${this.header}">
-              ${this.open === undefined
-                ? html` <svg-icon
-                    class="details-icon"
-                    path="images/icons.svg#calendar"
-                  ></svg-icon>`
-                : ''}
-              <div class="header-content">
-                <span class="date">
-                  ${this.date}
-                </span>
+     ${
+       this.open
+         ? html` <page-heading
+             topic="${this.date}"
+             header="${this.header}"
+             date="${this.location}"
+           ></page-heading>`
+         : html`
+             <article>
+               <h3>
+                 <a class="header" href="/event/${this.header}">
+                   <svg-icon
+                     class="details-icon"
+                     path="images/icons.svg#calendar"
+                   ></svg-icon>
+                   <div class="header-content">
+                     <span class="date">
+                       ${this.date}
+                     </span>
 
-                ${this.header}
+                     ${this.header}
 
-                <div class="location">
-                  ${this.location}
-                </div>
-              </div>
-            </a>
-          </h3>
-
-          ${this.open === true
-            ? html`
-                <div class="contact">
-                  ${this.contact}
-                </div>
-                <div class="body">
-                  <slot></slot>
-                </div>
-              `
-            : ''}
+                     <div class="location">
+                       ${this.location}
+                     </div>
+                   </div>
+                 </a>
+               </h3>
+             </article>
+           `
+     }
+          ${
+            this.open === true
+              ? html`
+                  <div class="contact">
+                    ${this.contact}
+                  </div>
+                  <div class="body">
+                    <slot></slot>
+                  </div>
+                `
+              : ''
+          }
         </article>
       </content-modal>
     `;

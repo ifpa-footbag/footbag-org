@@ -1,61 +1,47 @@
-class PageOneColumn extends HTMLElement {
-  _render() {
-    const style = `
-    :host {
-      display: block;
-      background: var(--color-white);
-      
-      max-width: 765px;
-      margin: 0 auto;
+import { css, html, LitElement } from 'lit-element';
 
-      min-height: 600px;
-    
-      padding:  0 var(--space-xl) var(--space-xl) var(--space-xl) ;
-    }
+class PageOneColumn extends LitElement {
+  static get styles() {
+    return css`
+      :host {
+        display: block;
+        background: var(--color-white);
 
-    h2 {
-      font-size: var(--font-size-xxl);
-      margin: 0;
-      padding: var(--space-xl) 0;
-    }
+        max-width: 765px;
+        margin: 0;
 
-    @media only screen and (min-width: 765px) {
-      :host {     
-        margin-top: var(--space-xl);
-        margin-bottom: var(--space-xl);
+        min-height: 600px;
+
+        padding: 0 var(--space-xl) var(--space-xl) var(--space-xl);
       }
 
       h2 {
-        font-size: var(--font-size-xxxl);
+        font-size: var(--font-size-xxl);
+        margin: 0;
+        padding: var(--space-xl) 0;
       }
-    }
-  `;
 
-    const html = `
-    ${
-      this.getAttribute('header') !== null
-        ? `
-    <h2>${this.getAttribute('header') || ''}</h2>
-    `
-        : ''
-    }
-    <slot></slot>`;
-
-    this.shadowRoot.innerHTML = `
-    <style>
-      ${style}
-    </style>
-    ${html}
-  `;
+      @media only screen and (min-width: 765px) {
+        h2 {
+          font-size: var(--font-size-xxxl);
+        }
+      }
+    `;
   }
 
-  constructor() {
-    super();
-    this.attachShadow({ mode: 'open' });
+  render() {
+    return html` ${this.header !== undefined
+        ? html` <h2>${this.header || ''}</h2> `
+        : ''}
+      <slot></slot>`;
   }
 
-  connectedCallback() {
-    this._render();
+  static get properties() {
+    return {
+      header: {
+        type: String,
+      },
+    };
   }
 }
 
