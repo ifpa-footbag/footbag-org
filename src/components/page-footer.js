@@ -68,7 +68,9 @@ class PageFooter extends LitElement {
         background: var(--color-white);
         border-radius: 5rem;
         color: var(--color-blue);
+
         display: block;
+        font-weight: var(--font-weight-bold);
 
         width: 10rem;
         padding: var(--space-m);
@@ -142,9 +144,9 @@ class PageFooter extends LitElement {
         <aside>
           <svg-icon class="ifpa-logo" path="images/icons.svg#ifpa-logo"></svg-icon>
                   
-          <div class="button">
-          
-            <a href="mailto:info@footbag.org">Contact Us</a></div>
+          <div class="button">          
+            <a href="mailto:info@footbag.org">Contact Us</a>
+          </div>
         </aside>
 
         </main>

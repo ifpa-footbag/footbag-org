@@ -1,5 +1,6 @@
 import { html, LitElement } from 'lit-element';
 
+import './components/image-element.js';
 import './components/page-heading.js';
 import './components/page-one-column.js';
 import './components/navigation-bar.js';
@@ -15,7 +16,12 @@ class FootbagPage extends LitElement {
           header="What is Footbag?"
           topic="Introduction"
         ></page-heading>
-        <card-element image="images/net.jpg">
+        <card-element>
+          <image-element
+            src="images/net.jpg"
+            small
+            caption="Footbag Net"
+          ></image-element>
           <p>
             Footbag Net is a singles or doubles court game, where players use
             only their feet to kick the footbag over a net. The size of the
@@ -35,8 +41,14 @@ class FootbagPage extends LitElement {
           </p>
         </card-element>
         <h3>Footbag freestyle</h3>
-        <card-element image="images/freestyle.jpg">
+        <card-element>
           <p>
+            <image-element
+              src="images/freestyle.jpg"
+              small
+              caption="Footbag Freestyle"
+            ></image-element>
+
             The object of Freestyle Footbag is perform tricks with the bag. It
             has evolved from its roots into a very technical competitive
             discipline. Players compete by choreographing routines, performing
@@ -53,6 +65,7 @@ class FootbagPage extends LitElement {
             hit different types of tricks, involving both sides of the body and
             multiple trick components.
           </p>
+          <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
         </card-element>
       </page-one-column>
     `;
