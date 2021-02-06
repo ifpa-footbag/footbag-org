@@ -14,26 +14,11 @@ class PageOneColumn extends LitElement {
 
         padding: 0 var(--space-xl) var(--space-xl) var(--space-xl);
       }
-
-      h2 {
-        font-size: var(--font-size-xxl);
-        margin: 0;
-        padding: var(--space-xl) 0;
-      }
-
-      @media only screen and (min-width: 765px) {
-        h2 {
-          font-size: var(--font-size-xxxl);
-        }
-      }
     `;
   }
 
   render() {
-    return html` ${this.header !== undefined
-        ? html` <h2>${this.header || ''}</h2> `
-        : ''}
-      <slot></slot>`;
+    return html` <slot></slot>`;
   }
 
   static get properties() {

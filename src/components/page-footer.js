@@ -112,21 +112,40 @@ class PageFooter extends LitElement {
 
   render() {
     return html`
-    <footer>
+    <footer id="footer">
       <header>
         <svg-icon class="worldwide-logo" path="images/icons.svg#footbag-worldwide"></svg-icon>
       </header>
       <main>
     
         <section>
-          <h4>Discuss online</h4>
-          <p><a href="https://www.facebook.com/footbag.org/">
-          <svg-icon
-            path="images/icons.svg#arrow-right"
-          ></svg-icon>&nbsp;Facebook</a></p>
-          <p><a href="https://www.instagram.com/footbag_sports/"><svg-icon
-                    path="images/icons.svg#arrow-right"
-                  ></svg-icon>&nbsp;Instagram</a></p>  
+          <h4>Join Community</h4>
+          <p>
+              <a href="https://www.facebook.com/footbag.org/">
+              <svg-icon
+                path="images/icons.svg#arrow-right"
+              ></svg-icon>&nbsp;Facebook
+              </a>
+          </p>
+
+          <p>
+            <a href="https://www.facebook.com/groups/footbag">
+            <svg-icon path="images/icons.svg#arrow-right"></svg-icon>&nbsp;Facebook Freestyle</a>
+          
+          </p>
+          <p>        
+            <a href="https://www.facebook.com/groups/154116001290293"><svg-icon path="images/icons.svg#arrow-right"></svg-icon>&nbsp;Facebook Net
+          </a>
+          </p>
+          <p>
+              <a href="https://www.instagram.com/footbag_sports/">
+              <svg-icon path="images/icons.svg#arrow-right"></svg-icon>&nbsp;Instagram
+            </a>
+          </p>
+
+          <p>
+          <a href="https://discord.com/invite/DAtQwG4">  <svg-icon path="images/icons.svg#arrow-right"></svg-icon>&nbsp;Discord</a>
+          </p>
         </section>
 
         <section>

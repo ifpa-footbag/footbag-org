@@ -40,7 +40,8 @@ class MainMenu extends LitElement {
         background: var(--color-blue);
         position: absolute;
         right: -8px;
-        width: 250px;
+        width: 320px;
+        max-width: 100vw;
       }
 
       .menu {
@@ -59,6 +60,9 @@ class MainMenu extends LitElement {
       }
       li {
         padding: var(--space-m) 0;
+      }
+      li div {
+        margin-left: 1.25rem;
       }
 
       h4 {
@@ -95,17 +99,19 @@ class MainMenu extends LitElement {
                 ><svg-icon path="images/icons.svg#arrow-right"></svg-icon>
                 Home</a
               >
+              <div>- Footbag introduction</div>
+              <div>- News</div>
+              <div>- Events</div>
             </li>
-            <li>
+            <!--li>
               <a href="/footbag"
-                ><svg-icon path="images/icons.svg#arrow-right"></svg-icon> What
-                is footbag?</a
+                ><svg-icon path="images/icons.svg#arrow-right"></svg-icon>Footbag Freestyle</a
               >
-            </li>
+            </li-->
             <li>
               <a href="/getting-started"
                 ><svg-icon path="images/icons.svg#arrow-right"></svg-icon>
-                Getting started</a
+                tutorials and instructions</a
               >
             </li>
             <li>
@@ -122,10 +128,6 @@ class MainMenu extends LitElement {
               <a href="http://footbag.org/reference/-/Footbag_Reference_Area"
                 >Footbag disciplines</a
               >
-            </li>
-            <li>
-              <svg-icon path="images/icons.svg#arrow-right"></svg-icon>
-              <a href="/rules">Rules</a>
             </li>
             <li>
               <svg-icon path="images/icons.svg#arrow-right"></svg-icon>

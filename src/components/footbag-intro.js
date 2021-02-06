@@ -15,7 +15,7 @@ class FootbagIntro extends LitElement {
 
       article {
         background: #f3f3f3;
-        font-size: var(--font-size-xl);
+        font-size: var(--font-size-l);
         padding: 0 var(--space-xl) var(--space-xxl) var(--space-xl);
       }
 
@@ -27,24 +27,32 @@ class FootbagIntro extends LitElement {
         font-size: var(--font-size-xxxl);
       }
 
+      h3 {
+        font-size: var(--font-size-xl);
+        margin: 0;
+      }
+
+      h4 {
+        font-size: var(--font-size-l);
+        margin: var(--space-xl) 0 var(--space-m) 0;
+      }
+
       em {
         color: var(--color-blue);
         font-style: normal;
         font-weight: var(--font-weight-bold);
-        font-size: var(--font-size);
       }
 
       section {
         margin: 0;
       }
-      section:first-of-type {
-        margin-top: var(--space-xl);
+      section.accordions {
+        margin: var(--space-xl) 0;
       }
 
-      /*
-      section + section {
-        border-top: 2px solid white;
-      }*/
+      smooth-expand[expanded] {
+        margin-bottom: var(--space-xl);
+      }
 
       p {
         margin: 0;
@@ -69,7 +77,6 @@ class FootbagIntro extends LitElement {
 
         padding: var(--space-l) 0;
         text-align: left;
-        text-decoration: underline;
 
         width: 100%;
       }
@@ -91,6 +98,11 @@ class FootbagIntro extends LitElement {
 
       svg-icon {
         padding-left: var(--space-m);
+        transition: transform 0.4s;
+      }
+
+      button[open] svg-icon {
+        transform: rotateX(180deg);
       }
 
       img {
@@ -113,90 +125,85 @@ class FootbagIntro extends LitElement {
             a small round bag or ball. Some players do amazing tricks, others
             compete over a net, while for some, the aim is to work together to
             keep the bag off the ground. While being extremely easy to start, it
-            also has its competitive forms played all over the world.</em
+            also has its competitive forms played all over the world. It is also
+            known for its culture and strong community, both locally and
+            globally.</em
           >
         </p>
 
-        <section>
-          <button @click="${() => this._toggle(0)}">
-            What is footbag?
+        <section class="accordions">
+          <button
+            @click="${() => this._toggle(2)}"
+            ?open="${this.detailsOpen[2]}"
+          >
+            <h3>History and current state</h3>
+            <svg-icon path="images/icons.svg#angle-down"></svg-icon>
+          </button>
+          <smooth-expand ?expanded="${this.detailsOpen[2]}">
+            <div class="details">
+              <p>
+                Footbag roots can be found deep in the ancient cultures of Asia
+                and the Americas, with similar games being played as far back as
+                3000 years ago. Its current form was established in North
+                America in the 1970s, and it has spread globally and evolved
+                into many forms since.
+              </p>
+              <p>
+                Some pursue footbag as a sport, with internationally
+                standardized rules of competition and local, regional, and
+                international championships where players display their skills
+                and the best rise to the top.
+              </p>
+              <p>
+                Many others choose to pursue footbag and a casual form of
+                relaxation, exercise, and fun. It can be as simple as an
+                individual seeing how many times they can kick the bag before it
+                drops to the ground.
+              </p>
+              <p>
+                More than sport or game, footbag creates a sense of community.
+                Players from all over the world share this powerful form of
+                creative expression, introspective meditation, and physical
+                exercise. It is a game with which you can both teach and learn
+                from others, and find common ground with people from all walks
+                of life. Participants have no need to speak the same language,
+                share the same system of beliefs, or be of the same physical
+                ability.
+              </p>
+            </div>
+          </smooth-expand>
+
+          <button
+            @click="${() => this._toggle(0)}"
+            ?open="${this.detailsOpen[0]}"
+          >
+            <h3>Footbag disciplines</h3>
             <svg-icon path="images/icons.svg#angle-down"></svg-icon>
           </button>
           <smooth-expand ?expanded="${this.detailsOpen[0]}">
             <div class="details">
               <p>
-                Footbag is both a sport and a culture, with a worldwide
-                community that shares a passion for the sport and the
-                connections it builds both locally and globally. At it’s core,
-                Footbag is a high energy sport, involving moving the body to
-                propel an object into the air. Some players do amazing tricks,
-                others compete over a net, while for some, the aim is to work
-                together to keep the bag off the ground.
-              </p>
-              <img src="images/front-page/footbag.jpg" />
-              <p>
-                There are many examples of sports involving keeping an object in
-                the air using the feet. The Mezoamerican civilization had
-                practiced a sport involving feet juggling that is said to be
-                3000 years old. Jianzi, another similar foot juggling practice,
-                is a traditional Chinese national sport originating in the Han
-                Dynasty 2000 years ago. Sepak Takraw, is played throughout South
-                East Asia and still is the National Sport of Malaysia and
-                Thailand.<br /><br />
-                Footbag itself, in its modern form, began in 1972 in Portland,
-                Oregon. John Stalberger had the idea of using simple juggling of
-                a bean bag with your feet to rehabilitate an injured knee. Along
-                with his friend Mike Marshall they decided the basic objective
-                of the game was to keep the bean bag from hitting the ground,
-                using a variety of kicks. "Hacky sack" quickly gained
-                popularity. The game fit well with the "peace and love" era of
-                the US and the number of players in both the US and Canada soon
-                rose into the thousands. People were kicking in parks, schools,
-                colleges and at music festivals. About ten years later the
-                phenomenon landed in Europe and is currently present on every
-                continent from Medellin, Colombia to Tokyo, Japan.
+                The most common display of casual footbag is the “circle”, in
+                which groups of people gather to collectively keep the bag from
+                touching the ground while passing back and forth. Other casual
+                forms include games like 4-square, footbag golf, mini net, and
+                foot juggling.
               </p>
               <p>
-                The most basic form of playing the game is called "circle
-                kicking", but many other games have developed from it such as
-                footbag golf, mini net, 4-square, etc. With "circle kicking" the
-                main goal is to keep the bean bag off the ground using the feet,
-                and passing between players. However, two genuine sports emerged
-                that required much more physical coordination and exertion.
-                These are named Footbag Net and Freestyle Footbag, currently the
-                two main disciplines in the sport, played in competition.
+                There are two main competitive disciplines in the sport, named
+                <i>Footbag Net</i> and <i>Freestyle Footbag</i>. Footbag net is
+                a game of offense and defense where players compete as
+                individuals or on teams to send the bag over a net and score
+                points against their opponents. In freestyle footbag, a sport
+                similar to juggling, players use their feet to propel the bag
+                upwards and creatively manipulate their bodies near or around
+                the bag to create tricks which can be strung together into
+                expressive routines and competitive runs.
               </p>
-            </div>
-          </smooth-expand>
-        </section>
 
-        <section>
-          <button @click="${() => this._toggle(1)}">
-            How to get started?
-            <svg-icon path="images/icons.svg#angle-down"></svg-icon>
-          </button>
-          <smooth-expand ?expanded="${this.detailsOpen[1]}">
-            <div class="details">
-              <p>
-                Footbag Net can most simply be described as volleyball with your
-                feet, but the ball is a hard footbag, a small, round ball. Using
-                a badminton net and court, players rally the bag between each
-                other, trying, as in volleyball and badminton, to get the ball
-                over the net on onto the opponent’s side of the court using
-                acrobatic movements to keep the ball in play. This sees players
-                reaching great heights aiming to make a winning shot. It has
-                often been described as a mix of soccer, volleyball and martial
-                arts.
-              </p>
-              <p>
-                Freestyle Footbag is played with a bean bag or "footbag" that,
-                unlike the one for Footbag Net, is softer and slightly heavier,
-                allowing for easier control when players kick, or attempt to
-                catch ("delay") the bag with their feet. Players generally play
-                in groups of two to four players in a "circle".
-              </p>
               <img src="images/front-page/footbag.jpg" />
 
+              <h4>Footbag Freestyle</h4>
               <p>
                 As with any "freestyle" sport, there are not any actual rules
                 (aside from not using hands), but rather performing creative
@@ -210,22 +217,58 @@ class FootbagIntro extends LitElement {
                 time. The best players seem to have a magnetic attraction to the
                 bag.
               </p>
+
+              <h4>Footbag Net</h4>
+              <p>
+                Footbag Net can most simply be described as volleyball with your
+                feet, but the ball is a hard footbag, a small, round ball. Using
+                a badminton net and court, players rally the bag between each
+                other, trying, as in volleyball and badminton, to get the ball
+                over the net on onto the opponent’s side of the court using
+                acrobatic movements to keep the ball in play. This sees players
+                reaching great heights aiming to make a winning shot. It has
+                often been described as a mix of soccer, volleyball and martial
+                arts.
+              </p>
+            </div>
+          </smooth-expand>
+
+          <button
+            @click="${() => this._toggle(1)}"
+            ?open="${this.detailsOpen[1]}"
+          >
+            <h3>How to get started?</h3>
+            <svg-icon path="images/icons.svg#angle-down"></svg-icon>
+          </button>
+          <smooth-expand ?expanded="${this.detailsOpen[1]}">
+            <div class="details">
+              <p>
+                Thinking of trying footbag out? Grab a bag, try and keep it in
+                the air. Do a few kicks, tricks, see if you can kick it over the
+                net. Once you get started, the possibilities are endless.
+              </p>
+              <h4>Equipment</h4>
+              <p>
+                As with many sports, footbag freestyle and net use specialized
+                shoes and other equipment. Some players take existing equipment
+                and modify it for their own purposes, improving the designs over
+                time. Also footbags are stitched all over the world, with
+                designs available to make your own at home! [click here for more
+                information about shoes for freestyle/net-above or below link a
+                couple small pictures of modified shoes, quantums etc] [click
+                here for information about some of the best footbag stitchers
+                and companies in the world, and for designs to make your
+                own-incl stitching pictures and completed bags]
+              </p>
             </div>
           </smooth-expand>
         </section>
         <section>
-          <button @click="${() => this._toggle(2)}">
-            Where to find players and how to reach us?
-            <svg-icon path="images/icons.svg#angle-down"></svg-icon>
-          </button>
-          <smooth-expand ?expanded="${this.detailsOpen[2]}">
-            <div class="details">
-              Our main Facebook page can be found here. We also have active
-              groups for Freestyle and Net discussion. We are also on Instagram,
-              so follow footbag_sports, and if you use Discord, an invite to our
-              channel can be found under this link.
-            </div>
-          </smooth-expand>
+          Join our worldwide community to learn more, ask help or finding player
+          to kick with! We are on
+          <a href="https://www.facebook.com/footbag.org">Facebook</a>,
+          <a href="https://www.instagram.com/footbag_sports/">Instagram</a> and
+          <a href="https://discord.com/invite/DAtQwG4">Discord</a>!
         </section>
       </article>
     `;
@@ -245,7 +288,7 @@ class FootbagIntro extends LitElement {
   }
 
   _toggle(index) {
-    const copy = [false, false, false];
+    const copy = [...this.detailsOpen];
     copy[index] = !this.detailsOpen[index];
     this.detailsOpen = copy;
   }

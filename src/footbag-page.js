@@ -16,6 +16,8 @@ class FootbagPage extends LitElement {
           header="What is Footbag?"
           topic="Introduction"
         ></page-heading>
+
+        <h3>Footbag Net</h3>
         <card-element>
           <image-element
             src="images/net.jpg"
