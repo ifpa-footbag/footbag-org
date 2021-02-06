@@ -95,6 +95,11 @@ class MainPage extends LitElement {
         color: var(--color-red);
         font-weight: var(--font-weight-bold);
       }
+
+      page-heading {
+        background: var(--color-gray-300);
+        padding: 0 var(--space-xl);
+      }
     `;
   }
 
@@ -118,7 +123,10 @@ class MainPage extends LitElement {
           <div class="filter-item">Freestyle</div>
           <div class="filter-item">Net</div>
         </div-->
-
+        <page-heading
+          header="Find out important news here"
+        ></page-heading>
+        
           ${news}
         
           <!-- not yet implemented -->
@@ -128,6 +136,10 @@ class MainPage extends LitElement {
         </div>
         <section class="events">
         <img src="images/front-page/players-association.jpg"></img>
+        <page-heading
+          header="Time to have fun and challenge the others!"
+        ></page-heading>
+
           ${events}
           <!-- not yet implemented -->
           <!-- div class="more">
