@@ -116,8 +116,8 @@ class FootbagIntro extends LitElement {
     return html`
       <article>
         <page-heading
-          header="What is Footbag?"
-          topic="Introduction"
+          topic="Footbag"
+          header="Recreational and competitive sports"
         ></page-heading>
         <p>
           <em

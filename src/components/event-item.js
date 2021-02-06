@@ -39,11 +39,8 @@ class EventItem extends LitElement {
         margin: var(--space-xl) 0;
       }
 
-      .date {
-        color: var(--color-red);
-        margin-right: var(--space-s);
-        padding-right: var(--space-s);
-        border-right: 2px solid var(--color-red);
+      .first-line {
+        font-size: var(--font-size-m);
       }
 
       .header {
@@ -57,13 +54,14 @@ class EventItem extends LitElement {
 
       .details-icon {
         color: var(--color-red);
-        padding-right: var(--space-m);
+        opacity: 0.1;
+        padding-right: var(--space-l);
       }
 
-      .location {
-        color: var(--color-blue);
-        font-size: var(--font-size-m);
+      :host([highlight]) .details-icon {
+        opacity: 0.2;
       }
+
       .contact {
         margin: var(--space-l) auto 0 0;
         color: var(--color-gray-800);
@@ -100,17 +98,14 @@ class EventItem extends LitElement {
                    <svg-icon
                      class="details-icon"
                      path="images/icons.svg#calendar"
+                     large
                    ></svg-icon>
                    <div class="header-content">
-                     <span class="date">
-                       ${this.date}
-                     </span>
+                     <div class="first-line">
+                       ${this.date}, ${this.location}
+                     </div>
 
                      ${this.header}
-
-                     <div class="location">
-                       ${this.location}
-                     </div>
                    </div>
                  </a>
                </h3>

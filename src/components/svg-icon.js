@@ -9,10 +9,20 @@ class SvgIcon extends LitElement {
     return css`
       :host {
         display: inline-block;
-        height: 20px;
-        width: 20px;
+        height: 16px;
+        width: 16px;
 
         vertical-align: middle;
+      }
+
+      :host([small]) {
+        height: 12px;
+        width: 12px;
+      }
+
+      :host([large]) {
+        height: 32px;
+        width: 32px;
       }
 
       svg {
@@ -40,6 +50,14 @@ class SvgIcon extends LitElement {
     return {
       path: {
         type: String,
+        reflect: true,
+      },
+      small: {
+        type: Boolean,
+        reflect: true,
+      },
+      large: {
+        type: Boolean,
         reflect: true,
       },
     };

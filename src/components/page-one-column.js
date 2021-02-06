@@ -14,6 +14,13 @@ class PageOneColumn extends LitElement {
 
         padding: 0 var(--space-xl) var(--space-xl) var(--space-xl);
       }
+
+      @media only screen and (min-width: 692px) {
+        :host {
+          padding-left: var(--space-xxl);
+          padding-right: var(--space-xxl);
+        }
+      }
     `;
   }
 

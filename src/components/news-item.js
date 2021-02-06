@@ -43,7 +43,12 @@ class NewsItem extends LitElement {
 
       .header-icon {
         fill: var(--color-red);
-        padding-right: var(--space-m);
+        opacity: 0.1;
+        padding-right: var(--space-l);
+      }
+
+      :host([highlight]) .header-icon {
+        opacity: 0.2;
       }
 
       img {
@@ -52,13 +57,8 @@ class NewsItem extends LitElement {
       }
 
       .date {
-        color: var(--color-blue);
         font-family: var(--font-family-primary);
         font-size: var(--font-size-m);
-      }
-
-      .news_body {
-        padding: 0 var(--content-padding);
       }
 
       .news_body {
@@ -74,15 +74,16 @@ class NewsItem extends LitElement {
 
         text-transform: uppercase;
       }
+
       svg {
         fill: var(--color-gray-800);
       }
 
       .topic {
-        color: var(--color-red); /* #348ba8; */
+        font-size: var(--font-size-ms);
+
         margin-right: var(--space-s);
         padding-right: var(--space-m);
-        border-right: 2px solid var(--color-red);
       }
     `;
   }
@@ -103,17 +104,15 @@ class NewsItem extends LitElement {
               <a class="header" href="/news/${this.header}">
                 <svg-icon
                   class="header-icon"
-                  path="images/icons.svg#arrow-right"
+                  path="images/icons.svg#bullhorn"
+                  large
                 ></svg-icon>
                 <div class="header-content">
-                  ${this.topic === undefined
-                    ? ''
-                    : html`<span class="topic">${this.topic}</span> `}
-                  ${this.header}
-
                   <div class="date">
-                    ${this.date || ''}
+                    <span class="date">${this.date || ''}</span>
+                    <span class="topic">${this.topic || ''}</span>
                   </div>
+                  ${this.header}
                 </div>
               </a>
             </h3>
