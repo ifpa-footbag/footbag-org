@@ -77,6 +77,7 @@ class NavigationBar extends LitElement {
 
       .back {
         background-color: var(--color-blue);
+        border: var(--space-s) solid var(--color-white);
         box-shadow: var(--box-shadow);
 
         color: var(--color-orange);

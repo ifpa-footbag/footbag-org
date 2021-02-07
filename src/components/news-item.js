@@ -17,10 +17,6 @@ class NewsItem extends LitElement {
         --content-padding: var(--space-xl);
       }
 
-      :host([highlight]) {
-        background-color: var(--color-redlight);
-      }
-
       a {
         color: inherit;
         display: flex;
@@ -42,13 +38,14 @@ class NewsItem extends LitElement {
       }
 
       .header-icon {
-        fill: var(--color-red);
+        fill: var(--color-blue);
         opacity: 0.1;
-        padding-right: var(--space-l);
+        padding-right: var(--space-xl);
+        min-width: 32px;
       }
 
       :host([highlight]) .header-icon {
-        opacity: 0.2;
+        opacity: 0.6;
       }
 
       img {
@@ -65,20 +62,6 @@ class NewsItem extends LitElement {
         line-height: var(--line-height-increased);
       }
 
-      footer {
-        color: var(--color-gray-800);
-        font-size: var(--font-size-m);
-
-        padding: var(--content-padding);
-        margin-top: auto;
-
-        text-transform: uppercase;
-      }
-
-      svg {
-        fill: var(--color-gray-800);
-      }
-
       .topic {
         font-size: var(--font-size-ms);
 
@@ -91,7 +74,7 @@ class NewsItem extends LitElement {
   render() {
     return html`
       ${this.open
-        ? html` <page-heading
+        ? html`<page-heading
             header="${this.header}"
             topic="${this.topic}"
             date="${this.date}"

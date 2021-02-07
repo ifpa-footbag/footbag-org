@@ -9,14 +9,16 @@ class FootbagIntro extends LitElement {
   static get styles() {
     return css`
       :host {
+        box-sizing: border-box;
         color: var(--color-blue);
         display: block;
+
+        --margin: var(--space-xl);
       }
 
-      article {
-        background: #f3f3f3;
-        font-size: var(--font-size-l);
-        padding: 0 var(--space-xl) var(--space-xxl) var(--space-xl);
+      page-heading {
+        background: var(--color-redlight);
+        padding: 0 var(--space-xl);
       }
 
       h2 {
@@ -34,28 +36,27 @@ class FootbagIntro extends LitElement {
 
       h4 {
         font-size: var(--font-size-l);
-        margin: var(--space-xl) 0 var(--space-m) 0;
+        margin: var(--margin) 0 var(--space-m) 0;
       }
 
-      em {
-        color: var(--color-blue);
-        font-style: normal;
-        font-weight: var(--font-weight-bold);
-      }
+      section,
+      footer {
+        background: var(--color-white); /*#f3f3f3;*/
+        font-size: var(--font-size-l);
+        padding: var(--margin);
 
-      section {
         margin: 0;
       }
       section.accordions {
-        margin: var(--space-xl) 0;
+        padding: 0;
       }
 
       smooth-expand[expanded] {
-        margin-bottom: var(--space-xl);
+        padding-bottom: var(--space-xl);
       }
 
       p {
-        margin: 0;
+        margin: var(--space-l) 0;
       }
 
       p + p {
@@ -75,8 +76,9 @@ class FootbagIntro extends LitElement {
 
         margin: 0;
 
-        padding: var(--space-l) 0;
+        padding: var(--space-l) var(--margin);
         text-align: left;
+        transition: background 0.4s;
 
         width: 100%;
       }
@@ -91,7 +93,7 @@ class FootbagIntro extends LitElement {
 
       button svg-icon {
         float: right;
-        fill: var(--color-orange);
+        fill: var(--color-red);
         pointer-events: none;
         padding-right: var(--space-l);
       }
@@ -101,8 +103,16 @@ class FootbagIntro extends LitElement {
         transition: transform 0.4s;
       }
 
+      button[open] {
+        background: var(--color-redlight);
+      }
+
       button[open] svg-icon {
         transform: rotateX(180deg);
+      }
+
+      smooth-expand {
+        padding: 0 var(--margin);
       }
 
       img {
@@ -114,22 +124,20 @@ class FootbagIntro extends LitElement {
 
   render() {
     return html`
-      <article>
-        <page-heading
-          topic="Footbag"
-          header="Recreational and competitive sports"
-        ></page-heading>
-        <p>
-          <em
-            >Footbag is a series of sports where players use their feet to kick
+      <page-heading
+        topic="Footbag"
+        header="Recreational and competitive sports"
+      ></page-heading>
+      
+        <section class="intro">
+            Footbag is a series of sports where players use their feet to kick
             a small round bag or ball. Some players do amazing tricks, others
             compete over a net, while for some, the aim is to work together to
             keep the bag off the ground. While being extremely easy to start, it
             also has its competitive forms played all over the world. It is also
             known for its culture and strong community, both locally and
-            globally.</em
-          >
-        </p>
+            globally.
+        </section>
 
         <section class="accordions">
           <button
@@ -263,13 +271,13 @@ class FootbagIntro extends LitElement {
             </div>
           </smooth-expand>
         </section>
-        <section>
+        <footer>
           Join our worldwide community to learn more, ask help or finding player
           to kick with! We are on
           <a href="https://www.facebook.com/footbag.org">Facebook</a>,
           <a href="https://www.instagram.com/footbag_sports/">Instagram</a> and
           <a href="https://discord.com/invite/DAtQwG4">Discord</a>!
-        </section>
+        </footer>
       </article>
     `;
   }

@@ -20,9 +20,9 @@ class PageHeading extends LitElement {
 
         display: flex;
 
-        margin: 3rem 0 var(--margin-bottom, 2.75rem) 0;
+        margin: 2.5rem 0 2.25rem 0;
 
-        color: var(--color-blue);
+        color: var(--color, var(--color-blue));
       }
 
       .date {
@@ -38,10 +38,10 @@ class PageHeading extends LitElement {
       }
 
       .topic {
-        color: var(--color-red); /* #348ba8; */
+        color: var(--color-topic, var(--color-red)); /* #348ba8; */
         margin-right: var(--space-s);
         padding-right: var(--space-m);
-        border-right: 2px solid var(--color-red);
+        border-right: 2px solid var(--color-topic, var(--color-red));
       }
     `;
   }
@@ -73,6 +73,12 @@ class PageHeading extends LitElement {
       date: {
         type: String,
       },
+
+      extraMargin: {
+        type: Boolean,
+        reflect: true,
+      },
+
       header: {
         type: String,
       },
@@ -80,6 +86,7 @@ class PageHeading extends LitElement {
       headerImage: {
         type: String,
       },
+
       topic: {
         type: String,
       },

@@ -35,6 +35,7 @@ class MainPage extends LitElement {
           grid-template-areas:
             'news   intro'
             'events intro';
+          grid-gap: var(--space-l);
         }
       }
 
@@ -43,7 +44,6 @@ class MainPage extends LitElement {
       }
 
       .intro {
-        background: rgb(247, 247, 248);
         grid-area: intro;
       }
 
@@ -61,7 +61,7 @@ class MainPage extends LitElement {
       }
 
       .events {
-        background: #f7f7f8;
+        background: var(--color-white);
 
         grid-area: events;
       }
@@ -97,7 +97,7 @@ class MainPage extends LitElement {
       }
 
       page-heading {
-        background: var(--color-gray-300);
+        background: var(--color-redlight);
         padding: 0 var(--space-xl);
       }
     `;
@@ -124,7 +124,8 @@ class MainPage extends LitElement {
           <div class="filter-item">Net</div>
         </div-->
         <page-heading
-          header="Find out important news here"
+          topic="News"
+          header="Find out what is going on"
         ></page-heading>
         
           ${news}
@@ -137,6 +138,7 @@ class MainPage extends LitElement {
         <section class="events">
         <img src="images/front-page/players-association.jpg"></img>
         <page-heading
+          topic="Events"
           header="Time to have fun and challenge the others!"
         ></page-heading>
 

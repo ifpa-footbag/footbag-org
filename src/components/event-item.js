@@ -10,14 +10,8 @@ class EventItem extends LitElement {
       }
 
       article {
-        background-color: var(--color-white);
-
         padding: var(--space-xl);
         max-width: 100%;
-      }
-
-      :host([highlight]) article {
-        background-color: var(--color-redlight);
       }
 
       a {
@@ -25,9 +19,11 @@ class EventItem extends LitElement {
         color: inherit;
         text-decoration: inherit;
       }
+
       a:hover {
         color: var(--color-bluehover);
       }
+
       h3 {
         color: var(--color-blue);
         margin: 0;
@@ -53,13 +49,14 @@ class EventItem extends LitElement {
       }
 
       .details-icon {
-        color: var(--color-red);
+        color: var(--color-blue);
         opacity: 0.1;
-        padding-right: var(--space-l);
+        padding-right: var(--space-xl);
+        min-width: 32px;
       }
 
       :host([highlight]) .details-icon {
-        opacity: 0.2;
+        opacity: 0.6;
       }
 
       .contact {
