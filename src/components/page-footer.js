@@ -1,5 +1,6 @@
 import { css, html, LitElement } from 'lit-element';
 
+import './contact-us.js';
 import './svg-icon.js';
 
 class PageFooter extends LitElement {
@@ -62,27 +63,6 @@ class PageFooter extends LitElement {
       a {
         color: var(--color-white);
         text-decoration: none;
-      }
-
-      .button a {
-        background: var(--color-white);
-        border-radius: 5rem;
-        color: var(--color-blue);
-
-        display: block;
-        font-weight: var(--font-weight-bold);
-
-        width: 10rem;
-        padding: var(--space-m);
-        text-align: center;
-      }
-
-      .button a svg {
-        fill: var(--color-blue);
-      }
-
-      a {
-        display: block;
       }
 
       .worldwide-logo {
@@ -163,9 +143,7 @@ class PageFooter extends LitElement {
         <aside>
           <svg-icon class="ifpa-logo" path="images/icons.svg#ifpa-logo"></svg-icon>
                   
-          <div class="button">          
-            <a href="mailto:info@footbag.org">Contact Us</a>
-          </div>
+          <Contact-us></Contact-us>
         </aside>
 
         </main>

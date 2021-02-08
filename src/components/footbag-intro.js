@@ -1,5 +1,6 @@
 import { css, html, LitElement } from 'lit-element';
 
+import './contact-us.js';
 import './page-heading.js';
 import './svg-icon.js';
 import './smooth-expand.js';
@@ -119,6 +120,10 @@ class FootbagIntro extends LitElement {
         max-width: 100%;
         padding: var(--space-xl) 0;
       }
+
+      .contact {
+        margin-top: var(--space-xl);
+      }
     `;
   }
 
@@ -169,9 +174,9 @@ class FootbagIntro extends LitElement {
                 drops to the ground.
               </p>
               <p>
-                More than sport or game, footbag creates a sense of community.
-                Players from all over the world share this powerful form of
-                creative expression, introspective meditation, and physical
+                More than sport or game, footbag creates a <b>sense of community</b>.
+                Players from all over the world share this <b>powerful form of
+                creative expression</b>, introspective meditation, and physical
                 exercise. It is a game with which you can both teach and learn
                 from others, and find common ground with people from all walks
                 of life. Participants have no need to speak the same language,
@@ -191,34 +196,37 @@ class FootbagIntro extends LitElement {
           <smooth-expand ?expanded="${this.detailsOpen[0]}">
             <div class="details">
               <p>
-                The most common display of casual footbag is the “circle”, in
+                The most common display of casual footbag is the <b>“circle”</b>, in
                 which groups of people gather to collectively keep the bag from
                 touching the ground while passing back and forth. Other casual
-                forms include games like 4-square, footbag golf, mini net, and
-                foot juggling.
+                forms include games like <b>4-square</b>, <b>footbag golf</b>, <b>mini net</b>, and
+                <b>foot juggling</b>.
               </p>
               <p>
                 There are two main competitive disciplines in the sport, named
-                <i>Footbag Net</i> and <i>Freestyle Footbag</i>. Footbag net is
-                a game of offense and defense where players compete as
-                individuals or on teams to send the bag over a net and score
-                points against their opponents. In freestyle footbag, a sport
+                <b>Footbag Net</b> and <b>Freestyle Footbag</b>. 
+                
+                
+              </p>
+
+              <h4>Footbag Freestyle</h4>
+              <img src="images/front-page/footbag.jpg" />
+              <p>
+              In freestyle footbag, a sport
                 similar to juggling, players use their feet to propel the bag
                 upwards and creatively manipulate their bodies near or around
                 the bag to create tricks which can be strung together into
                 expressive routines and competitive runs.
               </p>
-
-              <img src="images/front-page/footbag.jpg" />
-
-              <h4>Footbag Freestyle</h4>
+              
               <p>
                 As with any "freestyle" sport, there are not any actual rules
                 (aside from not using hands), but rather performing creative
                 sequences of tricks in the form of leg and body movements around
                 the bag in between delaying or catching the bag on their feet in
                 various positions, and developing unique style and moves through
-                training, both alone or in groups. The smaller size of a footbag
+                training, both alone or in groups. 
+  </p><p>The smaller size of a footbag
                 in comparison to a soccer ball allows many more tricks than
                 freestyle football and the elite level Freestyle Footbag players
                 perform a truly incredible amount of movements in a very short
@@ -227,10 +235,16 @@ class FootbagIntro extends LitElement {
               </p>
 
               <h4>Footbag Net</h4>
+              <img src="images/front-page/footbag.jpg" />
               <p>
-                Footbag Net can most simply be described as volleyball with your
-                feet, but the ball is a hard footbag, a small, round ball. Using
-                a badminton net and court, players rally the bag between each
+                Footbag net is
+                a game of offense and defense where players compete as
+                individuals or on teams to send the bag over a net and score
+                points against their opponents. It can most simply be described as 
+                volleyball with your feet, but the ball is a hard footbag, a small, round ball. 
+                </p>
+                <p>
+                Using a badminton net and court, players rally the bag between each
                 other, trying, as in volleyball and badminton, to get the ball
                 over the net on onto the opponent’s side of the court using
                 acrobatic movements to keep the ball in play. This sees players
@@ -254,6 +268,8 @@ class FootbagIntro extends LitElement {
                 Thinking of trying footbag out? Grab a bag, try and keep it in
                 the air. Do a few kicks, tricks, see if you can kick it over the
                 net. Once you get started, the possibilities are endless.
+
+                Do not miss our <a href="/getting-started">tutorial</a> explaining the basics.
               </p>
               <h4>Equipment</h4>
               <p>
@@ -277,6 +293,12 @@ class FootbagIntro extends LitElement {
           <a href="https://www.facebook.com/footbag.org">Facebook</a>,
           <a href="https://www.instagram.com/footbag_sports/">Instagram</a> and
           <a href="https://discord.com/invite/DAtQwG4">Discord</a>!
+          
+          <p>
+            Organizing event? Or having questions regarding sponsorships, contact 
+            <a href="mailto:info@footbag.org">International Footbag Players' Association</a> directly
+            </p>
+          
         </footer>
       </article>
     `;
