@@ -6,10 +6,16 @@ import './svg-icon.js';
 class PageFooter extends LitElement {
   static get styles() {
     return css`
-      footer {
+      :host {
         background: var(--color-blue);
+        display: block;
+      }
+      footer {
         color: var(--color-white);
         padding: var(--space-xl);
+
+        max-width: var(--max-content-width);
+        margin: var(--space-xxl) auto 0 auto;
       }
 
       header {

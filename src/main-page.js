@@ -15,9 +15,24 @@ class MainPage extends LitElement {
     return css`
       :host {
         display: block;
+        margin: 0 auto;
+        background: white;
       }
       header {
         z-index: 2;
+      }
+
+      hero-video,
+      main {
+        margin: 0 auto;
+        max-width: var(--max-content-width);
+      }
+
+      @media only screen and (min-width: 700px) and (max-width: 1023px) {
+        main {
+          margin-left: 8%;
+          margin-right: 8%;
+        }
       }
 
       main {
@@ -115,7 +130,7 @@ class MainPage extends LitElement {
           <footbag-intro></footbag-intro>
         </section>
        
-        <div class="news">
+        <section class="news">
         
         <img src="images/front-page/players-association.jpg"></img>
           <!--div class="news-filter">
@@ -127,14 +142,14 @@ class MainPage extends LitElement {
           topic="News"
           header="Find out what is going on"
         ></page-heading>
-        
+       
           ${news}
         
           <!-- not yet implemented -->
           <!-- div class="more">
             <a slot="footer">Older news</a>
           </div -->
-        </div>
+        </section>>
         <section class="events">
         <img src="images/front-page/players-association.jpg"></img>
         <page-heading

@@ -13,6 +13,7 @@ class FootbagIntro extends LitElement {
         box-sizing: border-box;
         color: var(--color-blue);
         display: block;
+        margin-top: var(--space-l);
 
         --margin: var(--space-xl);
       }
@@ -157,8 +158,8 @@ class FootbagIntro extends LitElement {
               <p>
                 Footbag roots can be found deep in the ancient cultures of Asia
                 and the Americas, with similar games being played as far back as
-                3000 years ago. Its current form was established in North
-                America in the 1970s, and it has spread globally and evolved
+                3000 years ago. <b>Its current form was established in North
+                America in the 1970s</b>, and it has spread globally and evolved
                 into many forms since.
               </p>
               <p>
@@ -174,9 +175,9 @@ class FootbagIntro extends LitElement {
                 drops to the ground.
               </p>
               <p>
-                More than sport or game, footbag creates a <b>sense of community</b>.
-                Players from all over the world share this <b>powerful form of
-                creative expression</b>, introspective meditation, and physical
+                More than sport or game, footbag creates a sense of community.
+                Players from all over the world share this powerful form of
+                creative expression, introspective meditation, and physical
                 exercise. It is a game with which you can both teach and learn
                 from others, and find common ground with people from all walks
                 of life. Participants have no need to speak the same language,
@@ -196,18 +197,21 @@ class FootbagIntro extends LitElement {
           <smooth-expand ?expanded="${this.detailsOpen[0]}">
             <div class="details">
               <p>
-                The most common display of casual footbag is the <b>“circle”</b>, in
+                Footbag is mostly known by its casual forms, but there 
+                are also two main competitive disciplines in the sport, named
+                <b>Footbag Net and Freestyle Footbag</b>.   
+              </p>
+
+              <h4>Casual footbag</h4>
+              <img src="images/front-page/footbag.jpg" />
+              <p>
+                The most common display of casual footbag is the <b>circle</b>, in
                 which groups of people gather to collectively keep the bag from
                 touching the ground while passing back and forth. Other casual
-                forms include games like <b>4-square</b>, <b>footbag golf</b>, <b>mini net</b>, and
-                <b>foot juggling</b>.
+                forms include games like <b>4-square, footbag golf, mini net, and
+                foot juggling</b>.
               </p>
-              <p>
-                There are two main competitive disciplines in the sport, named
-                <b>Footbag Net</b> and <b>Freestyle Footbag</b>. 
-                
-                
-              </p>
+
 
               <h4>Footbag Freestyle</h4>
               <img src="images/front-page/footbag.jpg" />

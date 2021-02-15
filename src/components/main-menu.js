@@ -19,7 +19,7 @@ class MainMenu extends LitElement {
 
         font-size: var(--font-size-m);
         font-weight: var(--font-weight-bold);
-        padding: var(--space-xl) var(--space-m);
+        padding: var(--space-xl) var(--space-xl);
         text-transform: uppercase;
         white-space: nowrap;
       }
@@ -99,9 +99,19 @@ class MainMenu extends LitElement {
                 ><svg-icon path="images/icons.svg#arrow-right"></svg-icon>
                 Home</a
               >
-              <div>- Footbag introduction</div>
-              <div>- News</div>
-              <div>- Events</div>
+            </li>  
+              <li>
+                <svg-icon path="images/icons.svg#arrow-right"></svg-icon
+                >Footbag introduction
+              </li>
+              <li>
+                <svg-icon path="images/icons.svg#arrow-right"></svg-icon>News
+              </li>
+              <li>
+                <svg-icon path="images/icons.svg#arrow-right"></svg-icon
+                >Events
+              </li>
+            
             </li>
             <!--li>
               <a href="/footbag"

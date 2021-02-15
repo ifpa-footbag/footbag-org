@@ -7,7 +7,6 @@ class NewsItem extends LitElement {
   static get styles() {
     return css`
       :host {
-        background-color: var(--color-white);
         display: flex;
         flex-direction: column;
         font-size: var(--font-size-l);

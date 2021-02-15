@@ -6,20 +6,26 @@ import './svg-icon.js';
 class NavigationBar extends LitElement {
   static get styles() {
     return css`
+      :host {
+        display: block;
+        background: var(--color-blue);
+        box-sizing: border-box;
+      }
       a {
         color: inherit;
         text-decoration: inherit;
       }
       nav {
-        background-color: var(--color-blue);
         color: var(--color-white);
         display: flex;
         align-items: center;
         justify-content: flex-end;
         margin: 0 auto;
-        padding-right: var(--space-m);
+        padding: var(--space-m) var(--space-l);
         top: 0;
         z-index: 1;
+
+        max-width: var(--max-content-width);
       }
 
       img {
@@ -119,7 +125,7 @@ class NavigationBar extends LitElement {
           <svg-icon path="images/icons.svg#footbag-worldwide"></svg-icon>
         </h1>
 
-        <main-menu></main-menu>
+        <!--main-menu></main-menu-->
       </nav>
     `;
   }

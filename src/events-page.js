@@ -1,6 +1,6 @@
 import { css, html, LitElement } from 'lit-element';
 
-import './components/page-one-column.js';
+import './components/page-two-columns.js';
 import './components/navigation-bar.js';
 import './components/hero-video.js';
 
@@ -19,21 +19,24 @@ class EventsPage extends LitElement {
     return html`
       <navigation-bar back></navigation-bar>
 
-      <page-one-column>
-        ${events}
-      </page-one-column>
+      <page-two-columns>
+        <div slot="main">
+          ${events}
+        </div>
+        <div slot="aside">
+          ${events}
+        </div>
+      </page-two-columns>
     `;
   }
 
   firstUpdated() {
-    setTimeout(() => {
-      this._hideEvents();
-    }, 50);
+    this._hideEvents();
   }
 
   _hideEvents() {
     const items = this.shadowRoot
-      .querySelector('page-one-column')
+      .querySelector('[slot=main]')
       .querySelectorAll('event-item');
 
     items.forEach(item => {

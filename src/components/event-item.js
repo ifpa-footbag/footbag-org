@@ -65,7 +65,7 @@ class EventItem extends LitElement {
         font-size: var(--font-size-xl);
       }
       .body {
-        margin: var(--space-xl);
+        margin: var(--space-xl) 0;
       }
       .modal {
         position: fixed;

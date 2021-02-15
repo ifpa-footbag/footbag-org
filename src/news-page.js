@@ -1,6 +1,6 @@
 import { css, html, LitElement } from 'lit-element';
 
-import './components/page-one-column.js';
+import './components/page-two-columns.js';
 import './components/navigation-bar.js';
 import './components/hero-video.js';
 
@@ -19,9 +19,14 @@ class NewsPage extends LitElement {
     return html`
       <navigation-bar back></navigation-bar>
 
-      <page-one-column>
-        ${news}
-      </page-one-column>
+      <page-two-columns>
+        <div slot="main">
+          ${news}
+        </div>
+        <div slot="aside">
+          ${news}
+        </div>
+      </page-two-columns>
     `;
   }
 
@@ -31,7 +36,7 @@ class NewsPage extends LitElement {
 
   _hideNews() {
     const items = this.shadowRoot
-      .querySelector('page-one-column')
+      .querySelector('[slot=main]')
       .querySelectorAll('news-item');
 
     items.forEach(item => {

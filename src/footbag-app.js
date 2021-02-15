@@ -16,10 +16,6 @@ class FootbagApp extends LitElement {
         display: block;
       }
 
-      #page-placeholder {
-        background: linear-gradient(90deg, #2c204e0f, #2c204e03);
-      }
-
       #page-placeholder > .leaving {
         animation: 0.2s fadeOut ease-in-out;
       }
