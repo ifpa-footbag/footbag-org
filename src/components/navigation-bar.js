@@ -21,7 +21,8 @@ class NavigationBar extends LitElement {
         align-items: center;
         justify-content: flex-end;
         margin: 0 auto;
-        padding: var(--space-m) var(--space-l);
+        padding-top: var(--space-m);
+        padding-bottom: var(--space-m);
         top: 0;
         z-index: 1;
 
@@ -50,9 +51,9 @@ class NavigationBar extends LitElement {
       }
 
       svg-icon {
-        margin-left: var(--space-l);
         width: 12rem;
         height: 45px;
+        fill: var(--color-white);
       }
 
       @media only screen and (min-width: 450px) {

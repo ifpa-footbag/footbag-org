@@ -27,7 +27,7 @@ class ImageElement extends LitElement {
 
       @media only screen and (min-width: 500px) and (max-width: 700px) {
         :host([small]) figure {
-          margin: var(--space-m);
+          padding: var(--space-l);
           width: 48%;
           float: right;
         }
@@ -35,7 +35,7 @@ class ImageElement extends LitElement {
 
       @media only screen and (min-width: 701px) {
         :host([small]) figure {
-          margin: var(--space-m);
+          margin: var(--space-l);
           width: 37%;
           float: right;
         }

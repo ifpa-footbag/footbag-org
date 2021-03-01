@@ -12,7 +12,7 @@ class PageFooter extends LitElement {
       }
       footer {
         color: var(--color-white);
-        padding: var(--space-xl);
+        padding: var(--space-l);
 
         max-width: var(--max-content-width);
         margin: var(--space-xxl) auto 0 auto;
@@ -44,7 +44,6 @@ class PageFooter extends LitElement {
       }
 
       section {
-        margin: var(--space-l);
         padding: var(--space-l);
       }
 

@@ -1,5 +1,7 @@
 import { css, html, LitElement } from 'lit-element';
 
+import { sharedStyles } from '../shared-styles.js';
+
 import './contact-us.js';
 import './page-heading.js';
 import './svg-icon.js';
@@ -8,124 +10,89 @@ import './card-element.js';
 
 class FootbagIntro extends LitElement {
   static get styles() {
-    return css`
-      :host {
-        box-sizing: border-box;
-        color: var(--color-blue);
-        display: block;
-        margin-top: var(--space-l);
+    return [
+      sharedStyles,
+      css`
+        :host {
+          box-sizing: border-box;
+          color: var(--color-blue);
+          display: block;
+        }
 
-        --margin: var(--space-xl);
-      }
+        page-heading {
+          --background: var(--color-redlight);
+        }
 
-      page-heading {
-        background: var(--color-redlight);
-        padding: 0 var(--space-xl);
-      }
+        .accordions {
+          margin-bottom: var(--space-xl);
+        }
 
-      h2 {
-        color: var(--color-orange);
+        footer {
+          background: var(--color-white); /*#f3f3f3;*/
+        }
 
-        margin: 0 0 var(--space-m) 0;
-        padding-right: var(--space-s);
-        font-size: var(--font-size-xxxl);
-      }
+        smooth-expand[expanded] {
+          padding-bottom: var(--space-xl);
+        }
 
-      h3 {
-        font-size: var(--font-size-xl);
-        margin: 0;
-      }
+        button {
+          background-color: transparent;
+          border: 0;
 
-      h4 {
-        font-size: var(--font-size-l);
-        margin: var(--margin) 0 var(--space-m) 0;
-      }
+          color: var(--color-blue);
+          margin: 0;
+          padding: 0;
 
-      section,
-      footer {
-        background: var(--color-white); /*#f3f3f3;*/
-        font-size: var(--font-size-l);
-        padding: var(--margin);
+          text-align: left;
+          transition: background 0.4s;
 
-        margin: 0;
-      }
-      section.accordions {
-        padding: 0;
-      }
+          width: 100%;
+        }
 
-      smooth-expand[expanded] {
-        padding-bottom: var(--space-xl);
-      }
+        button:focus {
+          outline: none;
+        }
 
-      p {
-        margin: var(--space-l) 0;
-      }
+        button:focus-visible {
+          outline: 2px solid var(--color-orange);
+        }
 
-      p + p {
-        margin-top: var(--space-m);
-      }
+        h3 svg-icon {
+          fill: var(--color-red);
+          pointer-events: none;
+          padding-right: var(--space-l);
 
-      button {
-        background-color: transparent;
-        border: 0;
+          padding-left: var(--space-m);
+          transition: transform 0.4s;
+          width: 4rem;
+        }
 
-        color: var(--color-blue);
+        h3 {
+          display: flex;
+          align-items: baseline;
+          justify-content: space-between;
+        }
 
-        display: flex;
-        justify-content: space-between;
-        font-family: var(--font-family-secondary);
-        font-size: var(--font-size-xl);
+        h3,
+        h4 {
+          padding-left: var(--space-l);
+          padding-right: var(--space-l);
+        }
 
-        margin: 0;
+        button[open] h3 {
+          background: var(--color-redlight);
+          margin-bottom: var(--space-m);
+        }
 
-        padding: var(--space-l) var(--margin);
-        text-align: left;
-        transition: background 0.4s;
+        button[open] svg-icon {
+          transform: rotateX(180deg);
+        }
 
-        width: 100%;
-      }
-
-      button:focus {
-        outline: none;
-      }
-
-      button:focus-visible {
-        outline: 2px solid var(--color-orange);
-      }
-
-      button svg-icon {
-        float: right;
-        fill: var(--color-red);
-        pointer-events: none;
-        padding-right: var(--space-l);
-      }
-
-      svg-icon {
-        padding-left: var(--space-m);
-        transition: transform 0.4s;
-      }
-
-      button[open] {
-        background: var(--color-redlight);
-      }
-
-      button[open] svg-icon {
-        transform: rotateX(180deg);
-      }
-
-      smooth-expand {
-        padding: 0 var(--margin);
-      }
-
-      img {
-        max-width: 100%;
-        padding: var(--space-xl) 0;
-      }
-
-      .contact {
-        margin-top: var(--space-xl);
-      }
-    `;
+        .contact {
+          margin-top: var(--space-xl);
+        }
+      `,
+    ];
   }
 
   render() {
@@ -135,14 +102,14 @@ class FootbagIntro extends LitElement {
         header="Recreational and competitive sports"
       ></page-heading>
       
-        <section class="intro">
-            Footbag is a series of sports where players use their feet to kick
+        <section class="intro article">
+            <p>Footbag is a series of sports where players use their feet to kick
             a small round bag or ball. Some players do amazing tricks, others
             compete over a net, while for some, the aim is to work together to
             keep the bag off the ground. While being extremely easy to start, it
             also has its competitive forms played all over the world. It is also
             known for its culture and strong community, both locally and
-            globally.
+            globally.</p>
         </section>
 
         <section class="accordions">
@@ -150,8 +117,11 @@ class FootbagIntro extends LitElement {
             @click="${() => this._toggle(2)}"
             ?open="${this.detailsOpen[2]}"
           >
-            <h3>History and current state</h3>
-            <svg-icon path="images/icons.svg#angle-down"></svg-icon>
+            <h3>
+              <div>History and current state</div>
+              <svg-icon path="images/icons.svg#angle-down"></svg-icon>
+            </h3>
+            
           </button>
           <smooth-expand ?expanded="${this.detailsOpen[2]}">
             <div class="details">
@@ -191,8 +161,11 @@ class FootbagIntro extends LitElement {
             @click="${() => this._toggle(0)}"
             ?open="${this.detailsOpen[0]}"
           >
-            <h3>Footbag disciplines</h3>
-            <svg-icon path="images/icons.svg#angle-down"></svg-icon>
+            <h3>
+                <div>Footbag disciplines</div>              
+                <svg-icon path="images/icons.svg#angle-down"></svg-icon>
+            </h3>
+          
           </button>
           <smooth-expand ?expanded="${this.detailsOpen[0]}">
             <div class="details">
@@ -263,8 +236,9 @@ class FootbagIntro extends LitElement {
             @click="${() => this._toggle(1)}"
             ?open="${this.detailsOpen[1]}"
           >
-            <h3>How to get started?</h3>
-            <svg-icon path="images/icons.svg#angle-down"></svg-icon>
+            <h3><div>How to get started?</div>
+              <svg-icon path="images/icons.svg#angle-down"></svg-icon></h3>
+           
           </button>
           <smooth-expand ?expanded="${this.detailsOpen[1]}">
             <div class="details">
@@ -291,12 +265,13 @@ class FootbagIntro extends LitElement {
             </div>
           </smooth-expand>
         </section>
-        <footer>
-          Join our worldwide community to learn more, ask help or finding player
+        <footer class="section">
+          <p>Join our worldwide community to learn more, ask help or finding player
           to kick with! We are on
           <a href="https://www.facebook.com/footbag.org">Facebook</a>,
           <a href="https://www.instagram.com/footbag_sports/">Instagram</a> and
           <a href="https://discord.com/invite/DAtQwG4">Discord</a>!
+          </p>
           
           <p>
             Organizing event? Or having questions regarding sponsorships, contact 

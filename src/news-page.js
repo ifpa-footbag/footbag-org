@@ -1,5 +1,6 @@
 import { css, html, LitElement } from 'lit-element';
 
+import { sharedStyles } from './shared-styles.js';
 import './components/page-two-columns.js';
 import './components/navigation-bar.js';
 import './components/hero-video.js';
@@ -8,11 +9,14 @@ import { news } from './news/news.js';
 
 class NewsPage extends LitElement {
   static get styles() {
-    return css`
-      [hidden] {
-        display: none;
-      }
-    `;
+    return [
+      sharedStyles,
+      css`
+        [hidden] {
+          display: none;
+        }
+      `,
+    ];
   }
 
   render() {

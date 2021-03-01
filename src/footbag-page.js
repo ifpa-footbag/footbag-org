@@ -1,5 +1,6 @@
 import { html, LitElement } from 'lit-element';
 
+import { sharedStyles } from './shared-styles.js';
 import './components/image-element.js';
 import './components/page-heading.js';
 import './components/page-one-column.js';
@@ -7,6 +8,10 @@ import './components/navigation-bar.js';
 import './components/card-element.js';
 
 class FootbagPage extends LitElement {
+  static get styles() {
+    return [sharedStyles];
+  }
+
   render() {
     return html`
       <navigation-bar back></navigation-bar>
@@ -17,7 +22,7 @@ class FootbagPage extends LitElement {
           topic="Introduction"
         ></page-heading>
 
-        <h3>Footbag Net</h3>
+        <h3 class="h2">Footbag Net</h3>
         <card-element>
           <image-element
             src="images/net.jpg"
@@ -42,7 +47,7 @@ class FootbagPage extends LitElement {
             preparing to counter attack.
           </p>
         </card-element>
-        <h3>Footbag freestyle</h3>
+        <h3 class="h2">Footbag freestyle</h3>
         <card-element>
           <p>
             <image-element

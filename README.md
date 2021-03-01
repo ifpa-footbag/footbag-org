@@ -39,31 +39,20 @@ Github pages is used for hosting. It serves the content of `docs` directory. Doc
 ## Component Structure
 
 ```
-index.html (includes HTML <head>)
-    footbag-app (includes router, which takes care of switching pages)
-        main-page
-          navigation-bar
-          hero-video
-          card-element (news, 2 columns)
-              news.js
-                  news-item
-                  news-item
-              ...
+index.html (includes HTML <head> and <body> and footbag-app)
+    footbag-app (includes router, which takes care of switching pages and including components, such as main-page and news-page)
+      main-page
+        navigation-bar
+        hero-video
+        page-heading
+        news.js
+          news-item
+          news-item
 
-          card-element (events, 1 column)
-              event-item
-              event-item
-              ...
-        getting-started-page
-          navigation-bar
-          page-one-column
+      news-page
+        navigation-bar
+        page-two-columns
+          news.js
             news-item
-            ...
-
-        footbag-page
-          page-one-column
-        event-page
-          page-one-column
-        news-page
-          page-one-column
+            news-item
 ```

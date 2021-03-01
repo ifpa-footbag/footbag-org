@@ -1,49 +1,39 @@
 import { css, html, LitElement } from 'lit-element';
 
 import './svg-icon.js';
+import { sharedStyles } from '../shared-styles.js';
 
 class PageHeading extends LitElement {
   static get styles() {
-    return css`
-      :host {
-        display: flex;
-        flex-direction: column;
-        font-size: var(--font-size-l);
-        max-width: 100%;
-        overflow-wrap: anywhere;
-        padding: 0;
-      }
+    return [
+      sharedStyles,
+      css`
+        :host {
+          display: flex;
+          flex-direction: column;
+        }
 
-      h2 {
-        font-family: var(--font-family-secondary);
-        font-size: var(--font-size-xxxl);
+        h2 {
+          background: var(--background, none);
+          font-family: var(--font-family-secondary);
+          display: flex;
+          color: var(--color, var(--color-blue));
+        }
 
-        display: flex;
+        .date {
+          color: var(--color-blue);
+          font-family: var(--font-family-primary);
+          font-size: var(--font-size-m);
+        }
 
-        margin: 2.5rem 0 2.25rem 0;
-
-        color: var(--color, var(--color-blue));
-      }
-
-      .date {
-        color: var(--color-blue);
-        font-family: var(--font-family-primary);
-        font-size: var(--font-size-m);
-      }
-
-      img {
-        max-width: 100%;
-        width: 100%;
-        margin-bottom: var(--space-xl);
-      }
-
-      .topic {
-        color: var(--color-topic, var(--color-red)); /* #348ba8; */
-        margin-right: var(--space-s);
-        padding-right: var(--space-m);
-        border-right: 2px solid var(--color-topic, var(--color-red));
-      }
-    `;
+        .topic {
+          color: var(--color-topic, var(--color-red)); /* #348ba8; */
+          margin-right: var(--space-s);
+          padding-right: var(--space-m);
+          border-right: 2px solid var(--color-topic, var(--color-red));
+        }
+      `,
+    ];
   }
 
   render() {
@@ -51,7 +41,7 @@ class PageHeading extends LitElement {
       ${this.headerImage !== undefined
         ? html`<img src="${this.headerImage}" />`
         : ``}
-      <h2>
+      <h2 class="h1">
         <div class="header">
           <div class="header-content">
             ${this.topic === undefined

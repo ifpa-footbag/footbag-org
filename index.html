@@ -17,7 +17,7 @@
       }
 
       html {
-        /* COMMON VARIABLES */
+        /* COMMON VARIABLES AND RULES THAT PIERCE SHADOW ROOT */
 
         --box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.7);
         --box-shadow-main: 0px 0px 7px 0px rgba(0, 0, 0, 0.03);
@@ -45,26 +45,23 @@
            * e.g. 1em, 1.25em, 1.563em, 1.953em, 2.441em, 3.052em, 3.814,
            */
 
-        --font-size-s: 0.64rem;
         --font-size-m: 0.8rem;
         --font-size-l: 1rem;
         --font-size-xl: 1.25rem;
         --font-size-xxl: 1.563rem;
         --font-size-xxxl: 1.953rem;
-        --font-size-xxxxl: 2.441rem;
 
         --font-weight-normal: 300;
         --font-weight-bold: 700;
         --font-weight-boldest: 900;
 
-        --line-height-increased: 1.35em;
         --max-content-width: 1200px;
 
-        --space-s: 0.25rem;
-        --space-m: 0.5rem;
-        --space-l: 0.75rem;
-        --space-xl: 1.5rem;
-        --space-xxl: 4.5rem;
+        --space-s: 0.328125rem;
+        --space-m: 0.65625rem;
+        --space-l: 1.3125rem;
+        --space-xl: 2.625rem;
+        --space-xxl: 5.25rem;
 
         --page-header-margin: var(--space-xl) 0;
 
@@ -75,43 +72,26 @@
         --z-index-floating-1: 2;
 
         background: var(--color-white);
-        font-size: 16px;
       }
 
       body {
+        color: var(--color-blue);
+
         font-family: var(--font-family-primary);
         font-weight: var(--font-weight-normal);
         margin: 0 auto;
-        color: var(--color-blue);
 
-        /* max-width: var(--max-content-width);*/
-      }
-
-      h1,
-      h2,
-      h3 {
-        margin: 0;
-      }
-      p {
-        margin: 0 0 var(--space-s) 0;
+        font-size: var(--font-size-l);
+        line-height: var(--space-l);
       }
 
       footbag-app {
         box-shadow: var(--box-shadow-main);
-      }
-
-      /* UTILITY CLASSES */
-
-      @media only screen and (max-width: 600px) {
-        .u-hide--small {
-          display: none;
-        }
       }
     </style>
 
     <script type="module" src="/src/footbag-app.js"></script>
     <!-- see footbag-app.js for router and rest of the application -->
     <footbag-app>loading...</footbag-app>
-    <!-- dev version -->
   </body>
 </html>

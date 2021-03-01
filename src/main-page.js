@@ -1,5 +1,6 @@
 import { css, html, LitElement } from 'lit-element';
 
+import { sharedStyles } from './shared-styles.js';
 import './components/card-element.js';
 import './components/event-item.js';
 import './components/footbag-intro.js';
@@ -12,110 +13,102 @@ import { news } from './news/news.js';
 
 class MainPage extends LitElement {
   static get styles() {
-    return css`
-      :host {
-        display: block;
-        margin: 0 auto;
-        background: white;
-      }
-      header {
-        z-index: 2;
-      }
-
-      hero-video,
-      main {
-        margin: 0 auto;
-        max-width: var(--max-content-width);
-      }
-
-      @media only screen and (min-width: 700px) and (max-width: 1023px) {
-        main {
-          margin-left: 8%;
-          margin-right: 8%;
+    return [
+      sharedStyles,
+      css`
+        :host {
+          display: block;
+          margin: 0 auto;
+          background: white;
         }
-      }
+        header {
+          z-index: 2;
+        }
 
-      main {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-areas:
-          'intro'
-          'news'
-          'events';
-      }
-
-      @media only screen and (min-width: 1024px) {
+        hero-video,
         main {
-          grid-template-columns: 161fr 100fr;
+          margin: 0 auto;
+          max-width: var(--max-content-width);
+        }
+
+        main {
+          display: grid;
+          grid-template-columns: 1fr;
           grid-template-areas:
-            'news   intro'
-            'events intro';
-          grid-gap: var(--space-l);
+            'intro'
+            'news'
+            'events';
         }
-      }
 
-      .card-element-news {
-        --card-background: #f3f3f3;
-      }
+        @media only screen and (min-width: 1024px) {
+          main {
+            grid-template-columns: 161fr 100fr;
+            grid-template-areas:
+              'news   intro'
+              'events intro';
+            grid-gap: var(--space-l);
+          }
+        }
 
-      .intro {
-        grid-area: intro;
-      }
+        .card-element-news {
+          --card-background: #f3f3f3;
+        }
 
-      .news {
-        background: var(--color-white);
-        grid-area: news;
-      }
+        .intro {
+          grid-area: intro;
+        }
 
-      .news img,
-      .events img {
-        width: 100%;
-        max-width: 100%;
-        padding: var(--space-l);
-        width: calc(100% - 1.5rem);
-      }
+        .news {
+          background: var(--color-white);
+          grid-area: news;
+        }
 
-      .events {
-        background: var(--color-white);
+        .news img,
+        .events img {
+          max-width: 100%;
+        }
 
-        grid-area: events;
-      }
+        .events {
+          background: var(--color-white);
 
-      .more {
-        padding: var(--space-xl);
-        text-align: center;
-        text-transform: uppercase;
-      }
+          grid-area: events;
+        }
 
-      .more a {
-        color: #8a8a92;
-        fill: #8a8a92;
-        text-decoration: none;
-      }
+        .more {
+          padding: var(--space-xl);
+          text-align: center;
+          text-transform: uppercase;
+        }
 
-      .news-filter {
-        background: var(--color-white);
-        display: flex;
-        padding: 0 var(--space-l);
-      }
+        .more a {
+          color: #8a8a92;
+          fill: #8a8a92;
+          text-decoration: none;
+        }
 
-      .filter-item {
-        padding: var(--space-l);
-        margin: 0 var(--space-m);
-        background: white;
-        width: 3rem;
-      }
-      .selected {
-        border-bottom: 3px solid var(--color-red);
-        color: var(--color-red);
-        font-weight: var(--font-weight-bold);
-      }
+        .news-filter {
+          background: var(--color-white);
+          display: flex;
+          padding: 0 var(--space-l);
+        }
 
-      page-heading {
-        background: var(--color-redlight);
-        padding: 0 var(--space-xl);
-      }
-    `;
+        .filter-item {
+          padding: var(--space-l);
+          margin: 0 var(--space-m);
+          background: white;
+          width: 3rem;
+        }
+        .selected {
+          border-bottom: 3px solid var(--color-red);
+          color: var(--color-red);
+          font-weight: var(--font-weight-bold);
+        }
+
+        page-heading {
+          --background: var(--color-redlight);
+        }
+      `,
+    ];
   }
 
   render() {
@@ -126,13 +119,13 @@ class MainPage extends LitElement {
       <hero-video></hero-video>
 
       <main>
-        <section class="intro">
+        <article class="intro">
           <footbag-intro></footbag-intro>
-        </section>
+        </article>
        
-        <section class="news">
+        <article class="news">
         
-        <img src="images/front-page/players-association.jpg"></img>
+        <img class="img--heading" src="images/front-page/players-association.jpg"></img>
           <!--div class="news-filter">
           <div class="filter-item selected">News</div>
           <div class="filter-item">Freestyle</div>
@@ -149,9 +142,9 @@ class MainPage extends LitElement {
           <!-- div class="more">
             <a slot="footer">Older news</a>
           </div -->
-        </section>>
-        <section class="events">
-        <img src="images/front-page/players-association.jpg"></img>
+  </article>
+        <article class="events">
+        <img class="img--heading" src="images/front-page/players-association.jpg"></img>
         <page-heading
           topic="Events"
           header="Time to have fun and challenge the others!"
@@ -162,7 +155,7 @@ class MainPage extends LitElement {
           <!-- div class="more">
             <a slot="footer">More events</a>
           </div -->
-        </section>
+  </article>
       </main>
     `;
   }

@@ -25,7 +25,7 @@ class CardElement extends LitElement {
         background: var(--header-color, var(--color-blue));
         color: var(--color-white);
 
-        font-size: var(--font-size-s);
+        font-size: var(--font-size-m);
         font-weight: var(--font-weight-boldest);
         text-transform: uppercase;
 

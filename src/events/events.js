@@ -94,10 +94,12 @@ const events = html`
       show the footbag community some of the most beautiful landmarks of the
       Jaworzno region with footbag golf and chill&grill for all participants.
     </p>
-    For the qualification days, there are two main event sites: a sports gym (6
-    footbag net courts plus additional freestyle area) and a shopping mall (for
-    Freestyle events only).
 
+    <p>
+      For the qualification days, there are two main event sites: a sports gym
+      (6 footbag net courts plus additional freestyle area) and a shopping mall
+      (for Freestyle events only).
+    </p>
     <p>
       Detailed information for players about schedule, accommodation, airport
       and local transfers, site maps and the *official registration* (by early
