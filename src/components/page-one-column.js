@@ -11,8 +11,6 @@ class PageOneColumn extends LitElement {
         margin: 0;
 
         min-height: 600px;
-
-        padding: 0 var(--space-xl) var(--space-xl) var(--space-xl);
       }
 
       @media only screen and (min-width: 692px) {

@@ -134,6 +134,7 @@ export const sharedStyles = css`
 
   .img--heading {
     padding-right: 0;
+    padding-bottom: 0;
     padding-left: 0;
   }
 

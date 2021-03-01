@@ -1,5 +1,6 @@
 import { css, html, LitElement } from 'lit-element';
 
+import { sharedStyles } from './shared-styles.js';
 import './components/page-heading.js';
 import './components/page-one-column.js';
 import './components/navigation-bar.js';
@@ -7,18 +8,21 @@ import './components/card-element.js';
 
 class RulesPage extends LitElement {
   static get styles() {
-    return css`
-      .main-grid {
-        display: grid;
-        max-width: var(--max-content-width);
-        margin: 0 auto;
-      }
-      @media only screen and (min-width: 520px) {
+    return [
+      sharedStyles,
+      css`
         .main-grid {
-          grid-template-columns: 2fr 1fr;
+          display: grid;
+          max-width: var(--max-content-width);
+          margin: 0 auto;
         }
-      }
-    `;
+        @media only screen and (min-width: 520px) {
+          .main-grid {
+            grid-template-columns: 2fr 1fr;
+          }
+        }
+      `,
+    ];
   }
 
   render() {
@@ -227,28 +231,35 @@ class RulesPage extends LitElement {
             related events.
           </p>
           <h3>102. Spirit of the Rules</h3>
-          Footbag sports have traditionally relied upon a spirit of
-          sportsmanship which places the responsibility of fair play on the
-          players themselves. Highly competitive and committed play is
-          encouraged, but never at the expense of the bond of mutual respect
-          between players, adherence to the agreed upon rules of any event, nor
-          the basic enjoyment of play. Protection of these vital elements serves
-          to eliminate adverse conduct from the playing field. The
-          responsibility for the maintenance of this spirit rests on each
-          player's shoulders.
+          <p>
+            Footbag sports have traditionally relied upon a spirit of
+            sportsmanship which places the responsibility of fair play on the
+            players themselves. Highly competitive and committed play is
+            encouraged, but never at the expense of the bond of mutual respect
+            between players, adherence to the agreed upon rules of any event,
+            nor the basic enjoyment of play. Protection of these vital elements
+            serves to eliminate adverse conduct from the playing field. The
+            responsibility for the maintenance of this spirit rests on each
+            player's shoulders.
+          </p>
           <h3>103. Construction of the Rules</h3>
-          Any rule set forth in Articles II through V shall be construed in
-          accordance with the purpose for the rule, in a manner of consistency
-          and fairness, exercising substance over form, with due regard to the
-          spirit and gamesmanship fundamental to footbag sports as set forth in
-          section 102 of Article I herein.
+          <p>
+            Any rule set forth in Articles II through V shall be construed in
+            accordance with the purpose for the rule, in a manner of consistency
+            and fairness, exercising substance over form, with due regard to the
+            spirit and gamesmanship fundamental to footbag sports as set forth
+            in section 102 of Article I herein.
+          </p>
           <h3>103.01. Comments</h3>
-          To facilitate understanding and comprehension of the rules of footbag
-          play, a comment discussing the event appears at the beginning of the
-          set of rules pertaining to that event. The comment shall not be
-          considered a rule. However, it may be used as an aid in interpretation
-          of the actual rules.
+          <p>
+            To facilitate understanding and comprehension of the rules of
+            footbag play, a comment discussing the event appears at the
+            beginning of the set of rules pertaining to that event. The comment
+            shall not be considered a rule. However, it may be used as an aid in
+            interpretation of the actual rules.
+          </p>
           <h3>103.02. Gender</h3>
+          <p></p>
           Wherever used in the rules, the use of any gender shall be applicable
           to both genders.
           <h3>103.03. Rule Changes</h3>
