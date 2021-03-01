@@ -259,22 +259,25 @@ class RulesPage extends LitElement {
             interpretation of the actual rules.
           </p>
           <h3>103.02. Gender</h3>
-          <p></p>
-          Wherever used in the rules, the use of any gender shall be applicable
-          to both genders.
+          <p>
+            Wherever used in the rules, the use of any gender shall be
+            applicable to both genders.
+          </p>
           <h3>103.03. Rule Changes</h3>
-          Suggestions for rule changes or additions concerning specific events
-          are to be made to the appropriate IFC event committees. Proposals
-          concerning general rule considerations may be made directly to the IFC
-          Rules Committee. All event committees shall submit their proposed rule
-          documents for the coming season before the annual meeting. The Rules
-          Committee shall then review the proposed rules, and through
-          communication with the event committees, assemble the rule book for
-          the coming season. Individual rule changes shall be discussed and
-          voted on during the annual IFC meeting held in late July or early
-          August. New rules and rule changes must be voted in no later than
-          November 30 of the year preceding their effective date. New rules and
-          rule changes shall be effective commencing January 1.
+          <p>
+            Suggestions for rule changes or additions concerning specific events
+            are to be made to the appropriate IFC event committees. Proposals
+            concerning general rule considerations may be made directly to the
+            IFC Rules Committee. All event committees shall submit their
+            proposed rule documents for the coming season before the annual
+            meeting. The Rules Committee shall then review the proposed rules,
+            and through communication with the event committees, assemble the
+            rule book for the coming season. Individual rule changes shall be
+            discussed and voted on during the annual IFC meeting held in late
+            July or early August. New rules and rule changes must be voted in no
+            later than November 30 of the year preceding their effective date.
+            New rules and rule changes shall be effective commencing January 1.
+          </p>
           <h3>104. Event Sanctioning Authority</h3>
           The IFC and IFPA may grant or revoke authorization for other
           organizations or entities to sanction footbag events. IFPA and IFC are
@@ -282,30 +285,38 @@ class RulesPage extends LitElement {
           information is available from IFPA Sanctioning committee and at
           www.footbag.org.
           <h3>105. Tournaments</h3>
-          Players shall compete in one or more of the footbag events at
-          tournaments organized or sanctioned by the IFC or by a nation or
-          person who is a member of the IFC.
+          <p>
+            Players shall compete in one or more of the footbag events at
+            tournaments organized or sanctioned by the IFC or by a nation or
+            person who is a member of the IFC.
+          </p>
           <h3>105.01. Entry</h3>
-          To qualify for entry in a tournament, a player shall pay the entry fee
-          set by the tournament director.
+          <p>
+            To qualify for entry in a tournament, a player shall pay the entry
+            fee set by the tournament director.
+          </p>
           <h3>105.02. Tournament Director</h3>
-          The tournament shall be under the management and control of a
-          tournament director who shall oversee the entire tournament, appoint
-          officials and delegate duties and responsibilities to said officials
-          and other tournament personnel, interpret the rules of play when
-          necessary, settle disputes as they arise, perform any other acts and
-          duties required by the IFC rules, and otherwise insure that the
-          tournament is conducted in an efficient, professional, consistent and
-          fair manner.
+          <p>
+            The tournament shall be under the management and control of a
+            tournament director who shall oversee the entire tournament, appoint
+            officials and delegate duties and responsibilities to said officials
+            and other tournament personnel, interpret the rules of play when
+            necessary, settle disputes as they arise, perform any other acts and
+            duties required by the IFC rules, and otherwise insure that the
+            tournament is conducted in an efficient, professional, consistent
+            and fair manner.
+          </p>
           <h3>106. Classification of Players</h3>
           To promote fair competition, players shall be classified based upon
           age, sex and ability level, and compete against other players of a
           like classification, or, at their discretion, in the open field of
           players. The following classifications shall be used:
           <h3>106.01. Open Division</h3>
-          All players who do not qualify for any other division or choose not to
-          compete in any other division. In a prize-money event, this division
-          may be labeled Open Professional.
+          <p>
+            All players who do not qualify for any other division or choose not
+            to compete in any other division. In a prize-money event, this
+            division may be labeled Open Professional.
+          </p>
           <h3>106.02. Women's Division</h3>
           Available only to female players. The women's division may be further
           subdivided into junior, intermediate, master, grand master, or senior
