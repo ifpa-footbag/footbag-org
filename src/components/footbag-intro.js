@@ -69,7 +69,7 @@ class FootbagIntro extends LitElement {
 
         h3 {
           display: flex;
-          align-items: baseline;
+          align-items: flex-end;
           justify-content: space-between;
         }
 
@@ -113,13 +113,41 @@ class FootbagIntro extends LitElement {
         </section>
 
         <section class="accordions">
+        <button
+            @click="${() => this._toggle(1)}"
+            ?open="${this.detailsOpen[1]}"
+          >
+            <h3><div>How to get started?</div>
+              <svg-icon path="images/icons.svg#angle-down" medium></svg-icon></h3>
+           
+          </button>
+          <smooth-expand ?expanded="${this.detailsOpen[1]}">
+            <div class="details">
+              <p>
+                Thinking of trying footbag out? Grab a bag, try and keep it in
+                the air. Do a few kicks, tricks, see if you can kick it over the
+                net. Once you get started, the possibilities are endless.
+
+                Do not miss our <a href="/getting-started">tutorial</a> explaining the basics.
+              </p>
+              <h4>Equipment</h4>
+              <p>
+                As with many sports, footbag freestyle and net use specialized
+                shoes and other equipment. Some players take existing equipment
+                and modify it for their own purposes, improving the designs over
+                time. Also footbags are stitched all over the world, with
+                designs available to make your own at home!
+              </p>
+            </div>
+          </smooth-expand>
+          
           <button
             @click="${() => this._toggle(2)}"
             ?open="${this.detailsOpen[2]}"
           >
             <h3>
               <div>History and current state</div>
-              <svg-icon path="images/icons.svg#angle-down"></svg-icon>
+              <svg-icon path="images/icons.svg#angle-down" medium></svg-icon>
             </h3>
             
           </button>
@@ -163,7 +191,7 @@ class FootbagIntro extends LitElement {
           >
             <h3>
                 <div>Footbag disciplines</div>              
-                <svg-icon path="images/icons.svg#angle-down"></svg-icon>
+                <svg-icon path="images/icons.svg#angle-down" medium></svg-icon>
             </h3>
           
           </button>
@@ -232,38 +260,7 @@ class FootbagIntro extends LitElement {
             </div>
           </smooth-expand>
 
-          <button
-            @click="${() => this._toggle(1)}"
-            ?open="${this.detailsOpen[1]}"
-          >
-            <h3><div>How to get started?</div>
-              <svg-icon path="images/icons.svg#angle-down"></svg-icon></h3>
-           
-          </button>
-          <smooth-expand ?expanded="${this.detailsOpen[1]}">
-            <div class="details">
-              <p>
-                Thinking of trying footbag out? Grab a bag, try and keep it in
-                the air. Do a few kicks, tricks, see if you can kick it over the
-                net. Once you get started, the possibilities are endless.
-
-                Do not miss our <a href="/getting-started">tutorial</a> explaining the basics.
-              </p>
-              <h4>Equipment</h4>
-              <p>
-                As with many sports, footbag freestyle and net use specialized
-                shoes and other equipment. Some players take existing equipment
-                and modify it for their own purposes, improving the designs over
-                time. Also footbags are stitched all over the world, with
-                designs available to make your own at home! [click here for more
-                information about shoes for freestyle/net-above or below link a
-                couple small pictures of modified shoes, quantums etc] [click
-                here for information about some of the best footbag stitchers
-                and companies in the world, and for designs to make your
-                own-incl stitching pictures and completed bags]
-              </p>
-            </div>
-          </smooth-expand>
+          
         </section>
         <footer class="section">
           <p>Join our worldwide community to learn more, ask help or finding player

@@ -38,12 +38,12 @@ class NewsItem extends LitElement {
 
         .header-icon {
           fill: var(--color-blue);
-          opacity: 0.1;
+          opacity: 0.3;
           min-width: 32px;
         }
 
         :host([highlight]) .header-icon {
-          opacity: 0.6;
+          opacity: 0.3;
         }
 
         img {

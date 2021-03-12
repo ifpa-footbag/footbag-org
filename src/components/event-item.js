@@ -50,12 +50,12 @@ class EventItem extends LitElement {
 
         .details-icon {
           color: var(--color-blue);
-          opacity: 0.1;
+          opacity: 0.3;
           min-width: 32px;
         }
 
         :host([highlight]) .details-icon {
-          opacity: 0.6;
+          opacity: 0.3;
         }
 
         .contact {
