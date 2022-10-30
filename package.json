@@ -24,7 +24,7 @@
     "@open-wc/building-rollup": "^1.0.0",
     "@open-wc/eslint-config": "^2.0.0",
     "@open-wc/testing": "^2.0.0",
-    "@open-wc/testing-karma": "^3.0.0",
+    "@open-wc/testing-karma": "^4.0.9",
     "@rollup/plugin-replace": "^2.3.3",
     "deepmerge": "^3.2.0",
     "eslint": "^6.1.0",
